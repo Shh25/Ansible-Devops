@@ -59,6 +59,9 @@ cd /ansible-srv/
 ## ScreenCast link
 //TO DO
 
+## Link to project wiki
+https://github.ncsu.edu/ssujal/CSC519_Project/wiki
+
 ## Authors
 Prayani Singh (psingh25@ncsu.edu)
 Shefali Agarwal (sdagarwa@ncsu.edu)
