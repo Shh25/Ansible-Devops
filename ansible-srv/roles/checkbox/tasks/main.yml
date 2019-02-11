@@ -1,0 +1,9 @@
+# Clean apt data
+- name: apt clean
+  shell: apt clean
+
+# Install Checkbox
+- name: Install Checkbox
+  apt:
+    name: []
+    state: present

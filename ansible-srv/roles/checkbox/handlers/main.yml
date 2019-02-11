@@ -1,0 +1,13 @@
+# # Handler start Checkbox
+# - name: start checkbox
+#   service:
+#     name: checkbox
+#     enabled: yes
+#     state: started
+
+# # Restart Checkbox
+# - name: restart checkbox
+#   service:
+#     name: checkbox
+#     enabled: yes
+#     state: restarted

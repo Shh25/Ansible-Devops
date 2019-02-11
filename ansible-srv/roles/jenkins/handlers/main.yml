@@ -1,0 +1,21 @@
+# # Start Jenins service
+# - name: Start Jenins service
+#   service:
+#     name: Jenins
+#     enabled: yes
+#     state: started
+
+# # Reload Jenins service 
+# - name: Reload Jenins service
+#   systemd:
+#     name: Jenins
+#     state: started
+#     daemon_reload: yes
+
+# # Enable Jenins service
+# - name: Enable Jenins service
+#   systemd:
+#     name: Jenins.service
+#     enabled: yes
+
+

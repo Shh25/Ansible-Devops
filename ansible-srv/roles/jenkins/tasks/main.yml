@@ -1,0 +1,9 @@
+# # Download Mattermost binary file
+# - name: Download binary from Jenkins website
+#   become: yes
+#   environment:
+#     http_proxy: http://127.0.0.1:8080
+#   get_url:
+#     url: https://releases.mattermost.com/{{ mattermost_version }}/mattermost-{{ mattermost_version }}-linux-amd64.tar.gz
+#     dest: /tmp/
+#     use_proxy: yes
