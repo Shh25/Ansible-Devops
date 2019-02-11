@@ -2,3 +2,7 @@ hosts
 *.swp
 *.retry
 testplay.yml
+
+# ssh keys
+ansible-srv/web-srv.pub
+ansible-srv/web-srv

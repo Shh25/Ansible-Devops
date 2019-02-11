@@ -66,6 +66,5 @@ Sujal Sujal (ssujal@ncsu.edu)
 Vaibhav Singh (vsingh7@ncsu.edu)
 
 
-## Miscellaneous
-# Shefali
-Installing Jenkins
+## Wiki - Report
+//TO DO - add wiki link
