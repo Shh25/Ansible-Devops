@@ -1,0 +1,13 @@
+# Handler start mySQL
+- name: start mysql
+  service:
+    name: mysql
+    enabled: yes
+    state: started
+
+# Restart mySQL
+- name: restart mysql
+  service:
+    name: mysql
+    enabled: yes
+    state: restarted
