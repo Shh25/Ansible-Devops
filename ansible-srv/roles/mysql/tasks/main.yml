@@ -1,0 +1,40 @@
+# Install mySQL
+- name: Install MySQL and packages
+  apt:
+    name: ['mysql-server=5.7.*','python3-mysqldb']
+    state: present
+
+# Copy config file to given location
+- name: Copy config file to root location
+  template:
+    src:   './templates/.my.cnf'
+    dest:  ~/.my.cnf
+    mode:  0600
+
+# Remove all anonymous users from db
+- name: Remove all anonymous users from db
+  mysql_user:
+    name: ""
+    state: absent
+
+# Update db given user password and grant all permissions to user
+- name: Update db user password and grant all permissions to user
+  mysql_user:
+    login_user: "{{db_user}}"
+    login_password: "{{db_password}}"
+    check_implicit_admin: yes
+    name: "{{db_user}}"
+    password: "{{db_password}}"
+    priv: "*.*:ALL,GRANT"
+    state: present
+
+# Create new db with given name
+- name: Create a new database with name "{{db_name}}"
+  mysql_db:
+    name: "{{db_name}}"
+    login_user: "{{db_user}}"
+    login_password: "{{db_password}}"
+    state: present
+  notify: restart mysql
+
+
