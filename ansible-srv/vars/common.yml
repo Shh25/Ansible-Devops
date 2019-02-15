@@ -1,3 +1,8 @@
 ---
 ansible_user: "root"
 key_file: "{{ ansible_env.HOME }}/.ssh/web_srv"
+
+#jenkins installation + config
+jenkins_admin_username: admin 
+jenkins_admin_password: admin
+
