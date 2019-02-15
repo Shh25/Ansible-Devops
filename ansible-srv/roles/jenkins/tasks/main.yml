@@ -81,4 +81,14 @@
     user: "{{jenkins_admin_username}}"
     password: "{{jenkins_admin_username}}"
 
+- name: Installing plugins
+  jenkins_plugin:
+      name: "{{item}}"
+      state: latest
+      with_dependencies: true
+      url_username: "{{jenkins_admin_username}}"
+      url_password: "{{jenkins_admin_username}}"
+  with_items:
+    - token-macro
+
 

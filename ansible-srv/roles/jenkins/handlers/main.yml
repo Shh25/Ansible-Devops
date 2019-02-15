@@ -18,27 +18,3 @@
 #     name: Jenkins.service
 #     enabled: yes
 
-# for tasks/main.yml
-
-# - name: Installing plugins
-#   jenkins_plugin:
-#       name: "{{item}}"
-#       state: latest
-#       with_dependencies: true
-#       url_username: "{{jenkins_admin_username}}"
-#       url_password: "{{jenkins_admin_username}}"
-#   with_items:
-#     - token-macro
-
-
-# - name: Download CLI jar
-#   get_url:
-#     url: "{{ download_url }}"
-#     dest: /opt/jenkins-cli.jar
-
-# - name: Admin login
-#   shell: java -jar /opt/jenkins-cli.jar -s "{{server_url}}" who-am-i --username {{jenkins_admin_username}} --password {{jenkins_admin_password}}
-
-
-download_url:  http://localhost:8080/jnlpJars/jenkins-cli.jar
-server_url: http://localhost:8080
