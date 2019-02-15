@@ -1,9 +1,84 @@
-# # Download Mattermost binary file
-# - name: Download binary from Jenkins website
-#   become: yes
-#   environment:
-#     http_proxy: http://127.0.0.1:8080
-#   get_url:
-#     url: https://releases.mattermost.com/{{ mattermost_version }}/mattermost-{{ mattermost_version }}-linux-amd64.tar.gz
-#     dest: /tmp/
-#     use_proxy: yes
+---
+- name: Installing jre8
+  become: true
+  apt:
+    name: openjdk-8-jre
+    state: present
+    update_cache: yes
+  
+- name: Installing git
+  become: true
+  apt:
+    name: git
+    state: present
+
+- name: Add jenkins repo key
+  become: true
+  apt_key:
+    url: https://pkg.jenkins.io/debian/jenkins.io.key
+    state: present
+
+- name: Add jenkins repo list file into sources.list.d
+  become: true
+  apt_repository:
+    repo: deb http://pkg.jenkins.io/debian-stable binary/
+    state: present
+
+- name: Installing jenkins
+  become: true
+  apt:
+    name: jenkins
+    state: latest
+    update_cache: yes
+
+- name: Starting jenkins
+  systemd:
+    name: jenkins 
+    state: started
+
+- name: Wait for 20 sec 
+  wait_for:
+      timeout: 20
+  delegate_to: localhost
+
+- name: Reading password
+  no_log: true
+  shell: cat /var/lib/jenkins/secrets/initialAdminPassword 
+  register: initial
+
+- name: Configuring jenkins
+  become: true
+  jenkins_script:
+    script:  |
+      import jenkins.model.*
+      import hudson.security.*
+
+      def instance = Jenkins.getInstance()
+
+      println "--> Creating local user 'admin'"
+
+      def hudsonRealm = new HudsonPrivateSecurityRealm(false)
+      hudsonRealm.createAccount('{{ jenkins_admin_username }}','${user_pwd}')
+      instance.setSecurityRealm(hudsonRealm)
+
+      def strategy = new FullControlOnceLoggedInAuthorizationStrategy()
+      strategy.setAllowAnonymousRead(false)
+      instance.setAuthorizationStrategy(strategy)
+      instance.save()
+    args:
+      user_pwd: "{{jenkins_admin_password}}"
+    user: "{{jenkins_admin_username}}"
+    password: "{{initial.stdout}}"
+
+- name: Complete jenkins setup
+  become: true
+  jenkins_script:
+    script: |
+      import static jenkins.model.Jenkins.instance as jenkins
+      import jenkins.install.InstallState
+      if (!jenkins.installState.isSetupComplete()) {
+        InstallState.INITIAL_SETUP_COMPLETED.initializeState()}
+    user: "{{jenkins_admin_username}}"
+    password: "{{jenkins_admin_username}}"
+
+
