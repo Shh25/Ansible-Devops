@@ -5,6 +5,7 @@
 
   vars_files:
     - ./vars/common.yml
+  
   pre_tasks: 
     - name: Ensure .ssh directory exists.
       file: 
@@ -16,4 +17,5 @@
   roles:
   - jenkins
   - nginx
+  - mongodb
   - checkbox
