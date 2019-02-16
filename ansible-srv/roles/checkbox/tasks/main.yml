@@ -1,9 +1,5 @@
-# Clean apt data
-- name: apt clean
-  shell: apt clean
-
 # Install Checkbox
-- name: Install Checkbox
-  apt:
-    name: []
-    state: present
+- name: Install Checkbox from repository
+  git:
+    repo: https://github.com/chrisparnin/checkbox.io.git
+    dest: "{{ checkbox_dest }}"
