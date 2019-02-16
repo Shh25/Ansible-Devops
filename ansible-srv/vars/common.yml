@@ -10,3 +10,9 @@ jenkins_admin_password: admin
 db_user: "root"
 db_name: "mattermost"
 db_password: "hello"
+<<<<<<< Updated upstream
+=======
+mongo_data_path: /data/db
+bind: 0.0.0.0
+checkbox_dest: /checkbox
+>>>>>>> Stashed changes

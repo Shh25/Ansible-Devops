@@ -1,0 +1,15 @@
+---
+- name: remove old apt lists
+  raw: sudo rm -rf /etc/apt/sources.list.d/nginx-stable-trusty.list*
+
+- name: install new apt dist list
+  raw: sudo add-apt-repository ppa:nginx/stable -y
+
+- name: Install packages
+  apt: 
+    name: ['nginx', 'sendmail', 'libgd-tools', 'unzip', 'zip', 'bzip2'] 
+    state: present
+
+- name: Dist Upgrade
+  apt:
+    upgrade: dist
