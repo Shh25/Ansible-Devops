@@ -13,6 +13,8 @@ db_password: "hello"
 
 #mongo
 mongo_data_path: /data/db
+mongo_username: root
+mongo_password: root
 bind: 0.0.0.0
 
 #checkbox
