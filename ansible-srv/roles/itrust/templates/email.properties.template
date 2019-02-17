@@ -1,4 +1,4 @@
-from=vaibhavsinghspam
-username=vaibhavsinghspam
-password=vaibhavs1nghsp@m
+from={{gmail_username}}
+username={{gmail_username}}
+password={{gmail_password}}
 host=smtp.gmail.com
