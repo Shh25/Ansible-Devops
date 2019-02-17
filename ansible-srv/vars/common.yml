@@ -23,5 +23,5 @@ checkbox_dest: /checkbox
 #itrust
 githubuser: "github_username"
 githubpassword: "github_password"
-email_user: "gmail_username"
-email_password: "gmail_password"
+mailuser: "gmail_username"
+mailpassword: "mail_password"

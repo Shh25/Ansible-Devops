@@ -1,4 +1,4 @@
-from={{gmail_username}}
-username={{gmail_username}}
-password={{gmail_password}}
+from={{ mailuser }}
+username={{ mailuser }}
+password={{ mailpassword }}
 host=smtp.gmail.com

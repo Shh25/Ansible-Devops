@@ -14,21 +14,15 @@
 
 # Copy db.properties file
 - name: Copy db.properties file
-  copy:
+  template:
     src: ./templates/db.properties.template
     dest: ~/itrust/iTrust2/src/main/java/db.properties
-    owner: root
-    group: root
-    mode: 0644
 
 # Copy email.properties file
 - name: Copy email.properties file
-  copy:
+  template:
     src: ./templates/email.properties.template
     dest: ~/itrust/iTrust2/src/main/java/email.properties
-    owner: root
-    group: root
-    mode: 0644
 
 - name: Build database and create sample data 
   shell: "mvn -f pom-data.xml process-test-classes"
