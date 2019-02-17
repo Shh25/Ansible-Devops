@@ -19,3 +19,9 @@ bind: 0.0.0.0
 
 #checkbox
 checkbox_dest: /checkbox
+
+#itrust
+githubuser: "github_username"
+githubpassword: "github_password"
+email_user: "gmail_username"
+email_password: "gmail_password"
