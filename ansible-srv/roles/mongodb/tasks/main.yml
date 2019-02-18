@@ -36,14 +36,17 @@
   pip:
     name: pymongo
     state: present
+#   notify: 
+#   - Start MongoDB service
 
+# - meta: flush_handlers
 - name: Start MongoDB service
   service: name=mongod state=restarted
 
 - mongodb_user:
     database: admin
-    name: "{{mongo_username}}"
-    password: "{{mongo_password}}"
+    name: "{{ mongo_username }}"
+    password: "{{ mongo_password }}"
     roles: dbAdminAnyDatabase
     state: present
 

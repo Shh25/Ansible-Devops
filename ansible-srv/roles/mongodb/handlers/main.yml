@@ -1,4 +1,4 @@
-- name: start
+- name: Start MongoDB service
   service: name=mongod state=restarted
 
 # - name: Stop homebrew MongoDB Services
