@@ -16,3 +16,18 @@ plugins_list_notify: ['email-ext', 'emailext-template', 'mailer', 'publish-over-
 db_user: "root"
 db_name: "mattermost"
 db_password: "hello"
+
+#mongo
+mongo_data_path: /data/db
+mongo_username: root
+mongo_password: root
+bind: 0.0.0.0
+
+#checkbox
+checkbox_dest: /checkbox
+
+#itrust
+githubuser: "github_username"
+githubpassword: "github_password"
+mailuser: "gmail_username"
+mailpassword: "mail_password"

@@ -1,0 +1,19 @@
+- name: start
+  service: name=mongod state=restarted
+
+# - name: Stop homebrew MongoDB Services
+#   shell: "launchctl stop homebrew.mxcl.mongodb.plist"
+#   with_items: '{{ rs_servers }}'
+#   connection: local
+#   ignore_errors: true
+
+# - name: Stop any previous MongoDB Services
+#   shell: "launchctl stop ansible.mongodb-{{ item.name }}.plist"
+#   with_items: '{{ rs_servers }}'
+#   connection: local
+#   ignore_errors: true
+
+# - name: Stop daemons
+#   shell: "killall daemon"
+#   connection: local
+#   ignore_errors: true

@@ -1,0 +1,40 @@
+---
+- name: Install OpenJDK and Maven
+  apt: name={{ item }} update_cache=yes cache_valid_time=3600 state=present
+  become: true
+  with_items:
+    - openjdk-8-jdk
+    - maven
+
+- name: Clone iTrust repo
+  become: true
+  git:
+    repo: 'https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/engr-csc326-staff/iTrust2-v4'
+    dest: ~/itrust
+
+# Copy db.properties file
+- name: Copy db.properties file
+  template:
+    src: ./templates/db.properties.template
+    dest: ~/itrust/iTrust2/src/main/java/db.properties
+
+# Copy email.properties file
+- name: Copy email.properties file
+  template:
+    src: ./templates/email.properties.template
+    dest: ~/itrust/iTrust2/src/main/java/email.properties
+
+- name: Build database and create sample data 
+  shell: "mvn -f pom-data.xml process-test-classes"
+  args:
+    chdir: ~/itrust/iTrust2
+
+- name: Run iTrust's integration and unit tests
+  shell: "mvn clean test verify checkstyle:checkstyle"
+  args:
+    chdir: ~/itrust/iTrust2
+  register: mvn_result
+
+- name: "mvn task output"
+  debug:
+    var: mvn_result

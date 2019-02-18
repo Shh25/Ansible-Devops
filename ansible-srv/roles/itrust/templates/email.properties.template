@@ -1,0 +1,4 @@
+from={{ mailuser }}
+username={{ mailuser }}
+password={{ mailpassword }}
+host=smtp.gmail.com
