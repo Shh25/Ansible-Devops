@@ -31,6 +31,13 @@
     state: latest
     update_cache: yes
 
+# Copy db.properties file
+- name: Changing jenkins port
+  become: true
+  template:
+    src: ./templates/jenkins
+    dest: /etc/default/jenkins
+
 - name: Starting jenkins
   systemd:
     name: jenkins 
