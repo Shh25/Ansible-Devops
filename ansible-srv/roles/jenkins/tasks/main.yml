@@ -77,7 +77,7 @@
     args:
       user_pwd: "{{jenkins_admin_password}}"
     user: "{{jenkins_admin_username}}"
-    password: "{{jenkins_admin_password}}"
+    password: "{{initial.stdout}}"
 
 - name: Complete jenkins setup
   become: true
