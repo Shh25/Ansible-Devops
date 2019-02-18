@@ -3,9 +3,9 @@
   become: true
   apt:
     name: openjdk-8-jre
-    state: present
     update_cache: yes
     cache_valid_time: 3600
+    state: present
   
 - name: Installing git
   become: true
@@ -32,7 +32,14 @@
     state: latest
     update_cache: yes
     cache_valid_time: 3600
-  
+
+# Copy db.properties file
+- name: Changing jenkins port
+  become: true
+  template:
+    src: ./templates/jenkins
+    dest: /etc/default/jenkins
+
 - name: Starting jenkins
   systemd:
     name: jenkins 
