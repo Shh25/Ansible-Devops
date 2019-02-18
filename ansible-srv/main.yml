@@ -15,5 +15,5 @@
 
   roles:
   - jenkins
-  - nginx
-  - checkbox
+  # - nginx
+  # - checkbox

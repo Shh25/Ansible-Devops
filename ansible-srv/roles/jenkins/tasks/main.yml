@@ -5,6 +5,7 @@
     name: openjdk-8-jre
     state: present
     update_cache: yes
+    cache_valid_time: 3600
   
 - name: Installing git
   become: true
@@ -30,7 +31,8 @@
     name: jenkins
     state: latest
     update_cache: yes
-
+    cache_valid_time: 3600
+  
 - name: Starting jenkins
   systemd:
     name: jenkins 
@@ -68,7 +70,7 @@
     args:
       user_pwd: "{{jenkins_admin_password}}"
     user: "{{jenkins_admin_username}}"
-    password: "{{initial.stdout}}"
+    password: "{{jenkins_admin_password}}"
 
 - name: Complete jenkins setup
   become: true
@@ -79,7 +81,22 @@
       if (!jenkins.installState.isSetupComplete()) {
         InstallState.INITIAL_SETUP_COMPLETED.initializeState()}
     user: "{{jenkins_admin_username}}"
-    password: "{{jenkins_admin_username}}"
+    password: "{{jenkins_admin_password}}"
 
-
+- name: Install plugins
+  jenkins_plugin:
+    name: "{{item | urlencode }}"
+    with_dependencies: true
+    validate_certs: false
+    url_username: "{{jenkins_admin_username}}"
+    url_password: "{{jenkins_admin_password}}"
+  with_items:
+    - "{{plugins_list_org}}"
+    - "{{plugins_list_build}}"
+    - "{{plugins_list_build_tools}}"
+    - "{{plugins_list_pipe}}"
+    - "{{plugins_list_scm}}"
+    - "{{plugins_list_notify}}"
+  ignore_errors: yes
+  notify: Reload Jenkins service
 
