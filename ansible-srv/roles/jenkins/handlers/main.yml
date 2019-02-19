@@ -1,20 +1,20 @@
 # # Start Jenkins service
 # - name: Start Jenkins service
 #   service:
-#     name: Jenkins
+#     name: jenkins
 #     enabled: yes
 #     state: started
 
-# # Reload Jenkins service
-# - name: Reload Jenkins service
-#   systemd:
-#     name: Jenkins
-#     state: started
-#     daemon_reload: yes
+# Reload Jenkins service
+- name: Reload jenkins service
+  systemd:
+    name: jenkins
+    state: restarted
+    daemon_reload: yes
 
 # # Enable Jenkins service
 # - name: Enable Jenkins service
 #   systemd:
-#     name: Jenkins.service
+#     name: jenkins.service
 #     enabled: yes
 
