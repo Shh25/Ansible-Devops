@@ -6,7 +6,7 @@
 #     state: started
 
 # Reload Jenkins service
-- name: Reload Jenkins service
+- name: Reload jenkins service
   systemd:
     name: jenkins
     state: restarted
