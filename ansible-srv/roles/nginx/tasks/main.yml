@@ -7,9 +7,9 @@
 
 - name: Install packages
   apt: 
-    name: ['nginx', 'sendmail', 'libgd-tools', 'unzip', 'zip', 'bzip2'] 
+    name: ['nginx', 'sendmail', 'libgd-tools'] 
     state: present
 
-- name: Dist Upgrade
-  apt:
-    upgrade: dist
+# - name: Dist Upgrade
+#   apt:
+#     upgrade: dist
