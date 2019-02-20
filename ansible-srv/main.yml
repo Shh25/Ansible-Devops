@@ -15,6 +15,7 @@
         state: directory
 
   roles:
+  - nodejs
   - jenkins
   - nginx
   - mongodb

@@ -2,6 +2,10 @@
 ansible_user: "root"
 key_file: "{{ ansible_env.HOME }}/.ssh/web_srv"
 
+#node JS
+ansible_distribution_release: xenial
+node_version: 10
+
 #jenkins installation + config + plugins
 jenkins_admin_username: admin 
 jenkins_admin_password: admin
@@ -25,9 +29,10 @@ bind: 0.0.0.0
 
 #checkbox
 checkbox_dest: /checkbox
+checkbox_repository: "https://github.com/Shh25/checkbox.io.git"
 
 #itrust
-githubuser: "github_username"
-githubpassword: "github_password"
-mailuser: "gmail_username"
-mailpassword: "mail_password"
+githubuser: "sdagarwa"
+githubpassword: "Shefali@22"
+mailuser: "vaibhavsinghspam"
+mailpassword: "vaibhavs1nghsp@m"

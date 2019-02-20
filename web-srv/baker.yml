@@ -5,8 +5,6 @@ config:
   - template: 
       src: ../ansible-srv/web-srv.pub 
       dest: ~/.ssh/public_key
-lang:
-  - nodejs9
 
 commands:
   serve: cat ~/.ssh/public_key >> ~/.ssh/authorized_keys
