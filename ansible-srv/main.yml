@@ -15,10 +15,10 @@
         state: directory
 
   roles:
-  # - nodejs
+  - nodejs
+  - checkbox
   - jenkins
-  # - nginx
-  # - mongodb
-  # - checkbox
-  # - mysql
-  # - itrust
+  - nginx
+  - mongodb
+  - mysql
+  - itrust

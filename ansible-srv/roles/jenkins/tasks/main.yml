@@ -140,6 +140,17 @@
     - "{{plugins_list_notify}}"
   ignore_errors: yes
 
+- name: Placing jobs script
+  become: true
+  template:
+    src: ./templates/jenkins_jobs
+    dest: /etc/jenkins_jobs/jenkins_jobs.ini
+
+- name: Creating jobs folder
+  command: mkdir /web-srv/jobs
+
+- name: 
+
 - name: Restarting jenkins
   systemd:
     name: jenkins 
