@@ -1,6 +1,7 @@
 name: web-srv
 vm:
   ip: 192.168.33.100
+  memory: 4096
 config:
   - template: 
       src: ../ansible-srv/web-srv.pub 

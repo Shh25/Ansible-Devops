@@ -3,8 +3,8 @@
   become: true
   apt:
     name: openjdk-8-jre
-    update_cache: yes
-    cache_valid_time: 3600
+    # update_cache: yes
+    # cache_valid_time: 3600
     state: present
   
 - name: Installing git
@@ -34,21 +34,55 @@
     cache_valid_time: 3600
 
 # Copy db.properties file
-- name: Changing jenkins port
-  become: true
-  template:
-    src: ./templates/jenkins
-    dest: /etc/default/jenkins
+#- name: Changing jenkins port
+#  become: true
+#  template:
+#    src: ./templates/jenkins
+#    dest: /etc/default/jenkins
 
 - name: Starting jenkins
   systemd:
     name: jenkins 
     state: started
+    # timeout: 5
+    # register: jenkins_service_status
+  # Keep trying for 5 mins in 5 sec intervals
+#   retries: 60
+#   delay: 5
+#   until: >
+#      'status' in jenkins_service_status and
+#      jenkins_service_status['status'] == 200
+
+# - name: Debug jenkins
+#   debug:
+#     msg: jenkins_service_status
 
 - name: Wait for 20 sec 
   wait_for:
       timeout: 20
   delegate_to: localhost
+
+# - name: checking service status
+#   command: systemctl status jenkins
+#   register: result
+#   ignore_errors: yes
+
+# - name: showing report
+#   debug:
+#     var: result
+
+# - name: Wait for Jenkins to start up
+#   uri:
+#     url: http://localhost:8080
+#     status_code: 200
+#     timeout: 5
+#   register: jenkins_service_status
+#   # Keep trying for 5 mins in 5 sec intervals
+#   retries: 60
+#   delay: 5
+#   until: >
+#      'status' in jenkins_service_status and
+#      jenkins_service_status['status'] == 200
 
 - name: Reading password
   no_log: true
@@ -61,7 +95,7 @@
     script:  |
       import jenkins.model.*
       import hudson.security.*
-
+      
       def instance = Jenkins.getInstance()
 
       println "--> Creating local user 'admin'"
@@ -116,3 +150,10 @@
   wait_for:
       timeout: 10
   delegate_to: localhost
+
+# - jenkins_job:
+#   config: "{{ lookup('file', 'templates/test.xml') }}"
+#   name: checkbox
+#   password: admin
+#   url: http://localhost:8080
+#   user: admin

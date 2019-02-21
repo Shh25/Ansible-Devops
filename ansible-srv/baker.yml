@@ -11,4 +11,3 @@ config:
 
 commands:
   serve: chmod 600 ~/.ssh/web-srv
-  
