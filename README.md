@@ -64,6 +64,7 @@ https://github.ncsu.edu/ssujal/CSC519_Project/wiki
 
 ## Link to forked repositories
 https://github.com/Shh25/checkbox.io
+https://github.ncsu.edu/engr-csc326-staff/iTrust2-v4
 
 ## Authors
 Prayani Singh (psingh25@ncsu.edu)
