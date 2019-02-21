@@ -6,7 +6,16 @@
     update_cache: yes
     cache_valid_time: 3600
     state: present
-  
+
+- name: Install  pip
+  apt: 
+    name: ['python-pip', 'python3-pip']
+    state: present
+
+- name: Install the Python jenkins
+  pip:
+    name: ['jenkins-job-builder']
+
 - name: Installing git
   become: true
   apt:
@@ -32,11 +41,6 @@
     state: latest
     update_cache: yes
     cache_valid_time: 3600
-
-- name: Starting jenkins
-  systemd:
-    name: jenkins 
-    state: started
 
 - name: Wait for 20 sec 
   wait_for:

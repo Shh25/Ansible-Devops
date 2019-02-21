@@ -1,5 +1,10 @@
-# Install Checkbox
 - name: Install Checkbox from repository
   git:
     repo: https://github.com/Shh25/checkbox.io.git
     dest: "{{ checkbox_dest }}"
+
+- name: Placing hook script
+  become: true
+  template:
+    src: ./templates/post-commit
+    dest: /checkbox/.git/hooks/

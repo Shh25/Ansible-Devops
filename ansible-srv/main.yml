@@ -15,10 +15,13 @@
         state: directory
 
   roles:
+<<<<<<< Updated upstream
   - nodejs
+=======
+  - checkbox
+>>>>>>> Stashed changes
   - jenkins
   - nginx
   - mongodb
-  - checkbox
   - mysql
   - itrust
