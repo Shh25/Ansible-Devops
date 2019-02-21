@@ -1,0 +1,11 @@
+#!/bin/sh
+
+curl -X POST {{server_url}}/job/{{jenkins_job_name}}/build --user {{jenkins_admin_username}}:{{jenkins_admin_password}}
+
+#curl -X POST http://localhost:9080/job/test/build --user admin:admin
+
+#curl -X POST http://admin:1102d2c8a18ddb86081b0a2a271dec2881@localhost:9080/job/test/build?TOKEN=1102d2c8a18ddb86081b0a2a271dec2881
+
+#curl -X POST http://admin:1102d2c8a18ddb86081b0a2a271dec2881@localhost:9080/job/test/build
+
+#curl --silent --show-error http://<username>:<api-token>@<jenkins-server>/job/<job-name>/doDelete
