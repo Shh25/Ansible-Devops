@@ -56,6 +56,11 @@ chmod 600 ~/.ssh/web-srv
 ```
 cd /ansible-srv/
 ```
+6. Call Ansible Playbook using inventory from main.yml file
+```
+ansible-playbook main.yml -i inventory
+```
+
 ## ScreenCast link
 //TO DO
 
