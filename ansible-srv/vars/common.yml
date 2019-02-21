@@ -2,7 +2,7 @@
 ansible_user: "root"
 key_file: "{{ ansible_env.HOME }}/.ssh/web_srv"
 
-#node JS
+#nodejs
 ansible_distribution_release: xenial
 node_version: 10
 
@@ -19,11 +19,9 @@ plugins_list_pipe: ['workflow-aggregator', 'github-organization-folder', 'pipeli
 plugins_list_scm: ['bitbucket', 'clearcase', 'cvs', 'git', 'git-parameter', 'github', 'gitlab-plugin', 'p4', 'repo', 'subversion', 'teamconcert', 'tfs', 'github-pullrequest']
 plugins_list_notify: ['email-ext', 'emailext-template', 'mailer', 'publish-over-ssh', 'ssh']
 
-
-
 #mysql
 db_user: "root"
-db_name: "mattermost"
+db_name: "itrust_db"
 db_password: "hello"
 
 #mongo
@@ -34,10 +32,9 @@ bind: 0.0.0.0
 
 #checkbox
 checkbox_dest: /checkbox
-checkbox_repository: "https://github.com/Shh25/checkbox.io.git"
 
 #itrust
-githubuser: "sdagarwa"
-githubpassword: "Shefali@22"
-mailuser: "vaibhavsinghspam"
-mailpassword: "vaibhavs1nghsp@m"
+githubuser: "username"
+githubpassword: "pwd"
+mailuser: "gmail_username"
+mailpassword: "mail_password"
