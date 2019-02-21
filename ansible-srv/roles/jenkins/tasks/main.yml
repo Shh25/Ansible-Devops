@@ -110,6 +110,24 @@
   ignore_errors: yes
   when: was_jenkins_installed.changed
 
+- name: Making jobs folder
+  command: mkdir -p /etc/jenkins_jobs
+
+- name: Placing jobs script
+  become: true
+  template:
+    src: ./templates/jenkins_jobs
+    dest: /etc/jenkins_jobs/jenkins_jobs.ini
+
+- name: Creating directory
+  command: mkdir -p /web-srv/jobs
+
+- name: Placing jobs.yml script
+  become: true
+  template:
+    src: ./templates/jobs.yml
+    dest: /web-srv/jobs/
+
 - name: Restarting jenkins
   systemd:
     name: jenkins 
