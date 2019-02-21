@@ -10,7 +10,7 @@
 - name: Clone iTrust repo
   become: true
   git:
-    repo: ''https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/vsingh7/iTrust2-v4''
+    repo: 'https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/vsingh7/iTrust2-v4'
     dest: /itrust
 
 # Copy db.properties file
