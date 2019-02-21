@@ -41,11 +41,15 @@
     state: latest
     update_cache: yes
     cache_valid_time: 3600
+  register: was_jenkins_installed
+
+- name: Debug jenkins installation
+  debug:
+    var: was_jenkins_installed
 
 - name: Wait for 20 sec 
   wait_for:
       timeout: 20
-  delegate_to: localhost
 
 - name: Reading password
   no_log: true
@@ -75,6 +79,7 @@
       user_pwd: "{{jenkins_admin_password}}"
     user: "{{jenkins_admin_username}}"
     password: "{{initial.stdout}}"
+  when: was_jenkins_installed.changed
 
 - name: Complete jenkins setup
   become: true
@@ -86,6 +91,7 @@
         InstallState.INITIAL_SETUP_COMPLETED.initializeState()}
     user: "{{jenkins_admin_username}}"
     password: "{{jenkins_admin_password}}"
+  when: was_jenkins_installed.changed
 
 - name: Install plugins
   jenkins_plugin:
@@ -102,6 +108,7 @@
     - "{{plugins_list_scm}}"
     - "{{plugins_list_notify}}"
   ignore_errors: yes
+  when: was_jenkins_installed.changed
 
 - name: Restarting jenkins
   systemd:
@@ -112,4 +119,3 @@
 - name: Wait for 10 sec 
   wait_for:
       timeout: 10
-  delegate_to: localhost
