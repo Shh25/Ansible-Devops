@@ -1,8 +1,21 @@
+<p align="center">
+  <img width="200" height="200" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/North_Carolina_State_University_Athletic_logo.svg">
+</p>
+
 # CSC519_Project
-Course project
+CSC-519 Spring 2019, Course project
+
+## Authors
+[Prayani Singh](https://github.ncsu.edu/pshingh25)(psingh25@ncsu.edu) <br>
+[Shefali Agarwal](https://github.ncsu.edu/Sdagarwa)(sdagarwa@ncsu.edu) <br>
+[Sujal Sujal](https://github.ncsu.edu/ssujal)(ssujal@ncsu.edu) <br>
+[Vaibhav Singh](https://github.ncsu.edu/vsingh7)(vsingh7@ncsu.edu) <br>
+
 
 ## Clone repository
-git clone git_repository_link
+```
+git clone 
+```
 
 ## Prerequisites
 1. Install VirtualBox - version 5.2.* (Please install this version for baker to run smoothly. Vagrant can be used instead but extra setup and steps will be required to setup successfully)
@@ -72,9 +85,4 @@ https://github.com/Shh25/checkbox.io
 
 https://github.ncsu.edu/vsingh7/iTrust2-v4
 
-## Authors
-Prayani Singh (psingh25@ncsu.edu)
-Shefali Agarwal (sdagarwa@ncsu.edu)
-Sujal Sujal (ssujal@ncsu.edu)
-Vaibhav Singh (vsingh7@ncsu.edu)
 
