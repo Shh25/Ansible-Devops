@@ -6,7 +6,7 @@
 CSC-519 Spring 2019
 
 ## Authors
-[Prayani Singh](https://github.ncsu.edu/pshingh25)(psingh25@ncsu.edu) <br>
+[Prayani Singh](https://github.ncsu.edu/psingh25)(psingh25@ncsu.edu) <br>
 [Shefali Agarwal](https://github.ncsu.edu/Sdagarwa)(sdagarwa@ncsu.edu) <br>
 [Sujal Sujal](https://github.ncsu.edu/ssujal)(ssujal@ncsu.edu) <br>
 [Vaibhav Singh](https://github.ncsu.edu/vsingh7)(vsingh7@ncsu.edu) <br>
