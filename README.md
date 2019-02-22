@@ -2,8 +2,8 @@
   <img width="200" height="200" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/North_Carolina_State_University_Athletic_logo.svg">
 </p>
 
-# CSC519_Project
-CSC-519 Spring 2019, Course project
+# CSC519_Project Milestone 1
+CSC-519 Spring 2019
 
 ## Authors
 [Prayani Singh](https://github.ncsu.edu/pshingh25)(psingh25@ncsu.edu) <br>
@@ -12,9 +12,24 @@ CSC-519 Spring 2019, Course project
 [Vaibhav Singh](https://github.ncsu.edu/vsingh7)(vsingh7@ncsu.edu) <br>
 
 
+# Configuration Management and Build Milestone
+
+In this milestone, you will complete the following tasks:
+
+:white_check_mark: Provisioning and configuring an jenkins server (on a remote VM), automatically using ansible. <br>
+
+:white_check_mark: Using a combination of jenkins-job-builder and ansible, automatically setup build jobs for two applications: <br>
+>  * A nodejs web application [checkbox.io](https://github.com/chrisparnin/checkbox.io).
+>  * An "enterprise" Java system [iTrust](https://github.ncsu.edu/engr-csc326-staff/iTrust2-v4)
+
+:white_check_mark: Using a combination of mocha/pm2, create a test script that will start and stop the checkbox.io service on the server. A starting place might be [the App](https://github.com/CSC-DevOps/App/blob/master/test/simple.js) we used in the Pipelines workshop. <br>
+
+:white_check_mark: Create a simple git hook or GitHub webhook to trigger a build when a push is made to the repo.   _You may use a forked/cloned version of the two systems._ Demonstrate a passing build for each job after a commit. <br>
+  
+
 ## Clone repository
 ```
-git clone 
+git clone https://github.ncsu.edu/ssujal/CSC519_Project.git
 ```
 
 ## Prerequisites
