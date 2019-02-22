@@ -19,6 +19,10 @@
     src: ./templates/post-commit
     dest: /itrust/.git/hooks/
 
+- name: Changing perm of "/itrust/.git/hooks/post-commit", adding "+x"
+  file: dest=/itrust/.git/hooks/post-commit mode=a+x
+
+
 # Copy db.properties file
 - name: Copy db.properties file
   template:

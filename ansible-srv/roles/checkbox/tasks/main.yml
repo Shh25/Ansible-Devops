@@ -8,3 +8,6 @@
   template:
     src: ./templates/post-commit
     dest: /checkbox/.git/hooks/
+
+- name: Changing perm of "/checkbox/.git/hooks/post-commit", adding "+x"
+  file: dest=/checkbox/.git/hooks/post-commit mode=a+x
