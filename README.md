@@ -14,7 +14,7 @@ CSC-519 Spring 2019
 
 # Configuration Management and Build Milestone
 
-In this milestone, you will complete the following tasks:
+In this milestone, we have completed the following tasks:
 
 :white_check_mark: Provisioning and configuring an jenkins server (on a remote VM), automatically using ansible. <br>
 
@@ -22,9 +22,9 @@ In this milestone, you will complete the following tasks:
 >  * A nodejs web application [checkbox.io](https://github.com/chrisparnin/checkbox.io).
 >  * An "enterprise" Java system [iTrust](https://github.ncsu.edu/engr-csc326-staff/iTrust2-v4)
 
-:white_check_mark: Using a combination of mocha/pm2, create a test script that will start and stop the checkbox.io service on the server. A starting place might be [the App](https://github.com/CSC-DevOps/App/blob/master/test/simple.js) we used in the Pipelines workshop. <br>
+:white_check_mark: Using a combination of mocha/pm2, create a test script that will start and stop the checkbox.io service on the server. <br>
 
-:white_check_mark: Create a simple git hook or GitHub webhook to trigger a build when a push is made to the repo.   _You may use a forked/cloned version of the two systems._ Demonstrate a passing build for each job after a commit. <br>
+:white_check_mark: Create a simple git hook or GitHub webhook to trigger a build when a push is made to the repo. Demonstrate a passing build for each job after a commit. <br>
   
 
 ## Clone repository
