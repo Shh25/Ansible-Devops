@@ -128,7 +128,10 @@
     timeout: 10
 
 - name: Making jobs folder
-  command: mkdir -p /etc/jenkins_jobs
+  file:
+    path: /etc/jenkins_jobs
+    state: directory
+    mode: 0777
 
 - name: Placing jobs script
   become: true
@@ -136,8 +139,11 @@
     src: ./templates/jenkins_jobs
     dest: /etc/jenkins_jobs/jenkins_jobs.ini
 
-- name: Creating directory
-  command: mkdir -p /web-srv/jobs
+- name: Making jobs folder in server
+  file:
+    path: /web-srv/jobs
+    state: directory
+    mode: 0777
 
 - name: Placing jobs.yml script
   become: true
