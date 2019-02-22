@@ -9,8 +9,9 @@ node_version: 10
 #jenkins installation + config + plugins
 jenkins_admin_username: admin 
 jenkins_admin_password: admin
-jenkins_job_name: test2
-server_url: http://localhost:9080
+jenkins_job_name_checkbox: checkbox
+jenkins_job_name_itrust: itrust
+server_url: http://localhost:8080
 
 plugins_list_org: ['dashboard-view','cloudbees-folder','antisamy-markup-formatter']
 plugins_list_build: ['build-name-setter','build-timeout','config-file-provider','credentials-binding','embeddable-build-status','rebuild','ssh-agent','throttle-concurrents','timestamper','ws-cleanup','checkstyle', 'cobertura', 'htmlpublisher', 'junit', 'warnings', 'xunit', 'javadoc']
@@ -34,7 +35,7 @@ bind: 0.0.0.0
 checkbox_dest: /checkbox
 
 #itrust
-githubuser: "username"
-githubpassword: "pwd"
+githubuser: "github_username"
+githubpassword: "github_password"
 mailuser: "gmail_username"
-mailpassword: "mail_password"
+mailpassword: "gmail_password"

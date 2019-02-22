@@ -12,6 +12,11 @@
     name: ['python-pip', 'python3-pip']
     state: present
 
+- name: Install  lxml
+  apt: 
+    name: ['python3-lxml']
+    state: present
+
 - name: Install the Python jenkins
   pip:
     name: ['jenkins-job-builder']
@@ -110,6 +115,18 @@
   ignore_errors: yes
   when: was_jenkins_installed.changed
 
+##### Create jobs ##############
+
+- name: Disable Jenkins security
+  xml:
+    path: /var/lib/jenkins/config.xml
+    xpath: /hudson/useSecurity
+    value: 'false'
+
+- name: Wait for 10 sec 
+  wait_for:
+    timeout: 10
+
 - name: Making jobs folder
   command: mkdir -p /etc/jenkins_jobs
 
@@ -128,9 +145,30 @@
     src: ./templates/jobs.yml
     dest: /web-srv/jobs/
 
+#- name: Restarting jenkins
+#  systemd:
+#    name: jenkins
+#    state: restarted
+#    daemon_reload: yes 
+
+- name: Wait for 10 sec 
+  wait_for:
+    timeout: 10
+ 
+- name: Adding tasks to Jenkins
+  shell: jenkins-jobs update jobs
+  args:
+      chdir: /web-srv/
+
+- name: Enabling Jenkins security
+  xml:
+    path: /var/lib/jenkins/config.xml
+    xpath: /hudson/useSecurity
+    value: 'true'
+
 - name: Restarting jenkins
   systemd:
-    name: jenkins 
+    name: jenkins
     state: restarted
     daemon_reload: yes
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-curl -X POST {{server_url}}/job/{{jenkins_job_name_checkbox}}/build --user {{jenkins_admin_username}}:{{jenkins_admin_password}}
+curl -X POST {{server_url}}/job/{{jenkins_job_name_itrust}}/build --user {{jenkins_admin_username}}:{{jenkins_admin_password}}
 
 #curl -X POST http://localhost:9080/job/test/build --user admin:admin
 

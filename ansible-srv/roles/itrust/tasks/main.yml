@@ -13,6 +13,12 @@
     repo: 'https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/vsingh7/iTrust2-v4'
     dest: /itrust
 
+- name: Placing hook script
+  become: true
+  template:
+    src: ./templates/post-commit
+    dest: /itrust/.git/hooks/
+
 # Copy db.properties file
 - name: Copy db.properties file
   template:
