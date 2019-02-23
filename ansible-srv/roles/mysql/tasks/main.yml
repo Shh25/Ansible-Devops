@@ -30,4 +30,4 @@
     login_user: "{{db_user}}"
     login_password: "{{db_password}}"
     state: present
-  notify: restart mysql
+  notify: Restart mysql

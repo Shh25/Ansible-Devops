@@ -29,7 +29,7 @@
  
 - name: Package prerequisites for pymongo ansible module
   apt:
-    name: ['python-pip', 'python3-pip', 'python-setuptools', 'python-virtualenv', 'python-pymongo', 'build-essential', 'python-dev']
+    name: ['python-setuptools', 'python-virtualenv', 'python-pymongo', 'build-essential', 'python-dev']
     state: present
 
 - name: Install pymongo
@@ -38,7 +38,9 @@
     state: present
 
 - name: Start MongoDB service
-  service: name=mongod state=restarted
+  service: 
+    name: mongod 
+    state: restarted
 
 - mongodb_user:
     database: admin
