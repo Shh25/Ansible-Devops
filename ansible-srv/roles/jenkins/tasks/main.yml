@@ -43,9 +43,9 @@
     cache_valid_time: 3600
   register: was_jenkins_installed
 
-- name: Wait for 20 sec 
+- name: Wait for 10 sec 
   wait_for:
-      timeout: 20
+      timeout: 10
 
 - name: Reading password
   no_log: true
@@ -106,27 +106,63 @@
   ignore_errors: yes
   when: was_jenkins_installed.changed
 
-- name: Stopping jenkins
+- name: Restart jenkins
   systemd:
    name: jenkins
-   state: stopped 
+   state: restarted 
 
-- name: Wait for 10 sec 
+- name: Wait for 20 sec 
   wait_for:
-    timeout: 10
+    timeout: 20
 
 ##### Create jobs ##############
-- name: Disable Jenkins security
-  xml:
-    path: /var/lib/jenkins/config.xml
-    xpath: /hudson/useSecurity
-    value: 'false'
+
+- name: Disable security
+  jenkins_script:
+      script: |
+        import jenkins.model.*
+        import hudson.security.*
+        import hudson.security.csrf.DefaultCrumbIssuer
+        
+        def instance = Jenkins.getInstance()
+
+        instance.disableSecurity()
+        instance.save()
+      user: "{{jenkins_admin_username}}"
+      password: "{{jenkins_admin_password}}"
+
+- name: Update Jobs 
+  command: 'jenkins-jobs update jobs'
+
+- name: Enable security
+  jenkins_script:
+      script: |
+        import jenkins.model.*
+        import hudson.security.*
+
+        def instance = Jenkins.getInstance()
+
+        def hudsonRealm = new HudsonPrivateSecurityRealm(false)
+        instance.setSecurityRealm(hudsonRealm)
+
+        def strategy = new FullControlOnceLoggedInAuthorizationStrategy()
+        strategy.setAllowAnonymousRead(false)
+        instance.setAuthorizationStrategy(strategy)
+        instance.save()
+      user: "{{jenkins_admin_username}}"
+      password: "{{jenkins_admin_password}}"
+
+# - name: Disable Jenkins security
+#   xml:
+#     path: /var/lib/jenkins/config.xml
+#     xpath: /hudson/useSecurity
+#     value: 'false'
 
 # - name: edit config.xml
 #   xml:
 #     path: /var/lib/jenkins/config.xml
 #     xpath: /hudson/authorizationStrategy
-#     state: absent
+#     state: present
 
 # - name: edit config.xml
 #   xml:
@@ -144,29 +180,29 @@
 #   wait_for:
 #     timeout: 10
 
-- name: Making jobs folder
-  file:
-    path: /etc/jenkins_jobs
-    state: directory
-    mode: 0777
+# - name: Making jobs folder
+#   file:
+#     path: /etc/jenkins_jobs
+#     state: directory
+#     mode: 0777
 
-- name: Placing jobs script
-  become: true
-  template:
-    src: ./templates/jenkins_jobs
-    dest: /etc/jenkins_jobs/jenkins_jobs.ini
+# - name: Placing jobs script
+#   become: true
+#   template:
+#     src: ./templates/jenkins_jobs
+#     dest: /etc/jenkins_jobs/jenkins_jobs.ini
 
-- name: Making jobs folder in server
-  file:
-    path: /web-srv/jobs
-    state: directory
-    mode: 0777
+# - name: Making jobs folder in server
+#   file:
+#     path: /web-srv/jobs
+#     state: directory
+#     mode: 0777
 
-- name: Placing jobs.yml script
-  become: true
-  template:
-    src: ./templates/jobs.yml
-    dest: /web-srv/jobs/
+# - name: Placing jobs.yml script
+#   become: true
+#   template:
+#     src: ./templates/jobs.yml
+#     dest: /web-srv/jobs/
 
 # - name: Adding tasks to Jenkins
 #   shell: jenkins-jobs update jobs
