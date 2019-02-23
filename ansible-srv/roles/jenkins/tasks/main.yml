@@ -111,9 +111,9 @@
    name: jenkins
    state: restarted 
 
-- name: Wait for 20 sec 
+- name: Wait for 45 sec 
   wait_for:
-    timeout: 20
+    timeout: 45
 
 ##### Create jobs ##############
 
