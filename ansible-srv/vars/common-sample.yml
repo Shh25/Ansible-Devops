@@ -7,8 +7,8 @@ ansible_distribution_release: xenial
 node_version: 10
 
 #jenkins installation + config + plugins
-jenkins_admin_username: admin 
-jenkins_admin_password: admin
+jenkins_admin_username: "" 
+jenkins_admin_password: ""
 jenkins_job_name_checkbox: checkbox
 jenkins_job_name_itrust: itrust
 server_url: http://localhost:8080
@@ -21,15 +21,15 @@ plugins_list_scm: ['bitbucket', 'clearcase', 'cvs', 'git', 'git-parameter', 'git
 plugins_list_notify: ['email-ext', 'emailext-template', 'mailer', 'publish-over-ssh', 'ssh']
 
 #mysql
-db_user: "root"
-db_name: "itrust_db"
-db_password: "hello"
+db_user: ""
+db_name: ""
+db_password: ""
 
 #mongo
 mongo_ip: 127.0.0.1
 mongo_data_path: /data/db
-mongo_username: root
-mongo_password: root
+mongo_username: ""
+mongo_password: ""
 bind: 0.0.0.0
 
 #checkbox
