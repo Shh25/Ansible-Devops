@@ -84,10 +84,20 @@ chmod 600 ~/.ssh/web-srv
 ```
 cd /ansible-srv/
 ```
-6. Call Ansible Playbook using inventory from main.yml file
+6. Open vars/common.yml in the project directory, add required credentials for database, jenkins, checkbox and iTrust.
+A few variables have been supplied by us. These include a few URLs and plugins. Please do not make modifications to these existing variables as it may lead to incorrect installation of the project.
+
+7. Once the required credentials have been added, vault the common.yml file by calling this command:
+````
+ansible-vault encrypt vars/common.yml
+````
+This will encrypt your variable file and prompt for a password which can be used every time you want to run the Ansible playbook.
+
+8. Call Ansible Playbook using inventory from main.yml file
 ```
-ansible-playbook main.yml -i inventory
+ansible-playbook main.yml -i inventory --ask-vault-pass
 ```
+This will prompt you for vault password. Enter password as added in step 7. This should run the Ansible Playbook.
 
 ## ScreenCast link
 //TO DO
