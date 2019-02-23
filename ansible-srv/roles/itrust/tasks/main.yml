@@ -11,41 +11,31 @@
   become: true
   git:
     repo: 'https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/vsingh7/iTrust2-v4'
-    dest: /itrust
+    dest: "{{ itrust_dest }}"
 
 - name: Placing hook script
   become: true
   template:
     src: ./templates/post-commit
-    dest: /itrust/.git/hooks/
+    dest: "{{ itrust_dest }}/.git/hooks/"
 
-- name: Changing perm of "/itrust/.git/hooks/post-commit", adding "+x"
-  file: dest=/itrust/.git/hooks/post-commit mode=a+x
+- name: Modifying permissions for Post-Commit file for execution
+  file: dest="{{ itrust_dest }}/.git/hooks/post-commit" mode=a+x
 
 
 # Copy db.properties file
 - name: Copy db.properties file
   template:
     src: ./templates/db.properties.template
-    dest: /itrust/iTrust2/src/main/java/db.properties
+    dest: "{{ itrust_dest }}/iTrust2/src/main/java/db.properties"
 
 # Copy email.properties file
 - name: Copy email.properties file
   template:
     src: ./templates/email.properties.template
-    dest: /itrust/iTrust2/src/main/java/email.properties
+    dest: "{{ itrust_dest }}/iTrust2/src/main/java/email.properties"
 
 - name: Build database and create sample data 
   shell: "mvn -f pom-data.xml process-test-classes"
   args:
-    chdir: /itrust/iTrust2
-
-# - name: Run iTrust's integration and unit tests
-#   shell: "mvn clean test verify checkstyle:checkstyle"
-#   args:
-#     chdir: /itrust/iTrust2
-#   register: mvn_result
-
-# - name: "mvn task output"
-#   debug:
-#     var: mvn_result
+    chdir: "{{ itrust_dest }}/iTrust2"
