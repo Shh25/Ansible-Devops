@@ -3,11 +3,11 @@
     repo: https://github.com/Shh25/checkbox.io.git
     dest: "{{ checkbox_dest }}"
 
-- name: Placing hook script
+- name: Placing hook script at /.git/hooks/
   become: true
   template:
     src: ./templates/post-commit
-    dest: /checkbox/.git/hooks/
+    dest: "{{ checkbox_dest }}/.git/hooks/"
 
-- name: Changing perm of "/checkbox/.git/hooks/post-commit", adding "+x"
-  file: dest=/checkbox/.git/hooks/post-commit mode=a+x
+- name: Modifying permissions for Post-Commit file for execution
+  file: dest="{{ checkbox_dest }}/.git/hooks/post-commit" mode=a+x
