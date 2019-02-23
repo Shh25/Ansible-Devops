@@ -103,6 +103,22 @@ ansible-playbook main.yml -i inventory --ask-vault-pass
 ```
 This will prompt you for vault password. Enter password as added in step 7. This should run the Ansible Playbook.
 
+9. Once everything is installed successfully, Jenkins can be accessed on the following port:
+````
+192.168.33.100:8080
+````
+It will prompt you for username and password, enter credentials as specified in vars/commons.yml for Jenkins. Once you are logged into Jenkins portal. You should see project builds for Checkbox and iTrust in a healthy state. To check working of the builds through Git hook, go to the next step.
+
+## Jenkins Builds
+To check Jenkins builds on commit, go into forked repository directory on web server. (as specified in vars/commons.yml). 
+- CheckBox
+Go into project directory where the server files are located. Commit a few changes into this repository and push it to the server. Open browser on Jenkins port as specified above.
+Open jenkins on specified location above and check if the build is running.
+
+- iTrust
+Go into project directory where the server files are located. Commit a few changes into this repository and push it to the server. Open browser on Jenkins port as specified above.
+Open jenkins on specified location above and check if the build is running.
+
 ## ScreenCast link
 //TO DO
 
