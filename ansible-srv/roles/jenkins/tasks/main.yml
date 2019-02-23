@@ -61,7 +61,7 @@
 
       def instance = Jenkins.getInstance()
 
-      println "--> Creating local user 'admin'"
+      println "--> Creating local user '{{ jenkins_admin_username }}'"
 
       def hudsonRealm = new HudsonPrivateSecurityRealm(false)
       hudsonRealm.createAccount('{{ jenkins_admin_username }}','${user_pwd}')
@@ -131,8 +131,34 @@
       user: "{{jenkins_admin_username}}"
       password: "{{jenkins_admin_password}}"
 
+- name: Making jobs folder
+  file:
+    path: /etc/jenkins_jobs
+    state: directory
+    mode: 0777
+
+- name: Placing jobs script
+  become: true
+  template:
+    src: ./templates/jenkins_jobs
+    dest: /etc/jenkins_jobs/jenkins_jobs.ini
+
+- name: Making jobs folder in server
+  file:
+    path: /web-srv/jobs
+    state: directory
+    mode: 0777
+
+- name: Placing jobs.yml script
+  become: true
+  template:
+    src: ./templates/jobs.yml
+    dest: /web-srv/jobs/
+
 - name: Update Jobs 
-  command: 'jenkins-jobs update jobs'
+  command: 'jenkins-jobs --conf jenkins_jobs.ini update jobs'
+  args:
+       chdir: /web-srv/
 
 - name: Enable security
   jenkins_script:
@@ -151,91 +177,3 @@
         instance.save()
       user: "{{jenkins_admin_username}}"
       password: "{{jenkins_admin_password}}"
-
-# - name: Disable Jenkins security
-#   xml:
-#     path: /var/lib/jenkins/config.xml
-#     xpath: /hudson/useSecurity
-#     value: 'false'
-
-# - name: edit config.xml
-#   xml:
-#     path: /var/lib/jenkins/config.xml
-#     xpath: /hudson/authorizationStrategy
-#     state: present
-
-# - name: edit config.xml
-#   xml:
-#     path: /var/lib/jenkins/config.xml
-#     xpath: /hudson/securityRealm
-#     state: absent
-
-# - name: starting jenkins
-#   systemd:
-#    name: jenkins
-#    state: started
-# #    daemon_reload: yes 
-
-# - name: Wait for 10 sec 
-#   wait_for:
-#     timeout: 10
-
-# - name: Making jobs folder
-#   file:
-#     path: /etc/jenkins_jobs
-#     state: directory
-#     mode: 0777
-
-# - name: Placing jobs script
-#   become: true
-#   template:
-#     src: ./templates/jenkins_jobs
-#     dest: /etc/jenkins_jobs/jenkins_jobs.ini
-
-# - name: Making jobs folder in server
-#   file:
-#     path: /web-srv/jobs
-#     state: directory
-#     mode: 0777
-
-# - name: Placing jobs.yml script
-#   become: true
-#   template:
-#     src: ./templates/jobs.yml
-#     dest: /web-srv/jobs/
-
-# - name: Adding tasks to Jenkins
-#   shell: jenkins-jobs update jobs
-#   args:
-#       chdir: /web-srv/
-
-# - name: Enable Jenkins security
-#   xml:
-#     path: /var/lib/jenkins/config.xml
-#     xpath: /hudson/useSecurity
-#     value: 'true'
-
-# - name: Stopping jenkins
-#   systemd:
-#    name: jenkins
-#    state: stopped 
-
-# - name: Wait for 10 sec 
-#   wait_for:
-#     timeout: 10
-    
-# - name: Enabling Jenkins security
-#   xml:
-#     path: /var/lib/jenkins/config.xml
-#     xpath: /hudson/useSecurity
-#     value: 'true'
-
-# - name: Restarting jenkins
-#   systemd:
-#     name: jenkins
-#     state: restarted
-#     # daemon_reload: yes
-
-# - name: Wait for 10 sec 
-#   wait_for:
-#       timeout: 10
