@@ -111,12 +111,10 @@ It will prompt you for username and password, enter credentials as specified in 
 
 ## Jenkins Builds
 To check Jenkins builds on commit, go into forked repository directory on web server. (as specified in vars/commons.yml). 
-- CheckBox
-Go into project directory where the server files are located. Commit a few changes into this repository and push it to the server. Open browser on Jenkins port as specified above.
+- CheckBox: Go into project directory where the server files are located. Commit a few changes into this repository and push it to the server. Open browser on Jenkins port as specified above.
 Open jenkins on specified location above and check if the build is running.
 
-- iTrust
-Go into project directory where the server files are located. Commit a few changes into this repository and push it to the server. Open browser on Jenkins port as specified above.
+- iTrust: Go into project directory where the server files are located. Commit a few changes into this repository and push it to the server. Open browser on Jenkins port as specified above.
 Open jenkins on specified location above and check if the build is running.
 
 ## ScreenCast link
