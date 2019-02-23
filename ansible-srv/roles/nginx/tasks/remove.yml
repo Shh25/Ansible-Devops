@@ -11,6 +11,5 @@
     name: ['nginx', 'nginx-core', 'nginx-common'] 
     state: absent
 
-- name: remove old apt lists
+- name: Remove old apt lists
   raw: sudo rm -rf /etc/apt/sources.list.d/nginx-stable-trusty.list*
-
