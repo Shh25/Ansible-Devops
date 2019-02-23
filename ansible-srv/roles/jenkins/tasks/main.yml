@@ -12,7 +12,7 @@
     name: ['python-pip', 'python3-pip','python3-lxml']
     state: present
 
-- name: Install the Python jenkins
+- name: Install the Job builder
   pip:
     name: ['jenkins-job-builder']
 
