@@ -118,7 +118,7 @@ Open jenkins on specified location above and check if the build is running.
 Open jenkins on specified location above and check if the build is running.
 
 ## ScreenCast link
-//TO DO
+https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sharing
 
 ## Link to project wiki
 https://github.ncsu.edu/ssujal/CSC519_Project/wiki
