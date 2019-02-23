@@ -1,8 +1,8 @@
 ---
-- name: Create mongo root directory
+- name: Create Mongo root directory
   file: path={{ mongo_data_path }} state=directory mode=0766
 
-- name: add MongoDB GPG key
+- name: Add MongoDB GPG key
   apt_key:
     keyserver: keyserver.ubuntu.com
     id: 9DA31620334BD75D9DCB49F368818C72E52529D4
@@ -17,12 +17,12 @@
     name: mongodb-org
     state: present
 
-- name: remove a file
+- name: Remove Mongod config file
   file:
     path: /etc/mongod.conf
     state: absent
 
-- name: mongo conf copy
+- name: Add Mongod config file
   template:
     src: mongod.conf.j2
     dest: /etc/mongod.conf
@@ -36,10 +36,7 @@
   pip:
     name: pymongo
     state: present
-#   notify: 
-#   - Start MongoDB service
 
-# - meta: flush_handlers
 - name: Start MongoDB service
   service: name=mongod state=restarted
 
