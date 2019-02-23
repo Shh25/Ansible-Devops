@@ -40,12 +40,12 @@
   args:
     chdir: /itrust/iTrust2
 
-- name: Run iTrust's integration and unit tests
-  shell: "mvn clean test verify checkstyle:checkstyle"
-  args:
-    chdir: /itrust/iTrust2
-  register: mvn_result
+# - name: Run iTrust's integration and unit tests
+#   shell: "mvn clean test verify checkstyle:checkstyle"
+#   args:
+#     chdir: /itrust/iTrust2
+#   register: mvn_result
 
-- name: "mvn task output"
-  debug:
-    var: mvn_result
+# - name: "mvn task output"
+#   debug:
+#     var: mvn_result

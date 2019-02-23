@@ -9,12 +9,7 @@
 
 - name: Install  pip
   apt: 
-    name: ['python-pip', 'python3-pip']
-    state: present
-
-- name: Install  lxml
-  apt: 
-    name: ['python3-lxml']
+    name: ['python-pip', 'python3-pip','python3-lxml']
     state: present
 
 - name: Install the Python jenkins
@@ -47,10 +42,6 @@
     update_cache: yes
     cache_valid_time: 3600
   register: was_jenkins_installed
-
-- name: Debug jenkins installation
-  debug:
-    var: was_jenkins_installed
 
 - name: Wait for 20 sec 
   wait_for:
@@ -115,17 +106,43 @@
   ignore_errors: yes
   when: was_jenkins_installed.changed
 
-##### Create jobs ##############
+- name: Stopping jenkins
+  systemd:
+   name: jenkins
+   state: stopped 
 
+- name: Wait for 10 sec 
+  wait_for:
+    timeout: 10
+
+##### Create jobs ##############
 - name: Disable Jenkins security
   xml:
     path: /var/lib/jenkins/config.xml
     xpath: /hudson/useSecurity
     value: 'false'
 
-- name: Wait for 10 sec 
-  wait_for:
-    timeout: 10
+# - name: edit config.xml
+#   xml:
+#     path: /var/lib/jenkins/config.xml
+#     xpath: /hudson/authorizationStrategy
+#     state: absent
+
+# - name: edit config.xml
+#   xml:
+#     path: /var/lib/jenkins/config.xml
+#     xpath: /hudson/securityRealm
+#     state: absent
+
+# - name: starting jenkins
+#   systemd:
+#    name: jenkins
+#    state: started
+# #    daemon_reload: yes 
+
+# - name: Wait for 10 sec 
+#   wait_for:
+#     timeout: 10
 
 - name: Making jobs folder
   file:
@@ -151,33 +168,38 @@
     src: ./templates/jobs.yml
     dest: /web-srv/jobs/
 
-#- name: Restarting jenkins
-#  systemd:
+# - name: Adding tasks to Jenkins
+#   shell: jenkins-jobs update jobs
+#   args:
+#       chdir: /web-srv/
+
+# - name: Enable Jenkins security
+#   xml:
+#     path: /var/lib/jenkins/config.xml
+#     xpath: /hudson/useSecurity
+#     value: 'true'
+
+# - name: Stopping jenkins
+#   systemd:
 #    name: jenkins
-#    state: restarted
-#    daemon_reload: yes 
+#    state: stopped 
 
-- name: Wait for 10 sec 
-  wait_for:
-    timeout: 10
- 
-- name: Adding tasks to Jenkins
-  shell: jenkins-jobs update jobs
-  args:
-      chdir: /web-srv/
+# - name: Wait for 10 sec 
+#   wait_for:
+#     timeout: 10
+    
+# - name: Enabling Jenkins security
+#   xml:
+#     path: /var/lib/jenkins/config.xml
+#     xpath: /hudson/useSecurity
+#     value: 'true'
 
-- name: Enabling Jenkins security
-  xml:
-    path: /var/lib/jenkins/config.xml
-    xpath: /hudson/useSecurity
-    value: 'true'
+# - name: Restarting jenkins
+#   systemd:
+#     name: jenkins
+#     state: restarted
+#     # daemon_reload: yes
 
-- name: Restarting jenkins
-  systemd:
-    name: jenkins
-    state: restarted
-    daemon_reload: yes
-
-- name: Wait for 10 sec 
-  wait_for:
-      timeout: 10
+# - name: Wait for 10 sec 
+#   wait_for:
+#       timeout: 10

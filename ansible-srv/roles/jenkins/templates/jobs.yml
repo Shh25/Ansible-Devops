@@ -7,6 +7,7 @@
     builders:
       - shell: 'cp -r /checkbox/* /var/lib/jenkins/workspace/{{jenkins_job_name_checkbox}}/'
       - shell: 'cd server-side/site && npm install && npm test'
+      - shell: 'export MONGO_PORT=27017 && export MONGO_IP=127.0.0.1 && export MONGO_USER=root && export MONGO_PASSWORD=root && export MAIL_USER=mail && export MAIL_PASSWORD=mail && export MAIL_SMTP=mail && export APP_PORT=3002 && cd server-side/site && npm install && npm test'
 
 - job:
     become: true
