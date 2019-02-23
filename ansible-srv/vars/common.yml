@@ -26,6 +26,7 @@ db_name: "itrust_db"
 db_password: "hello"
 
 #mongo
+mongo_ip: 127.0.0.1
 mongo_data_path: /data/db
 mongo_username: root
 mongo_password: root
@@ -33,6 +34,7 @@ bind: 0.0.0.0
 
 #checkbox
 checkbox_dest: /checkbox
+app_port: 3002
 
 #itrust
 itrust_dest: /itrust
@@ -40,3 +42,4 @@ githubuser: "ssujal"
 githubpassword: "Sujal_1234"
 mailuser: "vaibhavsinghspam"
 mailpassword: "vaibhavs1nghsp@m"
+mailsmtp: "mail"

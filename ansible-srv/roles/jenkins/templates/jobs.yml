@@ -5,8 +5,8 @@
     description: 'Run Checkbox tests'
     project-type: freestyle
     builders:
-      - shell: 'cp -r /checkbox/* /var/lib/jenkins/workspace/{{jenkins_job_name_checkbox}}/'
-      - shell: 'export MONGO_PORT=27017 && export MONGO_IP=127.0.0.1 && export MONGO_USER=root && export MONGO_PASSWORD=root && export MAIL_USER=mail && export MAIL_PASSWORD=mail && export MAIL_SMTP=mail && export APP_PORT=3002 && cd server-side/site && npm install && npm test'
+      - shell: 'cp -r {{checkbox_dest}}/* /var/lib/jenkins/workspace/{{jenkins_job_name_checkbox}}/'
+      - shell: 'export MONGO_PORT=27017 && export MONGO_IP={{mongo_ip}} && export MONGO_USER={{mongo_username}} && export MONGO_PASSWORD={{mongo_password}} && export MAIL_USER={{mailuser}} && export MAIL_PASSWORD={{mailpassword}} && export MAIL_SMTP={{mailsmtp}} && export APP_PORT={{app_port}} && cd server-side/site && npm install && npm test'
       
 - job:
     become: true
@@ -14,6 +14,6 @@
     description: 'Run iTrust tests'
     project-type: freestyle
     builders:
-      - shell: 'cp -r /itrust/iTrust2/* /var/lib/jenkins/workspace/{{jenkins_job_name_itrust}}/'
+      - shell: 'cp -r {{itrust_dest}}/iTrust2/* /var/lib/jenkins/workspace/{{jenkins_job_name_itrust}}/'
       - shell: 'mvn -f pom-data.xml process-test-classes && mvn clean test verify checkstyle:checkstyle'
 
