@@ -6,3 +6,6 @@ testplay.yml
 # ssh keys
 ansible-srv/web-srv.pub
 ansible-srv/web-srv
+
+# jobs
+web-srv/jobs/*
