@@ -14,7 +14,7 @@ jenkins_job_name_itrust: itrust
 server_url: http://localhost:8080
 
 plugins_list_org: ['dashboard-view','cloudbees-folder','antisamy-markup-formatter']
-plugins_list_build: ['build-name-setter','build-timeout','config-file-provider','credentials-binding','embeddable-build-status','rebuild','ssh-agent','throttle-concurrents','timestamper','ws-cleanup','checkstyle', 'cobertura', 'htmlpublisher', 'junit', 'warnings', 'xunit', 'javadoc']
+plugins_list_build: ['build-name-setter','build-timeout','config-file-provider','credentials-binding','embeddable-build-status','rebuild','ssh-agent','throttle-concurrents','timestamper','ws-cleanup','checkstyle', 'cobertura', 'htmlpublisher', 'junit', 'warnings', 'warnings-ng', 'xunit', 'javadoc', 'jacoco']
 plugins_list_build_tools: ['ant','nodejs','msbuild','maven-plugin','gradle']
 plugins_list_pipe: ['workflow-aggregator', 'github-organization-folder', 'pipeline-stage-view', 'build-pipeline-plugin', 'conditional-buildstep', 'jenkins-multijob-plugin', 'parameterized-trigger', 'copyartifact']
 plugins_list_scm: ['bitbucket', 'clearcase', 'cvs', 'git', 'git-parameter', 'github', 'gitlab-plugin', 'p4', 'repo', 'subversion', 'teamconcert', 'tfs', 'github-pullrequest']
