@@ -9,3 +9,6 @@ ansible-srv/web-srv
 
 # jobs
 web-srv/jobs/*
+
+# common file
+ansible-srv/vars/common.yml
