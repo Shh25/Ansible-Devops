@@ -1,0 +1,36 @@
+---
+- name: Clone iTrust repo
+  git:
+    repo: 'https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/vsingh7/iTrust2-v4'
+    dest: "{{ itrust_dest }}"
+
+- name: 'Checkout new branch'
+  shell: 'git checkout fuzzer'
+  args:
+    chdir: "{{ itrust_dest }}"
+
+- name: Placing fuzzer.py script
+  template:
+    src: ./templates/fuzzer_script.py
+    dest: /web-srv/fuzzer_script
+
+- name: Find /itrust files equal ending with .java
+  find:
+    paths: "{{ itrust_dest }}"
+    patterns: '*.java'
+    recurse: yes
+  register: files
+
+# - debug:
+#     var: files.files
+
+# - name: Run Py script
+#   script: fuzzer_script.py {{ item.path }}
+#   with_items: "{{ files.files }}"
+#   register: output
+
+- name: Run Py script
+  script: fuzzer_script.py {{ itrust_dest }}
+  register: output
+
+- debug: var=output.stdout_lines
