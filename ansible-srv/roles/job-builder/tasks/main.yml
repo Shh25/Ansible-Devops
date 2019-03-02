@@ -1,0 +1,61 @@
+
+- name: Disable security
+  jenkins_script:
+      script: |
+        import jenkins.model.*
+        import hudson.security.*
+        import hudson.security.csrf.DefaultCrumbIssuer
+        
+        def instance = Jenkins.getInstance()
+
+        instance.disableSecurity()
+        instance.save()
+      user: "{{jenkins_admin_username}}"
+      password: "{{jenkins_admin_password}}"
+
+- name: Making jobs folder
+  file:
+    path: /etc/jenkins_jobs
+    state: directory
+    mode: 0777
+
+- name: Placing jobs script
+  become: true
+  template:
+    src: ./templates/jenkins_jobs
+    dest: /etc/jenkins_jobs/jenkins_jobs.ini
+
+- name: Making jobs folder in server
+  file:
+    path: /web-srv/jobs
+    state: directory
+    mode: 0777
+
+- name: Placing jobs.yml script
+  become: true
+  template:
+    src: ./templates/jobs.yml
+    dest: /web-srv/jobs/
+
+- name: Update Jobs 
+  command: 'jenkins-jobs --conf jenkins_jobs.ini update jobs'
+  args:
+       chdir: /web-srv/
+
+- name: Enable security
+  jenkins_script:
+      script: |
+        import jenkins.model.*
+        import hudson.security.*
+
+        def instance = Jenkins.getInstance()
+
+        def hudsonRealm = new HudsonPrivateSecurityRealm(false)
+        instance.setSecurityRealm(hudsonRealm)
+
+        def strategy = new FullControlOnceLoggedInAuthorizationStrategy()
+        strategy.setAllowAnonymousRead(false)
+        instance.setAuthorizationStrategy(strategy)
+        instance.save()
+      user: "{{jenkins_admin_username}}"
+      password: "{{jenkins_admin_password}}"
