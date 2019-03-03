@@ -2,6 +2,10 @@
 
 import sys
 import os, fnmatch
+import random
+
+# random.seed(233)
+
 itrustPath = sys.argv[1]
 
 def getFilesByPattern(pattern, directoryPath) :
@@ -15,11 +19,18 @@ def getFilesByPattern(pattern, directoryPath) :
 def addFuzzer(pattern, directoryPath) :
     javaFiles = getFilesByPattern(pattern, directoryPath)
     for filename in javaFiles:
-        with open(filename, 'r') as inputfile:
-            newText = inputfile.read().replace('<', '>').replace('==', '!=').replace('0', '1')
+        if random.random() < 0.25:
+            with open(filename, 'r') as inputfile:
+                newText = inputfile.read()
+                if random.random() < 0.1:
+                    newText = newText.replace('<', '>')
+                if random.random() < 0.1:
+                    newText = newText.replace('==', '!=')
+                if random.random() < 0.1:
+                    newText = newText.replace('0', '1')
 
-        with open(filename, 'w') as outputfile:
-            outputfile.write(newText)
-
+            with open(filename, 'w') as outputfile:
+                outputfile.write(newText)
+        
 
 addFuzzer('*.java', itrustPath)
