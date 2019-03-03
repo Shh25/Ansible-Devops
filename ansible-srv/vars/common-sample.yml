@@ -40,6 +40,7 @@ app_port: 3002
 itrust_dest: /itrust
 githubuser: ""
 githubpassword: ""
+githubemail: ""
 mailuser: ""
 mailpassword: ""
 mailsmtp: ""

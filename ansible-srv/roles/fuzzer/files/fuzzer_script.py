@@ -23,7 +23,9 @@ def addFuzzer(pattern, directoryPath) :
             with open(filename, 'r') as inputfile:
                 newText = inputfile.read()
                 if random.random() < 0.1:
-                    newText = newText.replace('<', '>')
+                    newText = newText.replace('<=', '>=')
+                if random.random() < 0.1:
+                    newText = newText.replace('>=', '<=')
                 if random.random() < 0.1:
                     newText = newText.replace('==', '!=')
                 if random.random() < 0.1:

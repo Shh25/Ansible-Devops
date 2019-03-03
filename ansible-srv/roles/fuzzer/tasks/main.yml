@@ -14,21 +14,25 @@
   register: output
 
 - name: 'Git config user in web'
-  shell: git config --global user.email "sdagarwa@ncsu.edu"
+  shell: git config --global user.email {{ githubemail | urlencode }}
 
 - name: 'Git config password in web'
   shell: git config --global user.password "{{ githubpassword | urlencode }}"
 
 - name: 'Commit changed files in Git'
-  shell: git add ./* && git commit -m "Fuzzer commit test" && git push && git log --oneline --repo https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/vsingh7/iTrust2-v4
+  shell: git add ./* && git commit -m "Fuzzer commit test" && git log --oneline
   args:
     chdir: "{{ itrust_dest }}"
   register: commitHash
 
-- debug: var=commitHash.stdout_lines
+- debug: var=commitHash.stdout_lines[0].split(']')[0].split(' ')[1]
 
-- name: 'Revert Commit on Git'
-  command: git revert 4537f29 --repo https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/vsingh7/iTrust2-v4
+- Call Jenkins Job Builder
+
+- name: 'Reset Commit on Git'
+  shell: git reset {{ commitHash.stdout_lines[0].split(']')[0].split(' ')[1] }}
+  args:
+    chdir: "{{ itrust_dest }}"
   register: output
 
 - debug: var=output.stdout_lines
