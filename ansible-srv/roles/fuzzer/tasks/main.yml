@@ -1,9 +1,4 @@
 ---
-- name: Clone iTrust repo
-  git:
-    repo: 'https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/vsingh7/iTrust2-v4'
-    dest: "{{ itrust_dest }}"
-
 - name: 'Checkout new branch'
   shell: 'git checkout fuzzer'
   args:
@@ -23,14 +18,18 @@
   shell: git add ./* && git commit -m "Fuzzer commit test" && git log --oneline
   args:
     chdir: "{{ itrust_dest }}"
-  register: commitHash
+  register: commit_hash
 
-- debug: var=commitHash.stdout_lines[0].split(']')[0].split(' ')[1]
+- debug: var=commit_hash.stdout_lines[0].split(']')[0].split(' ')[1]
 
-- Call Jenkins Job Builder
+# - name: 'Checkout master branch'
+#   shell: 'git checkout master'
+#   args:
+#     chdir: "{{ itrust_dest }}"
+
 
 - name: 'Reset Commit on Git'
-  shell: git reset {{ commitHash.stdout_lines[0].split(']')[0].split(' ')[1] }}
+  shell: git reset {{ commit_hash.stdout_lines[0].split(']')[0].split(' ')[1] }}
   args:
     chdir: "{{ itrust_dest }}"
   register: output
