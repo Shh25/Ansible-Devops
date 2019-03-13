@@ -1,0 +1,5 @@
+---
+- name: Run Fuzzer x times
+  include_role:
+    name: fuzzer
+  with_sequence: start=1 end="{{ number_of_runs }}" stride=1
