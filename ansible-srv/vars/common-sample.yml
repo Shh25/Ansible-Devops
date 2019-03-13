@@ -44,3 +44,6 @@ githubemail: ""
 mailuser: ""
 mailpassword: ""
 mailsmtp: ""
+
+#Fuzzer-test
+number_of_runs: 100
