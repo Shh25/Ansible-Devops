@@ -18,21 +18,28 @@ def getFilesByPattern(pattern, directoryPath) :
     
 def addFuzzer(pattern, directoryPath) :
     javaFiles = getFilesByPattern(pattern, directoryPath)
-    for filename in javaFiles:
-        if random.random() < 0.25:
-            with open(filename, 'r') as inputfile:
-                newText = inputfile.read()
-                if random.random() < 0.1:
-                    newText = newText.replace('<=', '>=')
-                if random.random() < 0.1:
-                    newText = newText.replace('>=', '<=')
-                if random.random() < 0.1:
-                    newText = newText.replace('==', '!=')
-                if random.random() < 0.1:
-                    newText = newText.replace('0', '1')
+    changeFlag = False
+    while not changeFlag:
+        for filename in javaFiles:
+            if random.random() < 0.25:
+                with open(filename, 'r') as inputfile:
+                    newText = inputfile.read()
+                    if random.random() < 0.1:
+                        newText = newText.replace('<=', '>=')
+                        changeFlag = True
+                    if random.random() < 0.1:
+                        newText = newText.replace('>=', '<=')
+                        changeFlag = True
+                    if random.random() < 0.1:
+                        newText = newText.replace('==', '!=')
+                        changeFlag = True
+                    # if random.random() < 0.1:
+                    #     newText = newText.replace('0', '1')
+                    #     changeFlag = True
 
-            with open(filename, 'w') as outputfile:
-                outputfile.write(newText)
+                with open(filename, 'w') as outputfile:
+                    outputfile.write(newText)
+    
         
 
 addFuzzer('*.java', itrustPath)
