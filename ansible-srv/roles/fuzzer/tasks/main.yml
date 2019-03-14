@@ -39,4 +39,8 @@
 - name: Update Log location 
   command: "cp {{ jenkins_console_output_location }} {{ log_location }}"
 
+- name: run parser script
+  script: prioritize.py {{ log_location }}/log /tmp
+  register: output
+  
 # TO DO: Parse file and store in buffer/report file

@@ -49,3 +49,4 @@ mailsmtp: ""
 #Fuzzer-test
 number_of_runs: 100
 combined_log_location: "/var/tmp"
+log_location: "/var/tmp"
