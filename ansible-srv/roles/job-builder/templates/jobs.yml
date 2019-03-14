@@ -15,5 +15,5 @@
     project-type: freestyle
     builders:
       - shell: 'cp -r {{itrust_dest}}/iTrust2/* /var/lib/jenkins/workspace/{{jenkins_job_name_itrust}}/'
-      - shell: 'mvn -f pom-data.xml process-test-classes && mvn clean test verify checkstyle:checkstyle'
+      - shell: 'mvn -f pom-data.xml process-test-classes && mvn -B clean test verify checkstyle:checkstyle'
 
