@@ -27,11 +27,16 @@
 #   args:
 #     chdir: "{{ itrust_dest }}"
 
+- name: Wait for 250 seconds 
+  wait_for:
+    timeout: 250
 
 - name: 'Reset Commit on Git'
   shell: git reset {{ commit_hash.stdout_lines[0].split(']')[0].split(' ')[1] }}
   args:
     chdir: "{{ itrust_dest }}"
-  register: output
 
-- debug: var=output.stdout_lines
+- name: Update Log location 
+  command: "cp {{ jenkins_console_output_location }} {{ log_location }}"
+
+# TO DO: Parse file and store in buffer/report file
