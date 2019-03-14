@@ -12,6 +12,7 @@ jenkins_admin_password: ""
 jenkins_job_name_checkbox: checkbox
 jenkins_job_name_itrust: itrust
 server_url: http://localhost:8080
+jenkins_console_output_location: "/var/lib/jenkins/jobs/itrust/builds/lastFailedBuild/log"
 
 plugins_list_org: ['dashboard-view','cloudbees-folder','antisamy-markup-formatter']
 plugins_list_build: ['build-name-setter','build-timeout','config-file-provider','credentials-binding','embeddable-build-status','rebuild','ssh-agent','throttle-concurrents','timestamper','ws-cleanup','checkstyle', 'cobertura', 'htmlpublisher', 'junit', 'warnings', 'warnings-ng', 'xunit', 'javadoc', 'jacoco']
@@ -47,3 +48,4 @@ mailsmtp: ""
 
 #Fuzzer-test
 number_of_runs: 100
+combined_log_location: "/var/tmp"
