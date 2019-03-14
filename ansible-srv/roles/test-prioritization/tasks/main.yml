@@ -1,0 +1,23 @@
+---
+- name: Create empty file for combined logs
+  file: 
+    path: "{{ log_location }}/{{ combined_log_name }}"
+    state: touch
+    mode: 0777
+
+- name: Run Fuzzer "{{ number_of_runs }}" times
+  include_role:
+    name: fuzzer
+  with_sequence: start=1 end="{{ number_of_runs }}" stride=1
+
+- name: Create Test Prioritization report
+  script: test_prioritization.py /var/tmp/combined_logs
+  register: output
+
+- debug: var=output
+
+- fetch:
+    src: /var/tmp/combined_logs
+    dest: TestPrioritization-Report
+    flat: yes
+
