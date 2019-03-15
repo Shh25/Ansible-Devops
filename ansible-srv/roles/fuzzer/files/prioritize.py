@@ -6,6 +6,7 @@ import sys
 
 filteredTests = []
 dataset = []
+classnamedataset = set()
 
 
 tempdirlocation = sys.argv[1]
@@ -22,16 +23,18 @@ def readLogs(filename) :
             if z:
                 y = re.findall("Time", line)
                 if y:
-                    x = re.findall("run|driver|ShutdownMonitor|ITRunner", line)
+                    x = re.findall("run|driver|ShutdownMonitor|ITRunner|DateTimeParse", line)
                     if not x:
-                        filteredTests.append(line)
+                        if line not in filteredTests:
+                            filteredTests.append(line)
 
             #To capture failure cases, directly append all failures to the file.
             z = re.findall("FAILURE!|ERROR!", line)
             if z:
                 y = re.findall("run|driver|ITRunner", line)
                 if not y:
-                    filteredTests.append(line)
+                    if line not in filteredTests:
+                        filteredTests.append(line)
 
 
 
@@ -56,30 +59,25 @@ def createTestDataSet(filename, filetosave):
             item = classname.strip() + "." + testname.strip() + "," + time.strip() + "," + status.strip() + "\n"
             if item not in dataset:
                 dataset.append(item)
+                classnamedataset.add(classname.strip() + "." + testname.strip())
 
-    with open(filetosave, 'a+') as outputfile:
-        outputfile.write(''.join(str(e) for e in dataset))
+    # with open(filetosave, 'a+') as outputfile:
+    #     outputfile.write(''.join(str(e) for e in dataset))
 
 def addMissingTests(sourcefile, testcorpus):
-    tests = []
+    tests = set()
     missingTests = []
-    presentTests = []
     origtests = []
     with open(testcorpus, 'r') as fp:
         for cnt, line in enumerate(fp):
-            tests.append(line.strip())
-
-    with open(sourcefile, 'r') as fp:
-        for cnt, line in enumerate(fp):
-            presentTests.append(line.split(",")[0].strip())
-            origtests.append(line)
+            tests.add(line.strip())
 
         i = 0
         for test in tests:
-            if test not in presentTests:
+            if test not in classnamedataset:
                 missingTests.append(test.strip() + "," + "N.A." + "," + "Passed\n")
             else:
-                missingTests.append(origtests[i])
+                missingTests.append(dataset[i])
                 i += 1
 
     with open(sourcefile, 'a+') as outputfile:
