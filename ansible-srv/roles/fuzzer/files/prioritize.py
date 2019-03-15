@@ -7,8 +7,10 @@ import sys
 filteredTests = []
 dataset = []
 
-loglocation = sys.argv[1]
-tempdirlocation = sys.argv[2]
+
+tempdirlocation = sys.argv[1]
+loglocation = tempdirlocation + sys.argv[2]
+testcaselocation = tempdirlocation + sys.argv[3]
 
 def readLogs(filename) :
     with open(filename, 'r') as fp:
@@ -37,7 +39,7 @@ def readLogs(filename) :
     with open(tempdirlocation + 'logs_filtered', 'w') as outputfile:
         outputfile.write(''.join(str(e) for e in filteredTests))
 
-def createTestDataSet(filename):
+def createTestDataSet(filename, filetosave):
     with open(filename, 'r') as fp:
         for cnt, line in enumerate(fp):
             if "[INFO]" in line:
@@ -50,12 +52,12 @@ def createTestDataSet(filename):
             line = line.split("(")[1]
             classname = line.split(")")[0]
             line = line.split(")")[1]
-            time = line.split(":")[1].split("\n")[0].split("s")[0] + "s"
-            item = classname.strip() + "." + testname.strip() + ", " + time.strip() + ", " + status.strip() + "\n"
+            time = line.split(":")[1].split("\n")[0].split("s")[0]
+            item = classname.strip() + "." + testname.strip() + "," + time.strip() + "," + status.strip() + "\n"
             if item not in dataset:
                 dataset.append(item)
 
-    with open(filename + '_dataset', 'w') as outputfile:
+    with open(filetosave, 'a+') as outputfile:
         outputfile.write(''.join(str(e) for e in dataset))
 
 def addMissingTests(sourcefile, testcorpus):
@@ -69,21 +71,25 @@ def addMissingTests(sourcefile, testcorpus):
 
     with open(sourcefile, 'r') as fp:
         for cnt, line in enumerate(fp):
-            presentTests.append(line.split(", ")[0].strip())
+            presentTests.append(line.split(",")[0].strip())
             origtests.append(line)
 
         i = 0
         for test in tests:
             if test not in presentTests:
-                missingTests.append(test.strip() + ", " + "N.A." + ", " + "Passed\n")
+                missingTests.append(test.strip() + "," + "N.A." + "," + "Passed\n")
             else:
                 missingTests.append(origtests[i])
                 i += 1
 
-    with open(sourcefile, 'w') as outputfile:
+    with open(sourcefile, 'a+') as outputfile:
         outputfile.write(''.join(str(e) for e in missingTests))
 
 
+import os 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+print('dir path: ', dir_path)
+
 readLogs(loglocation)
-createTestDataSet(tempdirlocation + '/logs_filtered')
-addMissingTests(tempdirlocation + '/logs_filtered_dataset', '/vagrant/roles/fuzzer/templates/testcases')
+createTestDataSet(tempdirlocation + '/logs_filtered', tempdirlocation + '/logs_filtered_dataset')
+addMissingTests(tempdirlocation + '/logs_filtered_dataset', testcaselocation)

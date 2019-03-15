@@ -18,14 +18,10 @@
   shell: git add ./* && git commit -m "Fuzzer commit test" && git log --oneline
   args:
     chdir: "{{ itrust_dest }}"
+  ignore_errors: yes
   register: commit_hash
 
 - debug: var=commit_hash.stdout_lines[0].split(']')[0].split(' ')[1]
-
-# - name: 'Checkout master branch'
-#   shell: 'git checkout master'
-#   args:
-#     chdir: "{{ itrust_dest }}"
 
 - name: Wait for {{ timeout_in_seconds }} seconds 
   wait_for:
@@ -40,7 +36,7 @@
   command: "cp {{ jenkins_console_output_location }} {{ log_location }}"
 
 - name: run parser script
-  script: prioritize.py {{ log_location }}/log /tmp
+  script: prioritize.py {{ log_location }} log testcases
   register: output
   
 # TO DO: Parse file and store in buffer/report file
