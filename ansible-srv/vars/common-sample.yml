@@ -48,5 +48,6 @@ mailsmtp: ""
 
 #Fuzzer-test
 number_of_runs: 100
-combined_log_location: "/var/tmp"
-log_location: "/var/tmp"
+timeout_in_seconds: 250
+log_location: /var/tmp
+combined_log_name: combined_logs

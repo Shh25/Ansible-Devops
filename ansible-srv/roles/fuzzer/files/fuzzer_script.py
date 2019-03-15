@@ -31,11 +31,11 @@ def addFuzzer(pattern, directoryPath) :
                         newText = newText.replace('>=', '<=')
                         changeFlag = True
                     if random.random() < 0.1:
-                        newText = newText.replace('==', '!=')
+                        newText = newText.replace('=!', '==')
                         changeFlag = True
-                    # if random.random() < 0.1:
-                    #     newText = newText.replace('0', '1')
-                    #     changeFlag = True
+                    if random.random() < 0.1:
+                        newText = newText.replace('0', '1')
+                        changeFlag = True
 
                 with open(filename, 'w') as outputfile:
                     outputfile.write(newText)

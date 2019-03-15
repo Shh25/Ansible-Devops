@@ -27,9 +27,9 @@
 #   args:
 #     chdir: "{{ itrust_dest }}"
 
-- name: Wait for 250 seconds 
+- name: Wait for {{ timeout_in_seconds }} seconds 
   wait_for:
-    timeout: 250
+    timeout: "{{ timeout_in_seconds }}"
 
 - name: 'Reset Commit on Git'
   shell: git reset {{ commit_hash.stdout_lines[0].split(']')[0].split(' ')[1] }}
