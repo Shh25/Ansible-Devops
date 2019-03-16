@@ -18,7 +18,6 @@
   shell: git add ./* && git commit -m "Fuzzer commit test" && git log --oneline
   args:
     chdir: "{{ itrust_dest }}"
-  ignore_errors: yes
   register: commit_hash
 
 - debug: var=commit_hash.stdout_lines[0].split(']')[0].split(' ')[1]
@@ -28,7 +27,7 @@
     timeout: "{{ timeout_in_seconds }}"
 
 - name: 'Reset Commit on Git'
-  shell: git reset {{ commit_hash.stdout_lines[0].split(']')[0].split(' ')[1] }}
+  shell: git reset HEAD~1 --hard
   args:
     chdir: "{{ itrust_dest }}"
 
