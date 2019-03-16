@@ -12,6 +12,8 @@ classnamedataset = set()
 tempdirlocation = sys.argv[1]
 loglocation = tempdirlocation + sys.argv[2]
 testcaselocation = tempdirlocation + sys.argv[3]
+combinedlogname = tempdirlocation + sys.argv[4]
+combinedlogdataset = tempdirlocation + sys.argv[5]
 
 def readLogs(filename) :
     with open(filename, 'r') as fp:
@@ -89,5 +91,5 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 print('dir path: ', dir_path)
 
 readLogs(loglocation)
-createTestDataSet(tempdirlocation + '/logs_filtered', tempdirlocation + '/logs_filtered_dataset')
+createTestDataSet(combinedlogname, combinedlogdataset)
 #addMissingTests(tempdirlocation + '/logs_filtered_dataset', testcaselocation)

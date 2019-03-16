@@ -35,7 +35,7 @@
   command: "cp {{ jenkins_console_output_location }} {{ log_location }}"
 
 - name: run parser script
-  script: prioritize.py {{ log_location }} log testcases
+  script: prioritize.py {{ log_location }} log testcases {{combined_log_name}} {{combined_log_dataset}}
   register: output
   
 # TO DO: Parse file and store in buffer/report file
