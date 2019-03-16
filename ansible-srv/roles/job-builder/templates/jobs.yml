@@ -7,7 +7,7 @@
     builders:
       - shell: 'cp -r {{checkbox_dest}}/* /var/lib/jenkins/workspace/{{jenkins_job_name_checkbox}}/'
       - shell: 'export MONGO_PORT=27017 && export MONGO_IP={{mongo_ip}} && export MONGO_USER={{mongo_username}} && export MONGO_PASSWORD={{mongo_password}} && export MAIL_USER={{mailuser}} && export MAIL_PASSWORD={{mailpassword}} && export MAIL_SMTP={{mailsmtp}} && export APP_PORT={{app_port}} && cd server-side/site && npm install && npm test'
-      
+
 - job:
     become: true
     name: {{jenkins_job_name_itrust}} 
@@ -16,4 +16,32 @@
     builders:
       - shell: 'cp -r {{itrust_dest}}/iTrust2/* /var/lib/jenkins/workspace/{{jenkins_job_name_itrust}}/'
       - shell: 'mvn -f pom-data.xml process-test-classes && mvn -B clean test verify checkstyle:checkstyle site'
-
+    publishers:
+      - chuck-norris
+      - coverage
+      - jacoco:
+          exec-pattern: '**/**.exec'
+          class-pattern: '**/classes'
+          source-pattern: '**/src/main/java'
+          update-build-status: true
+          inclusion-pattern: '**/*.class'
+          exclusion-pattern: '**/*Test*.class'
+          targets:
+            - instruction:
+                healthy: 7
+                unhealthy: 1
+            - branch:
+                healthy: 8
+                unhealthy: 2
+            - complexity:
+                healthy: 9
+                unhealthy: 3
+            - line:
+                healthy: 10
+                unhealthy: 4
+            - method:
+                healthy: 11
+                unhealthy: 5
+            - class:
+                healthy: 12
+                unhealthy: 6
