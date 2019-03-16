@@ -61,8 +61,8 @@ def createTestDataSet(filename, filetosave):
                 dataset.append(item)
                 classnamedataset.add(classname.strip() + "." + testname.strip())
 
-    # with open(filetosave, 'a+') as outputfile:
-    #     outputfile.write(''.join(str(e) for e in dataset))
+    with open(filetosave, 'a+') as outputfile:
+        outputfile.write(''.join(str(e) for e in dataset))
 
 def addMissingTests(sourcefile, testcorpus):
     tests = set()
@@ -90,4 +90,4 @@ print('dir path: ', dir_path)
 
 readLogs(loglocation)
 createTestDataSet(tempdirlocation + '/logs_filtered', tempdirlocation + '/logs_filtered_dataset')
-addMissingTests(tempdirlocation + '/logs_filtered_dataset', testcaselocation)
+#addMissingTests(tempdirlocation + '/logs_filtered_dataset', testcaselocation)
