@@ -17,8 +17,8 @@ git clone https://github.ncsu.edu/ssujal/CSC519_Project.git
 ```
 
 # CSC519_Project Milestones 
-[Milestone 1](#milestone_1)
-[Milestone 2](#milestone_2)
+[Milestone 1](#milestone-1)<br>
+[Milestone 2](#milestone-2)
 
 
 #Milestone 1
