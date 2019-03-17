@@ -18,8 +18,8 @@ git clone https://github.ncsu.edu/ssujal/CSC519_Project.git
 
 # Devops_CSC519_Project Milestones 
 [Milestone 1](#milestone-1)<br>
-[Milestone 2 (current)](#milestone-2)
-[Milestone 3 (comming soon)](#milestone-3)
+[Milestone 2 (current)](#milestone-2)<br>
+[Milestone 3 (coming soon)](#milestone-3)<br>
 [Wiki and Repository Links](#wiki-and-repository-links)
 
 # Milestone 1
