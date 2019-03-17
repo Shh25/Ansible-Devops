@@ -1,0 +1,27 @@
+-------------------------------------------------------------------------------
+Test set: edu.ncsu.csc.itrust2.apitest.APIPatientTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 4, Errors: 1, Skipped: 0, Time elapsed: 1.053 s <<< FAILURE! - in edu.ncsu.csc.itrust2.apitest.APIPatientTest
+testGetNonExistentPatient(edu.ncsu.csc.itrust2.apitest.APIPatientTest)  Time elapsed: 0.124 s  <<< ERROR!
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
+	at edu.ncsu.csc.itrust2.apitest.APIPatientTest.testGetNonExistentPatient(APIPatientTest.java:71)
+Caused by: java.lang.NullPointerException
+	at edu.ncsu.csc.itrust2.apitest.APIPatientTest.testGetNonExistentPatient(APIPatientTest.java:71)
+
+testPatientAPI(edu.ncsu.csc.itrust2.apitest.APIPatientTest)  Time elapsed: 0.121 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<404> but was:<200>
+	at edu.ncsu.csc.itrust2.apitest.APIPatientTest.testPatientAPI(APIPatientTest.java:107)
+
+testPatientAsPatient(edu.ncsu.csc.itrust2.apitest.APIPatientTest)  Time elapsed: 0.042 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<404>
+	at edu.ncsu.csc.itrust2.apitest.APIPatientTest.testPatientAsPatient(APIPatientTest.java:436)
+
+testPatientUnauthenticated(edu.ncsu.csc.itrust2.apitest.APIPatientTest)  Time elapsed: 0.005 s
+testRepresentativeAPIHCP(edu.ncsu.csc.itrust2.apitest.APIPatientTest)  Time elapsed: 0.452 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<403>
+	at edu.ncsu.csc.itrust2.apitest.APIPatientTest.testRepresentativeAPIHCP(APIPatientTest.java:218)
+
+testRepresentativeAPIPatient(edu.ncsu.csc.itrust2.apitest.APIPatientTest)  Time elapsed: 0.29 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<404>
+	at edu.ncsu.csc.itrust2.apitest.APIPatientTest.testRepresentativeAPIPatient(APIPatientTest.java:370)
+

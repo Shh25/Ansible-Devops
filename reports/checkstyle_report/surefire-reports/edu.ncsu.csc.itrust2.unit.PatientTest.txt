@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: edu.ncsu.csc.itrust2.unit.PatientTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 s - in edu.ncsu.csc.itrust2.unit.PatientTest
+testPatientDateOfDeath(edu.ncsu.csc.itrust2.unit.PatientTest)  Time elapsed: 0.025 s
+testFieldValidation(edu.ncsu.csc.itrust2.unit.PatientTest)  Time elapsed: 0.051 s
+personalRepresentatives(edu.ncsu.csc.itrust2.unit.PatientTest)  Time elapsed: 0.039 s

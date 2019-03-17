@@ -1,0 +1,6 @@
+-------------------------------------------------------------------------------
+Test set: edu.ncsu.csc.itrust2.unit.OphthalmologySurgeryTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 s - in edu.ncsu.csc.itrust2.unit.OphthalmologySurgeryTest
+testOphthalmologySurgery(edu.ncsu.csc.itrust2.unit.OphthalmologySurgeryTest)  Time elapsed: 0.061 s
+testOphthalmologySurgeryForm(edu.ncsu.csc.itrust2.unit.OphthalmologySurgeryTest)  Time elapsed: 0.017 s

@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: edu.ncsu.csc.itrust2.unit.EmailUtilTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.713 s <<< FAILURE! - in edu.ncsu.csc.itrust2.unit.EmailUtilTest
+testEmail(edu.ncsu.csc.itrust2.unit.EmailUtilTest)  Time elapsed: 0 s
+testSendEmail(edu.ncsu.csc.itrust2.unit.EmailUtilTest)  Time elapsed: 0.713 s  <<< ERROR!
+javax.mail.AuthenticationFailedException: 
+534-5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbvf
+534-5.7.14 hnXlIuHZjimZhvs8U0bsWsTw9MNhtNn9TGBOXNwfs2O8anMWkznzcHwo5S6d5rynUvqrCp
+534-5.7.14 39V9ZKrFHInfTrRHVxMqJr9hVXV5j8V0BeKLYwDZGpj1tSxmJcn7H4qYX1-bRwD_Mu0OWc
+534-5.7.14 08LZbmLTdiAcxhJuHLR3Iyz2Rks7R_NJCbZDDVX3S9W2bPYPvl-IHT8A> Please log
+534-5.7.14 in via your web browser and then try again.
+534-5.7.14  Learn more at
+534 5.7.14  https://support.google.com/mail/answer/78754 t205sm1926135ywa.34 - gsmtp
+
+	at edu.ncsu.csc.itrust2.unit.EmailUtilTest.testSendEmail(EmailUtilTest.java:31)
+

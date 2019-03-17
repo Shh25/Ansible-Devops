@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: edu.ncsu.csc.itrust2.apitest.APIEmergencyRecordFormTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 36.595 s - in edu.ncsu.csc.itrust2.apitest.APIEmergencyRecordFormTest
+testGetNonExistentPatientRecord(edu.ncsu.csc.itrust2.apitest.APIEmergencyRecordFormTest)  Time elapsed: 14.464 s
+testEmergencyRecordFormHCPAPI(edu.ncsu.csc.itrust2.apitest.APIEmergencyRecordFormTest)  Time elapsed: 7.186 s
+testEmergencyRecordFormERAPI(edu.ncsu.csc.itrust2.apitest.APIEmergencyRecordFormTest)  Time elapsed: 5.981 s
+testEmergencyRecordForm(edu.ncsu.csc.itrust2.apitest.APIEmergencyRecordFormTest)  Time elapsed: 2.394 s

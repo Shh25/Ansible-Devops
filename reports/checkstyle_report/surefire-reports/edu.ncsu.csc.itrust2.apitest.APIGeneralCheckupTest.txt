@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: edu.ncsu.csc.itrust2.apitest.APIGeneralCheckupTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.074 s - in edu.ncsu.csc.itrust2.apitest.APIGeneralCheckupTest
+testPreScheduledGeneralCheckup(edu.ncsu.csc.itrust2.apitest.APIGeneralCheckupTest)  Time elapsed: 0.273 s
+testDeleteNonExistentOfficeVisit(edu.ncsu.csc.itrust2.apitest.APIGeneralCheckupTest)  Time elapsed: 0.031 s
+testGetNonExistentOfficeVisit(edu.ncsu.csc.itrust2.apitest.APIGeneralCheckupTest)  Time elapsed: 0.029 s
+testGeneralCheckupAPI(edu.ncsu.csc.itrust2.apitest.APIGeneralCheckupTest)  Time elapsed: 0.706 s

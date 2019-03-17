@@ -1,0 +1,6 @@
+-------------------------------------------------------------------------------
+Test set: edu.ncsu.csc.itrust2.unit.LockoutTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.158 s - in edu.ncsu.csc.itrust2.unit.LockoutTest
+testUserLockouts(edu.ncsu.csc.itrust2.unit.LockoutTest)  Time elapsed: 0.101 s
+testIPLockouts(edu.ncsu.csc.itrust2.unit.LockoutTest)  Time elapsed: 0.056 s

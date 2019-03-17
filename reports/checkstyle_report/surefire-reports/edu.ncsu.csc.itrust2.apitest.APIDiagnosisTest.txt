@@ -1,0 +1,5 @@
+-------------------------------------------------------------------------------
+Test set: edu.ncsu.csc.itrust2.apitest.APIDiagnosisTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.32 s - in edu.ncsu.csc.itrust2.apitest.APIDiagnosisTest
+testDiagnoses(edu.ncsu.csc.itrust2.apitest.APIDiagnosisTest)  Time elapsed: 1.32 s
