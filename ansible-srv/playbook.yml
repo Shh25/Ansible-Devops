@@ -4,7 +4,7 @@
   remote_user: root
 
   vars_files:
-    - ./vars/common.yml
+    - ./variables.yml
   
   pre_tasks: 
     - name: Ensure .ssh directory exists.
@@ -15,12 +15,12 @@
         state: directory
 
   roles:
-  - nodejs
-  - checkbox
-  - jenkins
-  - job-builder
-  - nginx
-  - mongodb
-  - mysql
-  - itrust
+  # - nodejs
+  # - checkbox
+  # - jenkins
+  # - job-builder
+  # - nginx
+  # - mongodb
+  # - mysql
+  # - itrust
   - test-prioritization
