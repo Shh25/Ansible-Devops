@@ -15,7 +15,7 @@
     project-type: freestyle
     builders:
       - shell: 'cp -r {{itrust_dest}}/iTrust2/* /var/lib/jenkins/workspace/{{jenkins_job_name_itrust}}/'
-      - shell: 'mvn -f pom-data.xml process-test-classes && mvn -B clean test verify checkstyle:checkstyle site'
+      - shell: 'mvn -f pom-data.xml process-test-classes && mvn -B clean site test verify'
     publishers:
       - chuck-norris
       - coverage
@@ -28,15 +28,15 @@
           healthThreshold: 'high'
           thresholds:
               unstable:
-                  totalAll: 90
-                  totalHigh: 80
-                  totalNormal: 70
-                  totalLow: 60
+                  totalAll: 16800
+                  totalHigh: 0
+                  totalNormal: 16700
+                  totalLow: 100
               failed:
-                  totalAll: 90
-                  totalHigh: 80
-                  totalNormal: 70
-                  totalLow: 60
+                  totalAll: 16800
+                  totalHigh: 0
+                  totalNormal: 16700
+                  totalLow: 100
       - jacoco:
           exec-pattern: '**/**.exec'
           class-pattern: '**/classes'
