@@ -2,7 +2,7 @@
   <img width="200" height="200" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/North_Carolina_State_University_Athletic_logo.svg">
 </p>
 
-# CSC519_Project Milestone 1
+# Devops_CSC519_Project
 CSC-519 Spring 2019
 
 ## Authors
@@ -11,8 +11,19 @@ CSC-519 Spring 2019
 [Sujal Sujal](https://github.ncsu.edu/ssujal)(ssujal@ncsu.edu) <br>
 [Vaibhav Singh](https://github.ncsu.edu/vsingh7)(vsingh7@ncsu.edu) <br>
 
+## Clone repository
+```
+git clone https://github.ncsu.edu/ssujal/CSC519_Project.git
+```
 
-# Configuration Management and Build Milestone
+# CSC519_Project Milestones 
+[Milestone 1](#milestone_1)
+[Milestone 2](#milestone_2)
+
+
+# Milestone 1
+
+## Build Milestones
 
 In this milestone, we have completed the following tasks:
 
@@ -25,12 +36,6 @@ In this milestone, we have completed the following tasks:
 :white_check_mark: Using a combination of mocha/pm2, create a test script that will start and stop the checkbox.io service on the server. <br>
 
 :white_check_mark: Create a simple git hook or GitHub webhook to trigger a build when a push is made to the repo. Demonstrate a passing build for each job after a commit. <br>
-  
-
-## Clone repository
-```
-git clone https://github.ncsu.edu/ssujal/CSC519_Project.git
-```
 
 ## Prerequisites
 1. Install VirtualBox - version 5.2.* (Please install this version for baker to run smoothly. Vagrant can be used instead but extra setup and steps will be required to setup successfully)
@@ -129,3 +134,14 @@ https://github.com/Shh25/checkbox.io
 https://github.ncsu.edu/vsingh7/iTrust2-v4
 
 
+# Milestone 2
+## Build Milestones
+In this milestone, we have completed the following tasks:
+
+:white_check_mark: Code coverage for iTrust <br>
+:white_check_mark: Test Prioritization for iTrust <br>
+:white_check_mark: Static Analysis for Checkbox <br>
+:white_check_mark: Analysis and Reporting <br>
+
+## Reports
+https://github.ncsu.edu/ssujal/CSC519_Project/reports
