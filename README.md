@@ -21,7 +21,7 @@ git clone https://github.ncsu.edu/ssujal/CSC519_Project.git
 [Milestone 2](#milestone-2)
 
 
-#Milestone 1
+# Milestone 1
 
 ## Build Milestones
 
@@ -134,7 +134,7 @@ https://github.com/Shh25/checkbox.io
 https://github.ncsu.edu/vsingh7/iTrust2-v4
 
 
-#Milestone 2
+# Milestone 2
 ## Build Milestones
 In this milestone, we have completed the following tasks:
 
