@@ -16,10 +16,11 @@ CSC-519 Spring 2019
 git clone https://github.ncsu.edu/ssujal/CSC519_Project.git
 ```
 
-# CSC519_Project Milestones 
+# Devops_CSC519_Project Milestones 
 [Milestone 1](#milestone-1)<br>
-[Milestone 2](#milestone-2)
-
+[Milestone 2 (current)](#milestone-2)
+[Milestone 3 (comming soon)](#milestone-3)
+[Wiki and Repository Links](#wiki-and-repository-links)
 
 # Milestone 1
 
@@ -125,23 +126,75 @@ Open jenkins on specified location above and check if the build is running.
 ## ScreenCast link
 https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sharing
 
-## Link to project wiki
-https://github.ncsu.edu/ssujal/CSC519_Project/wiki
-
-## Link to forked repositories
-https://github.com/Shh25/checkbox.io
-
-https://github.ncsu.edu/vsingh7/iTrust2-v4
-
 
 # Milestone 2
 ## Build Milestones
 In this milestone, we have completed the following tasks:
 
-:white_check_mark: Code coverage for iTrust <br>
-:white_check_mark: Test Prioritization for iTrust <br>
-:white_check_mark: Static Analysis for Checkbox <br>
-:white_check_mark: Analysis and Reporting <br>
+:white_check_mark: Code coverage, analysis for iTrust <br>
+:white_check_mark: Fuzzer and Test Prioritization for iTrust <br>
+:white_check_mark: Static Code Analysis for Checkbox <br>
+:white_check_mark: Reports and Analysis <br>
 
-## Reports
-https://github.ncsu.edu/ssujal/CSC519_Project/reports
+## ChangeLog
+1. Renamed main.yml > playbook.yml
+2. var/common.yml > variables.yml (in root directory)
+3. Added reports directory containing itrust and Checkbox reports
+
+## Prerequisites
+1. Setup web and ansible server as given in Milestone 1
+2. Please make sure Milestone 1 along with the roles mentioned in scripts are up and running
+
+## Starting Ansible Server
+1. Changed into linked directory for ansible server
+```
+cd /ansible-srv/
+```
+2. Open variables.yml in the project directory, add required config and variable names for jenkins, checkbox and iTrust.
+A few variables have been supplied by us. These include a few URLs and plugins. Please do not make modifications to these existing variables as it may lead to incorrect installation of the project.
+
+3. Call Ansible Playbook using inventory from playbook.yml file
+```
+ansible-playbook playbook.yml -i inventory --ask-vault-pass
+````
+
+## Code Coverage, analysis for iTrust
+1. Code coverage uses a plugin called [Jacoco](https://www.eclemma.org/jacoco/)
+2. Static code analysis is conducted through plugin called [Checkstyle](http://checkstyle.sourceforge.net/)
+2. Checkstyle analyses static code and Reports all warnings and errors. Report includes bugs, syntax warnings etc.
+3. Configured through Jenkins and reports are displayed on Jenkins Job portal
+4. Build fails when coverage is lesser than 50%
+
+## Fuzzer and Test Prioritization for iTrust
+1. There are 2 roles called Fuzzer and Test Prioritization. Fuzzer role is not included in playbook.yml and is run inside Test Prioritization role
+2. Number of runs in variables.yml indicate how many times fuzzer will run
+3. Number of seconds in variables.yml indicate the wait time before the next build is triggered. We have added the time as 250 seconds but it may differ based on system configuration
+4. 
+
+## Static Code Analysis for Checkbox
+1. There is a single file called analysis.js that runs for analysisng all files in Checkbox
+2. Build failing criteria is based on failing one of the following: 
+- When a method is longer than 25 lines
+- When there are more than 10 conditions in a function
+
+## Reports and Analysis
+https://github.ncsu.edu/ssujal/CSC519_Project/tree/master/reports
+Includes:
+1. Description Report
+2. Test Prioritization Report
+3. Sample Coverage Report
+4. Checkbox Analysis Report
+
+# Milestone 3
+---
+
+# Wiki and Repository Links
+
+## Project Wiki
+https://github.ncsu.edu/ssujal/CSC519_Project/wiki
+
+## Forked Repositories
+https://github.com/Shh25/checkbox.io
+
+https://github.ncsu.edu/vsingh7/iTrust2-v4
+
