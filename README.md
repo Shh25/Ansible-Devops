@@ -22,6 +22,8 @@ git clone https://github.ncsu.edu/ssujal/CSC519_Project.git
 [Milestone 3 (coming soon)](#milestone-3)<br>
 [Wiki and Repository Links](#wiki-and-repository-links)
 
+<details><summary>MILESTONE 1</summary>
+
 # Milestone 1
 
 ## Build Milestones
@@ -125,7 +127,7 @@ Open jenkins on specified location above and check if the build is running.
 
 ## ScreenCast link
 https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sharing
-
+</details>
 
 # Milestone 2
 ## Build Milestones
