@@ -34,14 +34,14 @@
           healthThreshold: 'high'
           thresholds:
               unstable:
-                  totalAll: 16800
+                  totalAll: 16900
                   totalHigh: 0
-                  totalNormal: 16700
+                  totalNormal: 16800
                   totalLow: 100
               failed:
-                  totalAll: 16800
+                  totalAll: 16900
                   totalHigh: 0
-                  totalNormal: 16700
+                  totalNormal: 16800
                   totalLow: 100
       - jacoco:
           exec-pattern: '**/**.exec'
@@ -69,3 +69,9 @@
             - class:
                 healthy: 95
                 unhealthy: 50
+      - text-finder:
+          regexp: "CHECKBOX: BUILD FAILURE"
+          fileset: "/var/lib/jenkins/jobs/{{ jenkins_job_name_checkbox }}/builds/lastSuccessfulBuild/log"
+          also-check-console-output: true
+          succeed-if-found: false
+          unstable-if-found: false
