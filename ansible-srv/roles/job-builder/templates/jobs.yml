@@ -6,7 +6,7 @@
     project-type: freestyle
     builders:
       - shell: 'cp -r {{checkbox_dest}}/* /var/lib/jenkins/workspace/{{jenkins_job_name_checkbox}}/'
-      - shell: 'export MONGO_PORT=27017 && export MONGO_IP={{mongo_ip}} && export MONGO_USER={{mongo_admin}} && export MONGO_PASSWORD={{mongo_admin_password}} && export MAIL_USER={{email_username}} && export MAIL_PASSWORD={{email_password}} && export MAIL_SMTP={{mailsmtp}} && export APP_PORT={{app_port}} && cd server-side/site && npm install && npm test'
+      - shell: 'export MONGO_PORT=27017 && export MONGO_IP={{mongo_ip}} && export MONGO_USER={{mongo_admin}} && export MONGO_PASSWORD={{mongo_admin_password}} && export MAIL_USER={{email_username}} && export MAIL_PASSWORD={{email_password}} && export MAIL_SMTP={{mailsmtp}} && export APP_PORT={{app_port}} && cd server-side/site && npm install && npm test {{ checkbox_static_analysis_max_line_length }} {{checkbox_static_analysis_max_function_length}} {{checkbox_static_analysis_max_conditions}}"'
 
 - job:
     become: true
