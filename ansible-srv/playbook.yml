@@ -15,12 +15,12 @@
         state: directory
 
   roles:
-  # - nodejs
-  # - checkbox
-  # - jenkins
-  # - job-builder
-  # - nginx
-  # - mongodb
-  # - mysql
-  # - itrust
+  - nodejs
+  - checkbox
+  - jenkins
+  - job-builder
+  - nginx
+  - mongodb
+  - mysql
+  - itrust
   - test-prioritization

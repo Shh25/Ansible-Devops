@@ -12,3 +12,9 @@ web-srv/jobs/*
 
 # common file
 ansible-srv/vars/common.yml
+
+# variables file
+ansible-srv/variables.yml
+
+# file
+ansile-srv/file

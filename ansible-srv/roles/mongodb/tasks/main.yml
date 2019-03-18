@@ -44,8 +44,8 @@
 
 - mongodb_user:
     database: admin
-    name: "{{ mongo_username }}"
-    password: "{{ mongo_password }}"
+    name: "{{ mongo_admin }}"
+    password: "{{ mongo_admin_password }}"
     roles: dbAdminAnyDatabase
     state: present
 

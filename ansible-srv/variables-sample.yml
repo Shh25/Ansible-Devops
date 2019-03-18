@@ -7,43 +7,45 @@ ansible_distribution_release: xenial
 node_version: 10
 
 #jenkins installation + config + plugins
-jenkins_admin_username: "" 
-jenkins_admin_password: ""
+jenkins_user: "" 
+jenkins_password: ""
 jenkins_job_name_checkbox: checkbox
 jenkins_job_name_itrust: itrust
 server_url: http://localhost:8080
 jenkins_console_output_location: "/var/lib/jenkins/jobs/itrust/builds/lastFailedBuild/log"
 
 plugins_list_org: ['dashboard-view','cloudbees-folder','antisamy-markup-formatter']
-plugins_list_build: ['build-name-setter','build-timeout','config-file-provider','credentials-binding','embeddable-build-status','rebuild','ssh-agent','throttle-concurrents','timestamper','ws-cleanup','checkstyle', 'cobertura', 'htmlpublisher', 'junit', 'warnings', 'warnings-ng', 'xunit', 'javadoc', 'jacoco']
+plugins_list_build: ['build-name-setter','build-timeout','config-file-provider','credentials-binding','embeddable-build-status','rebuild','ssh-agent','throttle-concurrents','timestamper','ws-cleanup','checkstyle', 'cobertura', 'htmlpublisher', 'junit', 'warnings', 'warnings-ng', 'xunit', 'javadoc', 'jacoco', 'text-finder']
 plugins_list_build_tools: ['ant','nodejs','msbuild','maven-plugin','gradle']
 plugins_list_pipe: ['workflow-aggregator', 'github-organization-folder', 'pipeline-stage-view', 'build-pipeline-plugin', 'conditional-buildstep', 'jenkins-multijob-plugin', 'parameterized-trigger', 'copyartifact']
 plugins_list_scm: ['bitbucket', 'clearcase', 'cvs', 'git', 'git-parameter', 'github', 'gitlab-plugin', 'p4', 'repo', 'subversion', 'teamconcert', 'tfs', 'github-pullrequest']
-plugins_list_notify: ['email-ext', 'emailext-template', 'mailer', 'publish-over-ssh', 'ssh']
+plugins_list_notify: ['email-ext', 'emailext-template', 'mailer', 'publish-over-ssh', 'ssh', 'chucknorris']
 
 #mysql
-db_user: ""
-db_name: ""
-db_password: ""
+mysql_user: ""
+mysql_db: ""
+mysql_password: ""
 
 #mongo
 mongo_ip: 127.0.0.1
 mongo_data_path: /data/db
-mongo_username: ""
-mongo_password: ""
+mongo_admin: ""
+mongo_admin_password: ""
 bind: 0.0.0.0
 
 #checkbox
+checkbox_repo: https://github.com/Shh25/checkbox.io.git
 checkbox_dest: /checkbox
 app_port: 3002
 
 #itrust
+itrust_repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/vsingh7/iTrust2-v4
 itrust_dest: /itrust
 githubuser: ""
 githubpassword: ""
 githubemail: ""
-mailuser: ""
-mailpassword: ""
+email_username: ""
+email_password: ""
 mailsmtp: ""
 
 #Fuzzer-test

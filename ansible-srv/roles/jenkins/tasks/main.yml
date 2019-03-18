@@ -61,10 +61,10 @@
 
       def instance = Jenkins.getInstance()
 
-      println "--> Creating local user '{{ jenkins_admin_username }}'"
+      println "--> Creating local user '{{ jenkins_user }}'"
 
       def hudsonRealm = new HudsonPrivateSecurityRealm(false)
-      hudsonRealm.createAccount('{{ jenkins_admin_username }}','${user_pwd}')
+      hudsonRealm.createAccount('{{ jenkins_user }}','${user_pwd}')
       instance.setSecurityRealm(hudsonRealm)
 
       def strategy = new FullControlOnceLoggedInAuthorizationStrategy()
@@ -72,8 +72,8 @@
       instance.setAuthorizationStrategy(strategy)
       instance.save()
     args:
-      user_pwd: "{{jenkins_admin_password}}"
-    user: "{{jenkins_admin_username}}"
+      user_pwd: "{{jenkins_password}}"
+    user: "{{jenkins_user}}"
     password: "{{initial.stdout}}"
   when: was_jenkins_installed.changed
 
@@ -85,8 +85,8 @@
       import jenkins.install.InstallState
       if (!jenkins.installState.isSetupComplete()) {
         InstallState.INITIAL_SETUP_COMPLETED.initializeState()}
-    user: "{{jenkins_admin_username}}"
-    password: "{{jenkins_admin_password}}"
+    user: "{{jenkins_user}}"
+    password: "{{jenkins_password}}"
   when: was_jenkins_installed.changed
 
 - name: Install plugins
@@ -94,8 +94,8 @@
     name: "{{item | urlencode }}"
     with_dependencies: true
     validate_certs: false
-    url_username: "{{jenkins_admin_username}}"
-    url_password: "{{jenkins_admin_password}}"
+    url_username: "{{jenkins_user}}"
+    url_password: "{{jenkins_password}}"
   with_items:
     - "{{plugins_list_org}}"
     - "{{plugins_list_build}}"

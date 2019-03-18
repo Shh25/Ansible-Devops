@@ -10,8 +10,8 @@
 
         instance.disableSecurity()
         instance.save()
-      user: "{{jenkins_admin_username}}"
-      password: "{{jenkins_admin_password}}"
+      user: "{{jenkins_user}}"
+      password: "{{jenkins_password}}"
 
 - name: Making jobs folder
   file:
@@ -57,5 +57,5 @@
         strategy.setAllowAnonymousRead(false)
         instance.setAuthorizationStrategy(strategy)
         instance.save()
-      user: "{{jenkins_admin_username}}"
-      password: "{{jenkins_admin_password}}"
+      user: "{{jenkins_user}}"
+      password: "{{jenkins_password}}"

@@ -1,5 +1,5 @@
 [jenkins]
-user={{jenkins_admin_username}}
-password={{jenkins_admin_password}}
+user={{jenkins_user}}
+password={{jenkins_password}}
 url={{server_url}}
 query_plugins_info=False

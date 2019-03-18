@@ -16,18 +16,18 @@
 
 - name: Update db user password and grant all permissions to user
   mysql_user:
-    login_user: "{{db_user}}"
-    login_password: "{{db_password}}"
+    login_user: "{{mysql_user}}"
+    login_password: "{{mysql_password}}"
     check_implicit_admin: yes
-    name: "{{db_user}}"
-    password: "{{db_password}}"
+    name: "{{mysql_user}}"
+    password: "{{mysql_password}}"
     priv: "*.*:ALL,GRANT"
     state: present
 
-- name: Create a new database with name "{{db_name}}"
+- name: Create a new database with name "{{mysql_db}}"
   mysql_db:
-    name: "{{db_name}}"
-    login_user: "{{db_user}}"
-    login_password: "{{db_password}}"
+    name: "{{mysql_db}}"
+    login_user: "{{mysql_user}}"
+    login_password: "{{mysql_password}}"
     state: present
   notify: Restart mysql

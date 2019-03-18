@@ -10,7 +10,7 @@
 - name: Clone iTrust repo
   become: true
   git:
-    repo: 'https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/vsingh7/iTrust2-v4'
+    repo: "{{ itrust_repo }}"
     dest: "{{ itrust_dest }}"
 
 - name: Placing hook script

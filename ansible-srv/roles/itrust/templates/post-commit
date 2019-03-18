@@ -1,9 +1,9 @@
 #!/bin/sh
 JENKINS_CRUMB=$(wget --user=admin --password=admin --auth-no-challenge -q --output-document - 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)')
- curl -X POST {{server_url}}/job/{{jenkins_job_name_itrust}}/build --user {{jenkins_admin_username}}:{{jenkins_admin_password}} -H "${JENKINS_CRUMB}"
+ curl -X POST {{server_url}}/job/{{jenkins_job_name_itrust}}/build --user {{jenkins_user}}:{{jenkins_password}} -H "${JENKINS_CRUMB}"
 
 
-#curl -X POST {{server_url}}/job/{{jenkins_job_name_itrust}}/build --user {{jenkins_admin_username}}:{{jenkins_admin_password}}
+#curl -X POST {{server_url}}/job/{{jenkins_job_name_itrust}}/build --user {{jenkins_user}}:{{jenkins_password}}
 
 #curl -X POST http://localhost:9080/job/test/build --user admin:admin
 
