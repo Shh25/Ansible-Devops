@@ -63,3 +63,9 @@
             - class:
                 healthy: 12
                 unhealthy: 6
+      - text-finder:
+          regexp: "CHECKBOX: BUILD FAILURE"
+          fileset: "/var/lib/jenkins/jobs/{{ jenkins_job_name_checkbox }}/builds/lastSuccessfulBuild/log"
+          also-check-console-output: true
+          succeed-if-found: false
+          unstable-if-found: false
