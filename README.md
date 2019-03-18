@@ -182,7 +182,11 @@ Includes:
 4. Checkbox Analysis Report
 
 <details><summary>MILESTONE 3</summary>
-  <p>Coming Soon</p> 
+  <p>
+    ```python
+    print("Coming soon!")
+    ``` 
+  </p> 
 </details>
 
 ## Wiki and Repository Links
