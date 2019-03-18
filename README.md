@@ -124,6 +124,12 @@ https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sha
 
 ## MILESTONE 2
 
+## Task Distribution
+[Prayani Singh](https://github.ncsu.edu/psingh25)(psingh25@ncsu.edu) - Checkbox Static Analysis Implementation and Gates <br>
+[Shefali Agarwal](https://github.ncsu.edu/Sdagarwa)(sdagarwa@ncsu.edu) - Fuzzer and Test Prioritization <br>
+[Sujal Sujal](https://github.ncsu.edu/ssujal)(ssujal@ncsu.edu) - iTrust Analysis and Gates <br>
+[Vaibhav Singh](https://github.ncsu.edu/vsingh7)(vsingh7@ncsu.edu) - Code coverage and Build Configuration <br>
+
 ## Build Milestones
 In this milestone, we have completed the following tasks:
 
@@ -165,13 +171,13 @@ ansible-playbook playbook.yml -i inventory --ask-vault-pass
 1. There are 2 roles called Fuzzer and Test Prioritization. Fuzzer role is not included in playbook.yml and is run inside Test Prioritization role
 2. Number of runs in variables.yml indicate how many times fuzzer will run
 3. Number of seconds in variables.yml indicate the wait time before the next build is triggered. We have added the time as 250 seconds but it may differ based on system configuration
-4. 
 
 ## Static Code Analysis for Checkbox
-1. There is a single file called analysis.js that runs for analysisng all files in Checkbox
+1. analysis.js is used to run static analyzer on all the Checkbox files.
 2. Build failing criteria is based on failing one of the following: 
-- When a method is longer than 25 lines
-- When there are more than 10 conditions in a function
+- When a method is longer than 80 lines
+- When there are more than 6 conditions in a function
+- When there are more than 165 characters on a given line
 
 ## Reports and Analysis
 https://github.ncsu.edu/ssujal/CSC519_Project/tree/master/reports
