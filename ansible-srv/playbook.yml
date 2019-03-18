@@ -2,6 +2,26 @@
 - hosts: all
   become: yes
   remote_user: root
+  vars_prompt:
+    - name: "itrust_fuzz_testing"
+      prompt: "Do you want to conduct iTrust test prioritization by fuzz testing (y/n)?"
+      default: n
+    - name: "checkbox_analysis_threshold"
+      prompt: "Do you want to conduct Checkbox static analysis (y/n)?"
+      default: n
+      register: checkbox_output
+    - name: "checkbox_static_analysis_max_line_length"
+      prompt: "Specify threshold for maximum characters in a single line -- To fail enter value smaller than"
+      default: 170
+      when: checkbox_output=y
+    - name: "checkbox_static_analysis_max_function_length"
+      prompt: "Specify threshold for maximum function length -- To fail enter value smaller than"
+      default: 80
+      when: checkbox_output=y
+    - name: "checkbox_static_analysis_max_conditions"
+      prompt: "Specify threshold for maximum conditions allowed within a function -- To fail enter value smaller than"
+      default: 6
+      when: checkbox_output=y
 
   vars_files:
     - ./variables.yml
@@ -16,11 +36,11 @@
 
   roles:
   # - nodejs
-  # - checkbox
-  # - jenkins
-  - job-builder
   # - nginx
   # - mongodb
   # - mysql
+  - checkbox
   # - itrust
-  # - test-prioritization
+  # - jenkins
+  - job-builder
+  - { role: test-prioritization, when: itrust_fuzz_testing == 'y' }
