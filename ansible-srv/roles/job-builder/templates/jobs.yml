@@ -34,14 +34,14 @@
           healthThreshold: 'high'
           thresholds:
               unstable:
-                  totalAll: 16800
+                  totalAll: 16900
                   totalHigh: 0
-                  totalNormal: 16700
+                  totalNormal: 16800
                   totalLow: 100
               failed:
-                  totalAll: 16800
+                  totalAll: 16900
                   totalHigh: 0
-                  totalNormal: 16700
+                  totalNormal: 16800
                   totalLow: 100
       - jacoco:
           exec-pattern: '**/**.exec'
