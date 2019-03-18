@@ -181,6 +181,9 @@ Includes:
 3. Sample Coverage Report
 4. Checkbox Analysis Report
 
+## ScreenCast link
+https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sharing
+
 <details><summary>MILESTONE 3</summary>
 <p>
   <h4> coming soon </h4>
