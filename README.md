@@ -17,8 +17,6 @@ git clone https://github.ncsu.edu/ssujal/CSC519_Project.git
 ```
 
 # Devops_CSC519_Project Milestones 
-[Wiki and Repository Links](#wiki-and-repository-links)
-
 <details><summary>MILESTONE 1</summary>
 
 ## Build Milestones
@@ -124,7 +122,7 @@ Open jenkins on specified location above and check if the build is running.
 https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sharing
 </details>
 
-<details><summary>MILESTONE 2</summary>
+## MILESTONE 2
 
 ## Build Milestones
 In this milestone, we have completed the following tasks:
@@ -182,13 +180,12 @@ Includes:
 2. Test Prioritization Report
 3. Sample Coverage Report
 4. Checkbox Analysis Report
-</details>
 
 <details><summary>MILESTONE 3</summary>
+  <p>Coming Soon</p> 
 </details>
----
 
-# Wiki and Repository Links
+## Wiki and Repository Links
 
 ## Project Wiki
 https://github.ncsu.edu/ssujal/CSC519_Project/wiki
