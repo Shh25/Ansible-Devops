@@ -48,8 +48,6 @@
           class-pattern: '**/classes'
           source-pattern: '**/src/main/java'
           update-build-status: true
-          # canRunOnFailed: true
-          haltOnFailure: false
           inclusion-pattern: '**/*.class'
           exclusion-pattern: '**/*Test*.class'
           targets:
