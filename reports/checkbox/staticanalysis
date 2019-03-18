@@ -1,0 +1,3059 @@
+
+routes/admin.js
+~~~~~~~~~~~~
+MaxFunctionLength 74	
+anon function @20(): 20
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @26(): 26
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @29(): 29
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @30(): 30
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @36(): 36
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @38(): 38
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @39(): 39
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @47(): 47
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @49(): 49
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @50(): 50
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @58(): 58
+============
+MaxConditions: 3	Parameters: 2
+
+FunctionLength: 74
+anon function @63(): 63
+============
+MaxConditions: 3	Parameters: 2
+
+FunctionLength: 68
+anon function @64(): 64
+============
+MaxConditions: 3	Parameters: 2
+
+FunctionLength: 66
+anon function @68(): 68
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 15
+anon function @70(): 70
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+anon function @86(): 86
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 38
+anon function @87(): 87
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+anon function @89(): 89
+============
+MaxConditions: 1	Parameters: 1
+
+FunctionLength: 7
+anon function @95(): 95
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 1
+anon function @100(): 100
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 21
+anon function @109(): 109
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 4
+anon function @115(): 115
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @135(): 135
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 46
+anon function @140(): 140
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 40
+anon function @141(): 141
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 38
+anon function @145(): 145
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 32
+anon function @146(): 146
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 30
+anon function @150(): 150
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 3
+anon function @152(): 152
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 11
+anon function @183(): 183
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 54
+anon function @222(): 222
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+routes/admin.js
+~~~~~~~~~~~~
+MaxFunctionLength 74	
+anon function @20(): 20
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @26(): 26
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @29(): 29
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @30(): 30
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @36(): 36
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @38(): 38
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 31
+anon function @39(): 39
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @47(): 47
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @49(): 49
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @50(): 50
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @58(): 58
+============
+MaxConditions: 3	Parameters: 2
+
+FunctionLength: 74
+anon function @63(): 63
+============
+MaxConditions: 3	Parameters: 2
+
+FunctionLength: 68
+anon function @64(): 64
+============
+MaxConditions: 3	Parameters: 2
+
+FunctionLength: 66
+anon function @68(): 68
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 15
+anon function @70(): 70
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+anon function @86(): 86
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 38
+anon function @87(): 87
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+anon function @89(): 89
+============
+MaxConditions: 1	Parameters: 1
+
+FunctionLength: 7
+anon function @95(): 95
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 1
+anon function @100(): 100
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 21
+anon function @109(): 109
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 4
+anon function @115(): 115
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @135(): 135
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 46
+anon function @140(): 140
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 40
+anon function @141(): 141
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 38
+anon function @145(): 145
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 32
+anon function @146(): 146
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 30
+anon function @150(): 150
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 3
+anon function @152(): 152
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 11
+anon function @183(): 183
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 54
+anon function @222(): 222
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+routes/create.js
+~~~~~~~~~~~~
+MaxFunctionLength 43	
+anon function @13(): 13
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @27(): 27
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 43
+anon function @40(): 40
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 28
+anon function @45(): 45
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 21
+anon function @59(): 59
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+basicCreate(): 73
+============
+MaxConditions: 2	Parameters: 3
+
+FunctionLength: 30
+anon function @76(): 76
+============
+MaxConditions: 2	Parameters: 1
+
+FunctionLength: 24
+anon function @78(): 78
+============
+MaxConditions: 2	Parameters: 2
+
+FunctionLength: 21
+sendStudyEmail(): 104
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 8
+anon function @106(): 106
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+routes/admin.js
+~~~~~~~~~~~~
+MaxFunctionLength 74	
+anon function @20(): 20
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @26(): 26
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @29(): 29
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @30(): 30
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @36(): 36
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @38(): 38
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 31
+anon function @39(): 39
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @47(): 47
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @49(): 49
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @50(): 50
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @58(): 58
+============
+MaxConditions: 3	Parameters: 2
+
+FunctionLength: 74
+anon function @63(): 63
+============
+MaxConditions: 3	Parameters: 2
+
+FunctionLength: 68
+anon function @64(): 64
+============
+MaxConditions: 3	Parameters: 2
+
+FunctionLength: 66
+anon function @68(): 68
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 15
+anon function @70(): 70
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+anon function @86(): 86
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 38
+anon function @87(): 87
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+anon function @89(): 89
+============
+MaxConditions: 1	Parameters: 1
+
+FunctionLength: 7
+anon function @95(): 95
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 1
+anon function @100(): 100
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 21
+anon function @109(): 109
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 4
+anon function @115(): 115
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @135(): 135
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 46
+anon function @140(): 140
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 40
+anon function @141(): 141
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 38
+anon function @145(): 145
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 32
+anon function @146(): 146
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 30
+anon function @150(): 150
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 3
+anon function @152(): 152
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 11
+anon function @183(): 183
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 54
+anon function @222(): 222
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+routes/create.js
+~~~~~~~~~~~~
+MaxFunctionLength 43	
+anon function @13(): 13
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @27(): 27
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 43
+anon function @40(): 40
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 28
+anon function @45(): 45
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 21
+anon function @59(): 59
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+basicCreate(): 73
+============
+MaxConditions: 2	Parameters: 3
+
+FunctionLength: 30
+anon function @76(): 76
+============
+MaxConditions: 2	Parameters: 1
+
+FunctionLength: 24
+anon function @78(): 78
+============
+MaxConditions: 2	Parameters: 2
+
+FunctionLength: 21
+sendStudyEmail(): 104
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 8
+anon function @106(): 106
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+routes/csv.js
+~~~~~~~~~~~~
+MaxFunctionLength 72	
+formatJsonAsCSV(): 3
+============
+MaxConditions: 5	Parameters: 1
+
+FunctionLength: 72
+sizeOfRow(): 77
+============
+MaxConditions: 6	Parameters: 1
+
+FunctionLength: 48
+routes/admin.js
+~~~~~~~~~~~~
+MaxFunctionLength 74	
+anon function @20(): 20
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @26(): 26
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @29(): 29
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @30(): 30
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @36(): 36
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @38(): 38
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 31
+anon function @39(): 39
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @47(): 47
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @49(): 49
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @50(): 50
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @58(): 58
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @63(): 63
+============
+MaxConditions: 3	Parameters: 2
+
+FunctionLength: 68
+anon function @64(): 64
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 56
+anon function @68(): 68
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 49
+anon function @70(): 70
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+anon function @86(): 86
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 38
+anon function @87(): 87
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+anon function @89(): 89
+============
+MaxConditions: 1	Parameters: 1
+
+FunctionLength: 7
+anon function @95(): 95
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 1
+anon function @100(): 100
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 21
+anon function @109(): 109
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 4
+anon function @115(): 115
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @135(): 135
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 46
+anon function @140(): 140
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @141(): 141
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @145(): 145
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 32
+anon function @146(): 146
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 30
+anon function @150(): 150
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 3
+anon function @152(): 152
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 11
+anon function @183(): 183
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 54
+anon function @222(): 222
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+routes/create.js
+~~~~~~~~~~~~
+MaxFunctionLength 43	
+anon function @13(): 13
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @27(): 27
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @40(): 40
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @45(): 45
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 21
+anon function @59(): 59
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+basicCreate(): 73
+============
+MaxConditions: 2	Parameters: 3
+
+FunctionLength: 30
+anon function @76(): 76
+============
+MaxConditions: 2	Parameters: 1
+
+FunctionLength: 24
+anon function @78(): 78
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+sendStudyEmail(): 104
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 8
+anon function @106(): 106
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+routes/csv.js
+~~~~~~~~~~~~
+MaxFunctionLength 72	
+formatJsonAsCSV(): 3
+============
+MaxConditions: 5	Parameters: 1
+
+FunctionLength: 72
+sizeOfRow(): 77
+============
+MaxConditions: 6	Parameters: 1
+
+FunctionLength: 48
+routes/designer.js
+~~~~~~~~~~~~
+MaxFunctionLength 80	
+anon function @18(): 18
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @24(): 24
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 11
+anon function @28(): 28
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @46(): 46
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @56(): 56
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @57(): 57
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @66(): 66
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 52
+anon function @71(): 71
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 44
+anon function @124(): 124
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+anon function @126(): 126
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @127(): 127
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @138(): 138
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+anon function @151(): 151
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 46
+anon function @189(): 189
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @198(): 198
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 80
+anon function @220(): 220
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 57
+anon function @242(): 242
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 34
+anon function @243(): 243
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 32
+anon function @267(): 267
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+anon function @282(): 282
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 24
+anon function @301(): 301
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @302(): 302
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 1
+routes/admin.js
+~~~~~~~~~~~~
+MaxFunctionLength 74	
+anon function @20(): 20
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @26(): 26
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @29(): 29
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @30(): 30
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @36(): 36
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @38(): 38
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @39(): 39
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @47(): 47
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @49(): 49
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @50(): 50
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @58(): 58
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @63(): 63
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 23
+anon function @64(): 64
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 56
+anon function @68(): 68
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 49
+anon function @70(): 70
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+anon function @86(): 86
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 38
+anon function @87(): 87
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+anon function @89(): 89
+============
+MaxConditions: 1	Parameters: 1
+
+FunctionLength: 7
+anon function @95(): 95
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 28
+anon function @100(): 100
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 21
+anon function @109(): 109
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 4
+anon function @115(): 115
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @135(): 135
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 46
+anon function @140(): 140
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @141(): 141
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @145(): 145
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 11
+anon function @146(): 146
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 30
+anon function @150(): 150
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 3
+anon function @152(): 152
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 11
+anon function @183(): 183
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 54
+anon function @222(): 222
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+routes/create.js
+~~~~~~~~~~~~
+MaxFunctionLength 43	
+anon function @13(): 13
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @27(): 27
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @40(): 40
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @45(): 45
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @59(): 59
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+basicCreate(): 73
+============
+MaxConditions: 2	Parameters: 3
+
+FunctionLength: 30
+anon function @76(): 76
+============
+MaxConditions: 2	Parameters: 1
+
+FunctionLength: 24
+anon function @78(): 78
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+sendStudyEmail(): 104
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 8
+anon function @106(): 106
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+routes/csv.js
+~~~~~~~~~~~~
+MaxFunctionLength 72	
+formatJsonAsCSV(): 3
+============
+MaxConditions: 5	Parameters: 1
+
+FunctionLength: 72
+sizeOfRow(): 77
+============
+MaxConditions: 6	Parameters: 1
+
+FunctionLength: 48
+routes/designer.js
+~~~~~~~~~~~~
+MaxFunctionLength 80	
+anon function @18(): 18
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @24(): 24
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 11
+anon function @28(): 28
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @46(): 46
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @56(): 56
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @57(): 57
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 31
+anon function @66(): 66
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 52
+anon function @71(): 71
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 44
+anon function @124(): 124
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 50
+anon function @126(): 126
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @127(): 127
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @138(): 138
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 32
+anon function @151(): 151
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 46
+anon function @189(): 189
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @198(): 198
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @220(): 220
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 57
+anon function @242(): 242
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 1
+anon function @243(): 243
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 32
+anon function @267(): 267
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+anon function @282(): 282
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 24
+anon function @301(): 301
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @302(): 302
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 1
+routes/live.js
+~~~~~~~~~~~~
+MaxFunctionLength 50	
+anon function @11(): 11
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @17(): 17
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @21(): 21
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @31(): 31
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @37(): 37
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @48(): 48
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 6
+anon function @62(): 62
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 25
+anon function @67(): 67
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 13
+anon function @69(): 69
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @90(): 90
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 4
+anon function @102(): 102
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 20
+anon function @110(): 110
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 11
+anon function @129(): 129
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 44
+anon function @130(): 130
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 42
+anon function @139(): 139
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 30
+anon function @143(): 143
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 3
+anon function @175(): 175
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 34
+anon function @199(): 199
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 8
+anon function @213(): 213
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 33
+anon function @241(): 241
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+routes/admin.js
+~~~~~~~~~~~~
+MaxFunctionLength 74	
+anon function @20(): 20
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @26(): 26
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 69
+anon function @29(): 29
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @30(): 30
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @36(): 36
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @38(): 38
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @39(): 39
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @47(): 47
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @49(): 49
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @50(): 50
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @58(): 58
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @63(): 63
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 23
+anon function @64(): 64
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 56
+anon function @68(): 68
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 49
+anon function @70(): 70
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+anon function @86(): 86
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 38
+anon function @87(): 87
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+anon function @89(): 89
+============
+MaxConditions: 1	Parameters: 1
+
+FunctionLength: 7
+anon function @95(): 95
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 28
+anon function @100(): 100
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 13
+anon function @109(): 109
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 4
+anon function @115(): 115
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @135(): 135
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 46
+anon function @140(): 140
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @141(): 141
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @145(): 145
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 11
+anon function @146(): 146
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 30
+anon function @150(): 150
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 3
+anon function @152(): 152
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 11
+anon function @183(): 183
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 54
+anon function @222(): 222
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+routes/create.js
+~~~~~~~~~~~~
+MaxFunctionLength 43	
+anon function @13(): 13
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @27(): 27
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @40(): 40
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @45(): 45
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @59(): 59
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+basicCreate(): 73
+============
+MaxConditions: 2	Parameters: 3
+
+FunctionLength: 30
+anon function @76(): 76
+============
+MaxConditions: 2	Parameters: 1
+
+FunctionLength: 24
+anon function @78(): 78
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+sendStudyEmail(): 104
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 8
+anon function @106(): 106
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+routes/csv.js
+~~~~~~~~~~~~
+MaxFunctionLength 72	
+formatJsonAsCSV(): 3
+============
+MaxConditions: 5	Parameters: 1
+
+FunctionLength: 72
+sizeOfRow(): 77
+============
+MaxConditions: 6	Parameters: 1
+
+FunctionLength: 48
+routes/designer.js
+~~~~~~~~~~~~
+MaxFunctionLength 80	
+anon function @18(): 18
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @24(): 24
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 11
+anon function @28(): 28
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @46(): 46
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @56(): 56
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @57(): 57
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 31
+anon function @66(): 66
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 52
+anon function @71(): 71
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 44
+anon function @124(): 124
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 50
+anon function @126(): 126
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @127(): 127
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @138(): 138
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 32
+anon function @151(): 151
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 46
+anon function @189(): 189
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @198(): 198
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @220(): 220
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 57
+anon function @242(): 242
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 1
+anon function @243(): 243
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 32
+anon function @267(): 267
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+anon function @282(): 282
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 24
+anon function @301(): 301
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @302(): 302
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 1
+routes/live.js
+~~~~~~~~~~~~
+MaxFunctionLength 50	
+anon function @11(): 11
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @17(): 17
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @21(): 21
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 77
+anon function @31(): 31
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @37(): 37
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @48(): 48
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 6
+anon function @62(): 62
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 25
+anon function @67(): 67
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 13
+anon function @69(): 69
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @90(): 90
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 4
+anon function @102(): 102
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 20
+anon function @110(): 110
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 11
+anon function @129(): 129
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 44
+anon function @130(): 130
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 42
+anon function @139(): 139
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 11
+anon function @143(): 143
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 3
+anon function @175(): 175
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 5
+anon function @199(): 199
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 8
+anon function @213(): 213
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 33
+anon function @241(): 241
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+routes/study.js
+~~~~~~~~~~~~
+MaxFunctionLength 80	
+anon function @19(): 19
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 80
+anon function @23(): 23
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 74
+anon function @33(): 33
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 61
+anon function @84(): 84
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @103(): 103
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @104(): 104
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @114(): 114
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @117(): 117
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @118(): 118
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @125(): 125
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 27
+anon function @132(): 132
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 19
+anon function @153(): 153
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 34
+commonSubmit(): 188
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 16
+anon function @193(): 193
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @194(): 194
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 8
+anon function @205(): 205
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 4
+routes/admin.js
+~~~~~~~~~~~~
+MaxFunctionLength 74	
+anon function @20(): 20
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @26(): 26
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 69
+anon function @29(): 29
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @30(): 30
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @36(): 36
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 31
+anon function @38(): 38
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @39(): 39
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @47(): 47
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @49(): 49
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @50(): 50
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @58(): 58
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @63(): 63
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 23
+anon function @64(): 64
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 56
+anon function @68(): 68
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 49
+anon function @70(): 70
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+anon function @86(): 86
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 38
+anon function @87(): 87
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+anon function @89(): 89
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 14
+anon function @95(): 95
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 28
+anon function @100(): 100
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 13
+anon function @109(): 109
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 4
+anon function @115(): 115
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @135(): 135
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 46
+anon function @140(): 140
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @141(): 141
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @145(): 145
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 11
+anon function @146(): 146
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 30
+anon function @150(): 150
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 3
+anon function @152(): 152
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 11
+anon function @183(): 183
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 54
+anon function @222(): 222
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+routes/create.js
+~~~~~~~~~~~~
+MaxFunctionLength 43	
+anon function @13(): 13
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @27(): 27
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @40(): 40
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @45(): 45
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @59(): 59
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+basicCreate(): 73
+============
+MaxConditions: 2	Parameters: 3
+
+FunctionLength: 30
+anon function @76(): 76
+============
+MaxConditions: 2	Parameters: 1
+
+FunctionLength: 24
+anon function @78(): 78
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+sendStudyEmail(): 104
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 8
+anon function @106(): 106
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+routes/csv.js
+~~~~~~~~~~~~
+MaxFunctionLength 72	
+formatJsonAsCSV(): 3
+============
+MaxConditions: 5	Parameters: 1
+
+FunctionLength: 72
+sizeOfRow(): 77
+============
+MaxConditions: 6	Parameters: 1
+
+FunctionLength: 48
+routes/designer.js
+~~~~~~~~~~~~
+MaxFunctionLength 80	
+anon function @18(): 18
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @24(): 24
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 11
+anon function @28(): 28
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @46(): 46
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 4
+anon function @56(): 56
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @57(): 57
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 31
+anon function @66(): 66
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 52
+anon function @71(): 71
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 44
+anon function @124(): 124
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 50
+anon function @126(): 126
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @127(): 127
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @138(): 138
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 32
+anon function @151(): 151
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 46
+anon function @189(): 189
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @198(): 198
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @220(): 220
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 57
+anon function @242(): 242
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 1
+anon function @243(): 243
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 32
+anon function @267(): 267
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+anon function @282(): 282
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 24
+anon function @301(): 301
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @302(): 302
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 1
+routes/live.js
+~~~~~~~~~~~~
+MaxFunctionLength 50	
+anon function @11(): 11
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @17(): 17
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @21(): 21
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 77
+anon function @31(): 31
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @37(): 37
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @48(): 48
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 6
+anon function @62(): 62
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 25
+anon function @67(): 67
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 13
+anon function @69(): 69
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @90(): 90
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 4
+anon function @102(): 102
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 20
+anon function @110(): 110
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 11
+anon function @129(): 129
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 44
+anon function @130(): 130
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 42
+anon function @139(): 139
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 11
+anon function @143(): 143
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 3
+anon function @175(): 175
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 5
+anon function @199(): 199
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 8
+anon function @213(): 213
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 33
+anon function @241(): 241
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+routes/study.js
+~~~~~~~~~~~~
+MaxFunctionLength 80	
+anon function @19(): 19
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 80
+anon function @23(): 23
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 74
+anon function @33(): 33
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 61
+anon function @84(): 84
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @103(): 103
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @104(): 104
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @114(): 114
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @117(): 117
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @118(): 118
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @125(): 125
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 27
+anon function @132(): 132
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 19
+anon function @153(): 153
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 34
+commonSubmit(): 188
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 16
+anon function @193(): 193
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @194(): 194
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 8
+anon function @205(): 205
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 4
+routes/studyModel.js
+~~~~~~~~~~~~
+MaxFunctionLength 31	
+surrogateCtor(): 4
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 1
+extend(): 6
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 8
+anon function @15(): 15
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 20
+anon function @52(): 52
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 14
+anon function @73(): 73
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 31
+anon function @83(): 83
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 4
+routes/admin.js
+~~~~~~~~~~~~
+MaxFunctionLength 74	
+anon function @20(): 20
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @26(): 26
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 69
+anon function @29(): 29
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @30(): 30
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @36(): 36
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 31
+anon function @38(): 38
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 3
+anon function @39(): 39
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @47(): 47
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @49(): 49
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @50(): 50
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @58(): 58
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @63(): 63
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 23
+anon function @64(): 64
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 56
+anon function @68(): 68
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 49
+anon function @70(): 70
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 3
+anon function @86(): 86
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @87(): 87
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+anon function @89(): 89
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 14
+anon function @95(): 95
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 28
+anon function @100(): 100
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 13
+anon function @109(): 109
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 11
+anon function @115(): 115
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @135(): 135
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 46
+anon function @140(): 140
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @141(): 141
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @145(): 145
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 11
+anon function @146(): 146
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 30
+anon function @150(): 150
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 3
+anon function @152(): 152
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 11
+anon function @183(): 183
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 54
+anon function @222(): 222
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 12
+routes/create.js
+~~~~~~~~~~~~
+MaxFunctionLength 43	
+anon function @13(): 13
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @27(): 27
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @40(): 40
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @45(): 45
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @59(): 59
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+basicCreate(): 73
+============
+MaxConditions: 2	Parameters: 3
+
+FunctionLength: 30
+anon function @76(): 76
+============
+MaxConditions: 2	Parameters: 1
+
+FunctionLength: 24
+anon function @78(): 78
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 36
+sendStudyEmail(): 104
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 8
+anon function @106(): 106
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+routes/csv.js
+~~~~~~~~~~~~
+MaxFunctionLength 72	
+formatJsonAsCSV(): 3
+============
+MaxConditions: 5	Parameters: 1
+
+FunctionLength: 72
+sizeOfRow(): 77
+============
+MaxConditions: 6	Parameters: 1
+
+FunctionLength: 48
+routes/designer.js
+~~~~~~~~~~~~
+MaxFunctionLength 80	
+anon function @18(): 18
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @24(): 24
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @28(): 28
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+anon function @46(): 46
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 4
+anon function @56(): 56
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @57(): 57
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 31
+anon function @66(): 66
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 3
+anon function @71(): 71
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 44
+anon function @124(): 124
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 50
+anon function @126(): 126
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @127(): 127
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @138(): 138
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 32
+anon function @151(): 151
+============
+MaxConditions: 5	Parameters: 2
+
+FunctionLength: 46
+anon function @189(): 189
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @198(): 198
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @220(): 220
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 57
+anon function @242(): 242
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 1
+anon function @243(): 243
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 32
+anon function @267(): 267
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+anon function @282(): 282
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 24
+anon function @301(): 301
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @302(): 302
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 1
+routes/live.js
+~~~~~~~~~~~~
+MaxFunctionLength 50	
+anon function @11(): 11
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @17(): 17
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @21(): 21
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 77
+anon function @31(): 31
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @37(): 37
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @48(): 48
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 6
+anon function @62(): 62
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 25
+anon function @67(): 67
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 13
+anon function @69(): 69
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @90(): 90
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 4
+anon function @102(): 102
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 20
+anon function @110(): 110
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 11
+anon function @129(): 129
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 44
+anon function @130(): 130
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 42
+anon function @139(): 139
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 11
+anon function @143(): 143
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 3
+anon function @175(): 175
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 5
+anon function @199(): 199
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 8
+anon function @213(): 213
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 33
+anon function @241(): 241
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+routes/study.js
+~~~~~~~~~~~~
+MaxFunctionLength 80	
+anon function @19(): 19
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 80
+anon function @23(): 23
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 74
+anon function @33(): 33
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 61
+anon function @84(): 84
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @103(): 103
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 20
+anon function @104(): 104
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
+anon function @114(): 114
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+anon function @117(): 117
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 5
+anon function @118(): 118
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 3
+anon function @125(): 125
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 27
+anon function @132(): 132
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 19
+anon function @153(): 153
+============
+MaxConditions: 1	Parameters: 2
+
+FunctionLength: 34
+commonSubmit(): 188
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 16
+anon function @193(): 193
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 10
+anon function @194(): 194
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 8
+anon function @205(): 205
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 4
+routes/studyModel.js
+~~~~~~~~~~~~
+MaxFunctionLength 31	
+surrogateCtor(): 4
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 1
+extend(): 6
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 8
+anon function @15(): 15
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 20
+anon function @52(): 52
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 14
+anon function @73(): 73
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 31
+anon function @83(): 83
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 4
+routes/upload.js
+~~~~~~~~~~~~
+MaxFunctionLength 32	
+anon function @34(): 34
+============
+MaxConditions: 0	Parameters: 3
+
+FunctionLength: 15
+anon function @44(): 44
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 4
+readFileStream(): 50
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 32
+anon function @55(): 55
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 26
+anon function @60(): 60
+============
+MaxConditions: 0	Parameters: 1
+
+FunctionLength: 5
+anon function @74(): 74
+============
+MaxConditions: 0	Parameters: 0
+
+FunctionLength: 4
+readFile(): 83
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 9
+uploadFile(): 93
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 32
+anon function @105(): 105
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 17
+anon function @112(): 112
+============
+MaxConditions: 0	Parameters: 2
+
+FunctionLength: 7
