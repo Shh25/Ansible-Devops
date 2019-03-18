@@ -38,6 +38,11 @@ checkbox_repo: https://github.com/Shh25/checkbox.io.git
 checkbox_dest: /checkbox
 app_port: 3002
 
+#checkbox static analysis
+checkbox_static_analysis_max_line_length: 170
+checkbox_static_analysis_max_function_length: 80
+checkbox_static_analysis_max_conditions: 6
+
 #itrust
 itrust_repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/vsingh7/iTrust2-v4
 itrust_dest: /itrust
