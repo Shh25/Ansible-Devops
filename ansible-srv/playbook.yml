@@ -43,12 +43,12 @@
         state: directory
 
   roles:
-  # - nodejs
-  # - nginx
-  # - mongodb
-  # - mysql
+  - nodejs
+  - nginx
+  - mongodb
+  - mysql
   - checkbox
-  # - itrust
-  # - jenkins
+  - itrust
+  - jenkins
   - job-builder
   - { role: test-prioritization, when: itrust_fuzz_testing == 'y' }
