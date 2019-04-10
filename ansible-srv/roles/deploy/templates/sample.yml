@@ -1,0 +1,82 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  environment:
+    DO_API_TOKEN: "{{API_TOKEN}}" 
+  vars_files:
+    - ./variables.yml
+  
+  tasks:
+    - name: Generate ssh key
+      command : ssh-keygen -t rsa -N "" -f ~/.ssh/id_ssh_rsa
+      args:
+        creates: ~/.ssh/id_ssh_rsa
+      register: result
+
+    - name: Read public key
+      shell: cat ~/.ssh/id_ssh_rsa.pub
+      register: result
+
+    - name: Set public key
+      set_fact:
+        SSH_KEY: "{{ result.stdout }}"
+    
+    - name: Install dopy
+      pip:
+        name: dopy
+    
+    - name: Add ssh key to account
+      digital_ocean:
+        state: present
+        command: ssh
+        name: MyKey
+        ssh_pub_key: "{{ SSH_KEY }}"
+        api_token: "{{ API_TOKEN }}"
+      register: SSH
+    
+    - name: Setting ssh id
+      set_fact:
+        SSH_ID: "{{ SSH['ssh_key']['id'] }}"
+
+    - name: Create new Droplet.
+      digital_ocean:
+        state: present
+        command: droplet
+        name: "{{droplet_name}}"
+        private_networking: yes
+        size_id: "{{droplet_size}}"
+        image_id: "{{droplet_image}}"
+        region_id: "{{droplet_region}}"
+        ssh_key_ids: "{{SSH_ID}}"
+        unique_name: yes
+      register: do
+
+    - name: Add new host to our inventory.
+      add_host:
+        name: "{{ do.droplet.ip_address }}"
+        groups: do
+      when: do.droplet is defined
+      changed_when: False
+
+- hosts: do
+  remote_user: root
+  gather_facts: False
+
+  tasks:
+    - name: Wait for port 22 to become available.
+      local_action: "wait_for port=22 host={{ inventory_hostname }}"
+
+    - name: Checking connection
+      shell: ls
+
+    # - name: Install tcpdump.
+    #   yum: name=tcpdump state=present
+
+# commands on web-srv
+# in /etc/environment
+# export DO_API_TOKEN='b345daf20baa93d4827fbc29837ad4e86567a2b0639993ecb61c4a4bd97f7ec5'
+# curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer $DO_API_TOKEN" "https://api.digitalocean.com/v2/account/keys"
+
+
+
