@@ -4,28 +4,28 @@
   gather_facts: False
   environment:
     DO_API_TOKEN: "{{API_TOKEN}}" 
+    
   vars_files:
     - ./variables.yml
   
   tasks:
     - name: Generate ssh key
-      command : ssh-keygen -t rsa -N "" -f ~/.ssh/id_ssh_rsa
+      command : ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
       args:
-        creates: ~/.ssh/id_ssh_rsa
+        creates: ~/.ssh/id_rsa
       register: result
 
     - name: Read public key
-      shell: cat ~/.ssh/id_ssh_rsa.pub
+      shell: cat ~/.ssh/id_rsa.pub
       register: result
 
     - name: Set public key
       set_fact:
         SSH_KEY: "{{ result.stdout }}"
     
-    - name: Install dopy
-      pip:
-        name: dopy
-    
+    - name: Installing dopy
+      shell: python -c "import dopy"
+
     - name: Add ssh key to account
       digital_ocean:
         state: present
@@ -67,16 +67,9 @@
     - name: Wait for port 22 to become available.
       local_action: "wait_for port=22 host={{ inventory_hostname }}"
 
-    - name: Checking connection
-      shell: ls
+    - name: checking
+      shell: 
 
-    # - name: Install tcpdump.
-    #   yum: name=tcpdump state=present
-
-# commands on web-srv
-# in /etc/environment
-# export DO_API_TOKEN='b345daf20baa93d4827fbc29837ad4e86567a2b0639993ecb61c4a4bd97f7ec5'
-# curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer $DO_API_TOKEN" "https://api.digitalocean.com/v2/account/keys"
 
 
 

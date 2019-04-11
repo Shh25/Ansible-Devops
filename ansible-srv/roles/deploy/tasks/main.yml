@@ -4,7 +4,8 @@
     src: ./variables.yml
     dest: /web-srv/variables.yml
 
+
 - name: Putting sample file 
-  template:
-    src: ./templates/sample.yml
-    dest: /web-srv/
+  copy:
+    src: ./templates/sample
+    dest: /web-srv/sample.yml   
