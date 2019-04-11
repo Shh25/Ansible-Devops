@@ -1,0 +1,116 @@
+---
+- name: Installing jre8
+  become: true
+  apt:
+    name: openjdk-8-jre
+    update_cache: yes
+    cache_valid_time: 3600
+    state: present
+
+- name: Install  pip and lxml
+  apt: 
+    name: ['python-pip', 'python3-pip','python3-lxml']
+    state: present
+
+- name: Install the Job builder
+  pip:
+    name: ['jenkins-job-builder']
+
+- name: Installing git
+  become: true
+  apt:
+    name: git
+    state: present
+
+- name: Add jenkins repo key
+  become: true
+  apt_key:
+    url: https://pkg.jenkins.io/debian/jenkins.io.key
+    state: present
+
+- name: Add jenkins repo list file into sources.list.d
+  become: true
+  apt_repository:
+    repo: deb http://pkg.jenkins.io/debian-stable binary/
+    state: present
+
+- name: Installing jenkins
+  become: true
+  apt:
+    name: jenkins
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+  register: was_jenkins_installed
+
+- name: Wait for 10 sec 
+  wait_for:
+      timeout: 10
+
+- name: Reading password
+  no_log: true
+  shell: cat /var/lib/jenkins/secrets/initialAdminPassword 
+  register: initial
+
+- name: Configuring jenkins
+  become: true
+  jenkins_script:
+    script:  |
+      import jenkins.model.*
+      import hudson.security.*
+
+      def instance = Jenkins.getInstance()
+
+      println "--> Creating local user '{{ jenkins_user }}'"
+
+      def hudsonRealm = new HudsonPrivateSecurityRealm(false)
+      hudsonRealm.createAccount('{{ jenkins_user }}','${user_pwd}')
+      instance.setSecurityRealm(hudsonRealm)
+
+      def strategy = new FullControlOnceLoggedInAuthorizationStrategy()
+      strategy.setAllowAnonymousRead(false)
+      instance.setAuthorizationStrategy(strategy)
+      instance.save()
+    args:
+      user_pwd: "{{jenkins_password}}"
+    user: "{{jenkins_user}}"
+    password: "{{initial.stdout}}"
+  when: was_jenkins_installed.changed
+
+- name: Complete jenkins setup
+  become: true
+  jenkins_script:
+    script: |
+      import static jenkins.model.Jenkins.instance as jenkins
+      import jenkins.install.InstallState
+      if (!jenkins.installState.isSetupComplete()) {
+        InstallState.INITIAL_SETUP_COMPLETED.initializeState()}
+    user: "{{jenkins_user}}"
+    password: "{{jenkins_password}}"
+  when: was_jenkins_installed.changed
+
+- name: Install plugins
+  jenkins_plugin:
+    name: "{{item | urlencode }}"
+    with_dependencies: true
+    validate_certs: false
+    url_username: "{{jenkins_user}}"
+    url_password: "{{jenkins_password}}"
+  with_items:
+    - "{{plugins_list_org}}"
+    - "{{plugins_list_build}}"
+    - "{{plugins_list_build_tools}}"
+    - "{{plugins_list_pipe}}"
+    - "{{plugins_list_scm}}"
+    - "{{plugins_list_notify}}"
+  ignore_errors: yes
+  when: was_jenkins_installed.changed
+
+- name: Restart jenkins
+  systemd:
+   name: jenkins
+   state: restarted 
+
+- name: Wait for 45 sec 
+  wait_for:
+    timeout: 45

@@ -1,0 +1,13 @@
+name: ansible-srv
+vm:
+  ip: 192.168.33.10
+tools:
+  - ansible
+
+config:
+  - template: 
+      src: web-srv
+      dest: ~/.ssh/web-srv
+
+commands:
+  serve: chmod 600 ~/.ssh/web-srv

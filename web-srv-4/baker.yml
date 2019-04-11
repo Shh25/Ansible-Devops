@@ -1,6 +1,6 @@
-name: web-srv
+name: web-srv-4
 vm:
-  ip: 192.168.33.100
+  ip: 192.168.33.104
   memory: 2048
 config:
   - template: 

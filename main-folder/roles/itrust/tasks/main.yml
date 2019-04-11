@@ -1,0 +1,41 @@
+---
+- name: Install OpenJDK and Maven
+  apt: 
+    name: ['openjdk-8-jdk', 'maven']
+    update_cache: yes
+    cache_valid_time: 3600
+    state: present
+  become: true
+
+- name: Clone iTrust repo
+  become: true
+  git:
+    repo: "{{ itrust_repo }}"
+    dest: "{{ itrust_dest }}"
+
+- name: Placing hook script
+  become: true
+  template:
+    src: ./templates/post-commit
+    dest: "{{ itrust_dest }}/.git/hooks/"
+
+- name: Modifying permissions for Post-Commit file for execution
+  file: dest="{{ itrust_dest }}/.git/hooks/post-commit" mode=a+x
+
+
+# Copy db.properties file
+- name: Copy db.properties file
+  template:
+    src: ./templates/db.properties.template
+    dest: "{{ itrust_dest }}/iTrust2/src/main/java/db.properties"
+
+# Copy email.properties file
+- name: Copy email.properties file
+  template:
+    src: ./templates/email.properties.template
+    dest: "{{ itrust_dest }}/iTrust2/src/main/java/email.properties"
+
+- name: Build database and create sample data 
+  shell: "mvn -f pom-data.xml process-test-classes"
+  args:
+    chdir: "{{ itrust_dest }}/iTrust2"

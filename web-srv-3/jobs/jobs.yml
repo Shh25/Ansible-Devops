@@ -1,0 +1,71 @@
+---
+- job:
+    become: true
+    name: checkbox 
+    description: 'Run Checkbox tests'
+    project-type: freestyle
+    builders:
+      - shell: 'cp -r /checkbox/* /var/lib/jenkins/workspace/checkbox/'
+      - shell: 'export MONGO_PORT=27017 && export MONGO_IP=127.0.0.1 && export MONGO_USER=root && export MONGO_PASSWORD=root && export MAIL_USER=vaibhavsinghspam && export MAIL_PASSWORD=vaibhavs1nghsp@m && export MAIL_SMTP=mail && export APP_PORT=3002 && cd server-side/site && npm install && npm test 1 1 2'
+    publishers:
+      - text-finder:
+          regexp: "CHECKBOX: BUILD FAILURE"
+          # fileset: "/var/lib/jenkins/jobs/checkbox/builds/lastSuccessfulBuild/log"
+          also-check-console-output: true
+          succeed-if-found: false
+          unstable-if-found: true
+- job:
+    become: true
+    name: itrust 
+    description: 'Run iTrust tests'
+    project-type: freestyle
+    builders:
+      - shell: 'cp -r /itrust/iTrust2/* /var/lib/jenkins/workspace/itrust/'
+      - shell: 'mvn -f pom-data.xml process-test-classes && mvn -B clean site test verify'
+    publishers:
+      - chuck-norris
+      - coverage
+      - checkstyle:
+          pattern: '**/checkstyle-result.xml'
+          canRunOnFailed: true
+          shouldDetectModules: true
+          healthy: 0
+          unHealthy: 100
+          healthThreshold: 'high'
+          thresholds:
+              unstable:
+                  totalAll: 16900
+                  totalHigh: 0
+                  totalNormal: 16800
+                  totalLow: 100
+              failed:
+                  totalAll: 16900
+                  totalHigh: 0
+                  totalNormal: 16800
+                  totalLow: 100
+      - jacoco:
+          exec-pattern: '**/**.exec'
+          class-pattern: '**/classes'
+          source-pattern: '**/src/main/java'
+          update-build-status: true
+          inclusion-pattern: '**/*.class'
+          exclusion-pattern: '**/*Test*.class'
+          targets:
+            - instruction:
+                healthy: 75
+                unhealthy: 50
+            - branch:
+                healthy: 65
+                unhealthy: 50
+            - complexity:
+                healthy: 70
+                unhealthy: 50
+            - line:
+                healthy: 75
+                unhealthy: 50
+            - method:
+                healthy: 85
+                unhealthy: 50
+            - class:
+                healthy: 95
+                unhealthy: 50

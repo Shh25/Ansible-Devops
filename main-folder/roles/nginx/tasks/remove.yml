@@ -1,0 +1,15 @@
+---
+- name: stop nginx Service
+  service: name=nginx state=stopped
+
+- name: Upgrade system packages
+  apt:
+    update_cache: yes
+
+- name: Remove packages
+  apt: 
+    name: ['nginx', 'nginx-core', 'nginx-common'] 
+    state: absent
+
+- name: Remove old apt lists
+  raw: sudo rm -rf /etc/apt/sources.list.d/nginx-stable-trusty.list*

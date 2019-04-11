@@ -1,0 +1,5 @@
+[jenkins]
+user={{jenkins_user}}
+password={{jenkins_password}}
+url={{server_url}}
+query_plugins_info=False

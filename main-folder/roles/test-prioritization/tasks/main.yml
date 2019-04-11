@@ -1,0 +1,46 @@
+---
+- name: Create empty file for combined logs
+  file: 
+    path: "{{ log_location }}/{{ combined_log_name }}"
+    state: touch
+    mode: 0777
+
+- name: Create empty file for combined logs
+  file: 
+    path: "{{ log_location }}/logs_filtered_dataset"
+    state: touch
+    mode: 0777
+  
+- name: Create empty file for final report
+  file: 
+    path: "{{ log_location }}/final_report"
+    state: touch
+    mode: 0777
+
+- name: Install pretty table
+  pip: 
+    name: PTable
+    state: present
+
+- name: Placing test cases script
+  become: true
+  template:
+    src: ./templates/testcases
+    dest: "{{ log_location }}/testcases"
+
+- name: Run Fuzzer "{{ number_of_runs }}" times
+  include_role:
+    name: fuzzer
+  with_sequence: start=1 end="{{ number_of_runs }}" stride=1
+
+- name: Create Test Prioritization report
+  script: test_prioritization.py {{ log_location }}/logs_filtered_dataset {{ log_location }}/final_report
+  register: output
+
+- debug: var=output
+
+- fetch:
+    src: "{{ log_location }}/final_report"
+    dest: TestPrioritization-Report
+    flat: yes
+

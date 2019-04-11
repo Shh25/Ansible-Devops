@@ -1,0 +1,12 @@
+#!/bin/sh
+
+JENKINS_CRUMB=$(wget --user=admin --password=admin --auth-no-challenge -q --output-document - 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)')
+curl -X POST {{server_url}}/job/{{jenkins_job_name_checkbox}}/build --user {{jenkins_user}}:{{jenkins_password}} -H "${JENKINS_CRUMB}"
+
+#curl -X POST http://localhost:9080/job/test/build --user admin:admin
+
+#curl -X POST http://admin:1102d2c8a18ddb86081b0a2a271dec2881@localhost:9080/job/test/build?TOKEN=1102d2c8a18ddb86081b0a2a271dec2881
+
+#curl -X POST http://admin:1102d2c8a18ddb86081b0a2a271dec2881@localhost:9080/job/test/build
+
+#curl --silent --show-error http://<username>:<api-token>@<jenkins-server>/job/<job-name>/doDelete
