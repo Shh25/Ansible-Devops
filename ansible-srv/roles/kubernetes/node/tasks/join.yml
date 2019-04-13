@@ -3,12 +3,23 @@
 - name: Reset Kubernetes component
   shell: "kubeadm reset --force"
   register: reset_cluster
+      
+- name: Get SHA hash value
+  when: reset_cluster is succeeded
+  shell: echo sha256:$(openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //')
+  register: sha_hash
+
+# - name: Echo command
+#   when: sha_hash is defined
+#   shell: "echo kubeadm join --token {{ token }} --ignore-preflight-errors=all --discovery-token-ca-cert-hash {{ sha_hash.stdout }} {{ master_ip }}:{{ kube_port }}"
+#   register: comm
+
+# - debug:
+#     msg: "{{ comm }}"
 
 - name: Join to Kubernetes cluster
-  when: reset_cluster is succeeded
-  # shell: "kubeadm join --token {{ token }} --discovery-token-ca-cert-hash sha256:69e6eb6b43f9b0c1a8e6a3b7e0643ecdfcf8f4104e8f5adc97d4455bae6d82bf {{ master_ip }}:{{ kube_port }}"
-  shell: "kubeadm join --token {{ token }} -–discovery-token-unsafe-skip-ca-verification {{ master_ip }}:{{ kube_port }}"
+  when: sha_hash is defined
+  shell: "kubeadm join --token {{ token }} --ignore-preflight-errors=all --discovery-token-ca-cert-hash {{ sha_hash.stdout }} {{ master_ip }}:{{ kube_port }}"
   register: join_cluster
   notify:
     - Recreate kube-dns
-# --discovery-file /etc/kubernetes/kubelet.conf \

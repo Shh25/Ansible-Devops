@@ -16,9 +16,6 @@
                  {{ init_opts }}
   register: init_cluster
 
-- debug:
-    msg: HELLO {{ init_cluster.msg.stdout.substr(init_cluster.msg.stdout.indexOf("sha256:"), init_cluster.msg.stdout.indexOf("sha256:") + 64)}}
-
 - name: Create Kubernetes config directory
   file:
     path: ".kube/"
