@@ -7,9 +7,8 @@
     builders:
       - shell: 'cp -r {{checkbox_dest}}/* /var/lib/jenkins/workspace/{{jenkins_job_name_checkbox}}/'
       - shell: 'export MONGO_PORT=27017 && export MONGO_IP={{mongo_ip}} && export MONGO_USER={{mongo_admin}} && export MONGO_PASSWORD={{mongo_admin_password}} && export MAIL_USER={{email_username}} && export MAIL_PASSWORD={{email_password}} && export MAIL_SMTP={{mailsmtp}} && export APP_PORT={{app_port}} && cd server-side/site && npm install && npm test {{ checkbox_static_analysis_max_line_length }} {{checkbox_static_analysis_max_function_length}} {{checkbox_static_analysis_max_conditions}}'
-      - shell: 'export LC_ALL=C && cd /web-srv/'
       - ansible-playbook:
-          playbook: "/web-srv/sample.yml" 
+          playbook: "/web-srv/main.yml" 
           inventory-type: "do-not-specify"   
     publishers:
       - text-finder:
@@ -25,7 +24,11 @@
     project-type: freestyle
     builders:
       - shell: 'cp -r {{itrust_dest}}/iTrust2/* /var/lib/jenkins/workspace/{{jenkins_job_name_itrust}}/'
-      - shell: 'mvn -f pom-data.xml process-test-classes && mvn -B clean site test verify'
+    #   - shell: 'mvn -f pom-data.xml process-test-classes && mvn -B clean site test verify' 
+      - shell: 'mvn package'
+      - ansible-playbook:
+          playbook: "/web-srv/main.yml" 
+          inventory-type: "do-not-specify"   
     publishers:
       - chuck-norris
       - coverage

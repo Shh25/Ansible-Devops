@@ -1,11 +1,36 @@
 ---
-- name: Putting variables file 
+- name: Copying variables file 
   template:
     src: ./variables.yml
     dest: /web-srv/variables.yml
 
-
-- name: Putting sample file 
+- name: Configuring ansible
   copy:
-    src: ./templates/sample
-    dest: /web-srv/sample.yml   
+    src: ./templates/ansible.cfg
+    dest: /etc/ansible/       
+
+- name: Placing ansible script
+  copy:
+    src: ./templates/main.yml
+    dest: /web-srv/   
+
+- name: Copying roles
+  copy:
+    src: "{{ item }}"
+    dest: /web-srv/roles/
+    owner: root
+  with_items:
+    - ../../nodejs
+    - ../../mongodb
+    - ../../mysql
+    
+- name: Updating mongo file
+  copy:
+    src: ../../mongodb/templates/main.yml
+    dest: /web-srv/roles/mongodb/tasks/main.yml
+
+- name: Copy iTrust script
+  copy:
+    src: ../itrust/templates/main.yml
+    dest: /web-srv/roles/itrust/tasks/
+   

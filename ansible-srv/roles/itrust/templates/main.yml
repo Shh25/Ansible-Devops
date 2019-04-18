@@ -1,0 +1,14 @@
+---
+- name: Install Jetty
+  unarchive:
+    src: http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/{{ jetty_version }}/jetty-distribution-{{ jetty_version }}.tar.gz
+    dest: "{{ jetty_dst_dir }}"
+    remote_src: True
+
+- name: Moving .war file 
+  copy: 
+    src: /var/lib/jenkins/workspace/itrust/target/iTrust2.war
+    dest: /opt/jetty-distribution-9.4.16.v20190411/webapps/
+
+# - name: Deploy iTrust   
+#   shell: 'java -jar start.jar -Djetty.port=9999'

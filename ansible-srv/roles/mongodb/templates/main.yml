@@ -1,0 +1,52 @@
+---
+- name: Create Mongo root directory
+  file: path={{ mongo_data_path }} state=directory mode=0766
+
+- name: Add MongoDB GPG key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 9DA31620334BD75D9DCB49F368818C72E52529D4
+
+- apt_repository:
+    repo: deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse
+    state: present
+    filename: mongodb-org-4.0.list
+
+- name: Install "mongodb" package
+  apt: 
+    name: mongodb-org
+    state: present
+
+- name: Remove Mongod config file
+  file:
+    path: /etc/mongod.conf
+    state: absent
+
+- name: Add Mongod config file
+  template:
+    src: mongod.conf.j2
+    dest: /etc/mongod.conf
+ 
+- name: Package prerequisites for pymongo ansible module
+  apt:
+    name: ['python-setuptools', 'python-virtualenv', 'python-pymongo', 'build-essential', 'python-dev','python-pip', 'python3-pip']
+    state: present
+
+- name: Install pymongo
+  pip:
+    name: pymongo
+    state: present
+
+- name: Start MongoDB service
+  service: 
+    name: mongod 
+    state: restarted
+
+- mongodb_user:
+    database: admin
+    name: "{{ mongo_admin }}"
+    password: "{{ mongo_admin_password }}"
+    roles: dbAdminAnyDatabase
+    state: present
+
+

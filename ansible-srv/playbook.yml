@@ -43,11 +43,11 @@
         state: directory
 
   roles:
-  # - deploy
+  - deploy
   # - nodejs
   # - nginx
   # - jenkins
-  - job-builder
+  # - job-builder
   # - mongodb
   # - mysql
   # - checkbox
