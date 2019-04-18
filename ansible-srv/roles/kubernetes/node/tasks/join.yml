@@ -14,8 +14,8 @@
 #   shell: "echo kubeadm join --token {{ token }} --ignore-preflight-errors=all --discovery-token-ca-cert-hash {{ sha_hash.stdout }} {{ master_ip }}:{{ kube_port }}"
 #   register: comm
 
-# - debug:
-#     msg: "{{ comm }}"
+- debug:
+    msg: "{{ sha_hash }}"
 
 - name: Join to Kubernetes cluster
   when: sha_hash is defined
@@ -23,3 +23,4 @@
   register: join_cluster
   notify:
     - Recreate kube-dns
+
