@@ -20,10 +20,12 @@
     dest: /web-srv/roles/
     owner: root
   with_items:
+    - ../../nginx
     - ../../nodejs
     - ../../mongodb
     - ../../mysql
-    
+    - ../../checkbox
+       
 - name: Updating mongo file
   copy:
     src: ../../mongodb/templates/main.yml

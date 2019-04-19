@@ -28,8 +28,8 @@
         name:
           - dopy>=0.3.5,<=0.3.5
 
-    # - name: Installing dopy
-    #   command: python -c "import dopy"
+    - name: Installing dopy
+      command: python -c "import dopy"
 
     - name: Add ssh key to account
       digital_ocean:
@@ -80,7 +80,7 @@
   - nginx
   - mongodb
   - mysql
-  - checkbox
+  # - checkbox
   - itrust
 
 

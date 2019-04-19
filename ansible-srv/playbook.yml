@@ -44,14 +44,14 @@
 
   roles:
   - deploy
-  # - nodejs
-  # - nginx
-  # - jenkins
-  # - job-builder
-  # - mongodb
-  # - mysql
-  # - checkbox
-  # - itrust
+  - nodejs
+  - nginx
+  - jenkins
+  - job-builder
+  - mongodb
+  - mysql
+  - checkbox
+  - itrust
   # - { role: test-prioritization, when: itrust_fuzz_testing == 'y' }
 
 

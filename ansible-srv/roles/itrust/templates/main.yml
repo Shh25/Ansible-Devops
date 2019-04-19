@@ -1,14 +1,54 @@
 ---
+- name: Install OpenJDK, Maven and Redis
+  apt: 
+    name: ['openjdk-8-jdk', 'maven','redis-server']
+    update_cache: yes
+    cache_valid_time: 3600
+    state: present
+  become: true
+
+- name: Pushing redis to background
+  become: true
+  shell: "systemctl enable redis-server.service"
+
+- name: Clone iTrust repo
+  become: true
+  git:
+    repo: "{{ itrust_repo }}"
+    dest: "{{ itrust_dest }}"
+
+# Copy db.properties file
+- name: Copy db.properties file
+  template:
+    src: ./templates/db.properties.template
+    dest: "{{ itrust_dest }}/iTrust2/src/main/java/db.properties"
+
+# Copy email.properties file
+- name: Copy email.properties file
+  template:
+    src: ./templates/email.properties.template
+    dest: "{{ itrust_dest }}/iTrust2/src/main/java/email.properties"
+
 - name: Install Jetty
   unarchive:
     src: http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/{{ jetty_version }}/jetty-distribution-{{ jetty_version }}.tar.gz
     dest: "{{ jetty_dst_dir }}"
     remote_src: True
 
-- name: Moving .war file 
-  copy: 
-    src: /var/lib/jenkins/workspace/itrust/target/iTrust2.war
-    dest: /opt/jetty-distribution-9.4.16.v20190411/webapps/
+# - name: Moving .war file 
+#   copy: 
+#     src: /var/lib/jenkins/workspace/itrust/target/iTrust2.war
+#     dest: /opt/jetty-distribution-9.4.16.v20190411/webapps/
 
 # - name: Deploy iTrust   
-#   shell: 'java -jar start.jar -Djetty.port=9999'
+#   shell: 'java -jar start.jar'
+    
+- name: Build database and create sample data 
+  shell: "mvn -f pom-data.xml process-test-classes"
+  args:
+    chdir: "{{ itrust_dest }}/iTrust2"
+
+- name: Start Jetty
+  shell: "nohup mvn jetty:run &"
+  args:
+    chdir: "{{ itrust_dest }}/iTrust2"
