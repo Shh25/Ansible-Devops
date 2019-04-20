@@ -34,7 +34,3 @@
     src: ./templates/email.properties.template
     dest: "{{ itrust_dest }}/iTrust2/src/main/java/email.properties"
     
-# - name: Build database and create sample data 
-#   shell: "mvn -f pom-data.xml process-test-classes"
-#   args:
-#     chdir: "{{ itrust_dest }}/iTrust2"

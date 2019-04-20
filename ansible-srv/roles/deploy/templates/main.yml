@@ -80,7 +80,7 @@
   - nginx
   - mongodb
   - mysql
-  # - checkbox
+  - checkbox
   - itrust
 
 

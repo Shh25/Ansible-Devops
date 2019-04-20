@@ -24,8 +24,8 @@
     project-type: freestyle
     builders:
       - shell: 'cp -r {{itrust_dest}}/iTrust2/* /var/lib/jenkins/workspace/{{jenkins_job_name_itrust}}/'
-    #   - shell: 'mvn -f pom-data.xml process-test-classes && mvn -B clean site test verify' 
-      - shell: 'mvn package'
+      - shell: 'mvn -f pom-data.xml process-test-classes && mvn package' 
+      - shell: 'mysqldump -u {{mysql_user}} -p -p{{mysql_password}} -x -A > /tmp/dbs2.sql'
       - ansible-playbook:
           playbook: "/web-srv/main.yml" 
           inventory-type: "do-not-specify"   
