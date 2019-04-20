@@ -50,9 +50,9 @@
   # - job-builder
   # - mongodb
   # - mysql
-  # - checkbox
+  - checkbox
   # - itrust
-  - kubernetes-do
+  # - kubernetes-do
   # - { role: test-prioritization, when: itrust_fuzz_testing == 'y' }
 
 
