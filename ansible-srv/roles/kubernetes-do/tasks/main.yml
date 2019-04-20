@@ -1,0 +1,41 @@
+---
+- name: Add Kubernetes APT GPG key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: Add Kubernetes APT repository
+  apt_repository:
+    repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+    filename: 'kubernetes'
+
+- name: Install kubernetes packages
+  apt:
+    name: "kubectl"
+    update_cache: yes
+    # state: latest
+- set_fact:
+    "cluster_name": "hello16"
+
+- name: 'Create cluster using cURL'
+  shell: 'curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 32ef0a6dbf90dbb2310f591c6f16e55cc2a404272a07e49979b1a0255c66b673" -d "{\"name\": \"{{ cluster_name }}\",\"region\": \"nyc1\",\"version\": \"1.13.5-do.1\",\"node_pools\": [{\"size\": \"s-1vcpu-2gb\",\"count\": 1,\"name\": \"n1\",\"nodes\":[{\"droplet_id\": \"\", \"name\": \"\", \"ipv4\": \"\"}]}]}" "https://api.digitalocean.com/v2/kubernetes/clusters"'
+  args:
+    warn: false
+  register: cluster_var
+
+- debug:
+    msg: '{{ cluster_var.stdout_lines[0] }}'
+
+- name: 'Check if cluster is created'
+  shell: 'curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer b7d03a6947b217efb6f3ec3bd3504582" "https://api.digitalocean.com/v2/kubernetes/clusters/{{ cluster_var.stdout.kubernetes_cluster.id }}"'
+  register: cluster_defined_var
+
+- name: 'Create Kube config'
+  shell: 'curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 32ef0a6dbf90dbb2310f591c6f16e55cc2a404272a07e49979b1a0255c66b673" "https://api.digitalocean.com/v2/kubernetes/clusters/8f04eff6-7a92-4f12-8246-1ff6fe58fa53/kubeconfig"'
+  register: services_list
+
+- copy: content='{{ services_list.stdout }}' dest=/web-srv/kubeconfig.yaml
+
+# - set_fact:
+#     cluster_var: 
