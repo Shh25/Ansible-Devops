@@ -11,3 +11,9 @@
 
 - name: Modifying permissions for Post-Commit file for execution
   file: dest="{{ checkbox_dest }}/.git/hooks/post-commit" mode=a+x
+
+- name: Add nginx default file for checkbox location
+  shell: cp /checkbox/local-conf/default /etc/nginx/sites-available/default
+
+- name: Add nginx conf file for checkbox location
+  shell: cp /checkbox/local-conf/nginx.conf /etc/nginx/nginx.conf
