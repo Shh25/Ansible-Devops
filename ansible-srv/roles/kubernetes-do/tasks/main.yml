@@ -29,16 +29,18 @@
 
 - set_fact:
     cluster_id: "{{ cluster_output['kubernetes_cluster']['id'] }}"  
+    
+# - set_fact:
+#     cluster_id: "7b4e06d9-4334-4833-b827-706bb39bd780"  
 
 - name: 'Check if cluster is created'
   shell: 'curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer b7d03a6947b217efb6f3ec3bd3504582" "https://api.digitalocean.com/v2/kubernetes/clusters/{{ cluster_id }}"'
   register: cluster_defined_var
 
 - name: 'Create Kube config'
-  shell: 'curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 32ef0a6dbf90dbb2310f591c6f16e55cc2a404272a07e49979b1a0255c66b673" "https://api.digitalocean.com/v2/kubernetes/clusters/8f04eff6-7a92-4f12-8246-1ff6fe58fa53/kubeconfig"'
-  register: services_list
+  shell: 'curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 32ef0a6dbf90dbb2310f591c6f16e55cc2a404272a07e49979b1a0255c66b673" "https://api.digitalocean.com/v2/kubernetes/clusters/{{ cluster_id }}/kubeconfig"'
+  args:
+    warn: false
+  register: config_variable_output
 
-- copy: content='{{ services_list.stdout }}' dest=/web-srv/kubeconfig.yaml
-
-# - set_fact:
-#     cluster_var: 
+- copy: content='{{ config_variable_output.stdout }}' dest=/web-srv/kubeconfig.yaml
