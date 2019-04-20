@@ -16,7 +16,7 @@
     update_cache: yes
     # state: latest
 - set_fact:
-    "cluster_name": "hello16"
+    "cluster_name": "hello52"
 
 - name: 'Create cluster using cURL'
   shell: 'curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 32ef0a6dbf90dbb2310f591c6f16e55cc2a404272a07e49979b1a0255c66b673" -d "{\"name\": \"{{ cluster_name }}\",\"region\": \"nyc1\",\"version\": \"1.13.5-do.1\",\"node_pools\": [{\"size\": \"s-1vcpu-2gb\",\"count\": 1,\"name\": \"n1\",\"nodes\":[{\"droplet_id\": \"\", \"name\": \"\", \"ipv4\": \"\"}]}]}" "https://api.digitalocean.com/v2/kubernetes/clusters"'
@@ -24,11 +24,14 @@
     warn: false
   register: cluster_var
 
-- debug:
-    msg: '{{ cluster_var.stdout_lines[0] }}'
+- set_fact:
+    cluster_output: "{{ cluster_var.stdout | join() }}"
+
+- set_fact:
+    cluster_id: "{{ cluster_output['kubernetes_cluster']['id'] }}"  
 
 - name: 'Check if cluster is created'
-  shell: 'curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer b7d03a6947b217efb6f3ec3bd3504582" "https://api.digitalocean.com/v2/kubernetes/clusters/{{ cluster_var.stdout.kubernetes_cluster.id }}"'
+  shell: 'curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer b7d03a6947b217efb6f3ec3bd3504582" "https://api.digitalocean.com/v2/kubernetes/clusters/{{ cluster_id }}"'
   register: cluster_defined_var
 
 - name: 'Create Kube config'
