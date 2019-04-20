@@ -17,3 +17,7 @@
 
 - name: Add nginx conf file for checkbox location
   shell: cp /checkbox/local-conf/nginx.conf /etc/nginx/nginx.conf
+
+- name: Restart nginx
+  become: true
+  shell: 'systemctl restart nginx'
