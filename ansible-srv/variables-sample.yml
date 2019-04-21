@@ -63,7 +63,7 @@ combined_log_dataset: logs_filtered_dataset
 #digitalocean
 API_TOKEN: 
 droplet_name: "mydroplet"
-droplet_size: "512mb"
+droplet_size: "2gb"
 droplet_region: "tor1"
 droplet_image: "ubuntu-16-04-x64" 
 
