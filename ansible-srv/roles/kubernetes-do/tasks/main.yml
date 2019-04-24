@@ -1,22 +1,23 @@
 # ---
-# - name: Add Kubernetes APT GPG key
-#   apt_key:
-#     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
-#     state: present
+- name: Add Kubernetes APT GPG key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
 
-# - name: Add Kubernetes APT repository
-#   apt_repository:
-#     repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
-#     state: present
-#     filename: 'kubernetes'
+- name: Add Kubernetes APT repository
+  apt_repository:
+    repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+    filename: 'kubernetes'
 
-# - name: Install kubernetes packages
-#   apt:
-#     name: "kubectl"
-#     update_cache: yes
-#     # state: latest
-# - set_fact:
-#     "cluster_name": "hello110"
+- name: Install kubernetes packages
+  apt:
+    name: "kubectl"
+    update_cache: yes
+    state: latest
+    
+- set_fact:
+    "cluster_name": "hello110"
 
 # - name: 'Create cluster using cURL'
 #   shell: 'curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 32ef0a6dbf90dbb2310f591c6f16e55cc2a404272a07e49979b1a0255c66b673" -d "{\"name\": \"{{ cluster_name }}\",\"region\": \"nyc1\",\"version\": \"1.13.5-do.1\",\"node_pools\": [{\"size\": \"s-1vcpu-2gb\",\"count\": 1,\"name\": \"n1\",\"nodes\":[{\"droplet_id\": \"\", \"name\": \"\", \"ipv4\": \"\"}]}]}" "https://api.digitalocean.com/v2/kubernetes/clusters"'
@@ -38,28 +39,27 @@
 #   register: cluster_defined_var
 
 - set_fact:
-    cluster_id: "76534b3d-705a-44cf-b966-e05b833c7476" 
+    cluster_id: "854c19a2-e5d9-4893-bd60-987f46a98724" 
 
-# - name: 'Create Kube config'
-#   shell: 'curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 32ef0a6dbf90dbb2310f591c6f16e55cc2a404272a07e49979b1a0255c66b673" "https://api.digitalocean.com/v2/kubernetes/clusters/{{ cluster_id }}/kubeconfig"'
-#   args:
-#     warn: false
-#   register: config_variable_output
+- name: 'Create Kube config'
+  shell: 'curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 32ef0a6dbf90dbb2310f591c6f16e55cc2a404272a07e49979b1a0255c66b673" "https://api.digitalocean.com/v2/kubernetes/clusters/{{ cluster_id }}/kubeconfig"'
+  args:
+    warn: false
+  register: config_variable_output
 
-# - copy: content='{{ config_variable_output.stdout }}' dest=/web-srv/kubeconfig.yaml
+# Temporary config file in websrv
+- copy: content='{{ config_variable_output.stdout }}' dest=/web-srv/kubeconfig.yaml
 
-- name: Copy service files to web server
+- name: Create Kubernetes config directory
+  file:
+    path: ".kube/"
+    state: directory
+
+- name: Copy admin.conf to Home directory
   copy:
-    src: "{{ item }}"
-    dest: /web-srv/
-    owner: root
-  with_items:
-    - ../templates/render.service.yml
-    - ../templates/render.service.js
-
-- name: Create rendering service
-  shell: kubectl --kubeconfig /web-srv/kubeconfig.yaml apply -f /web-srv/render.service.yml
-  register: rendering_service_output
-
-- debug:
-    msg: "{{rendering_service_output}}" 
+    content: '{{ config_variable_output.stdout }}'
+    dest: ".kube/config"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0755
+    remote_src: true

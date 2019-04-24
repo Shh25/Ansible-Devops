@@ -35,7 +35,7 @@
       digital_ocean:
         state: present
         command: ssh
-        name: MyKey
+        name: "{{ digital_ocean_key_name }}"
         ssh_pub_key: "{{ SSH_KEY }}"
         api_token: "{{ API_TOKEN }}"
       register: SSH

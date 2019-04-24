@@ -66,6 +66,7 @@ droplet_name: "mydroplet"
 droplet_size: "512mb"
 droplet_region: "tor1"
 droplet_image: "ubuntu-16-04-x64" 
+digital_ocean_key_name: MyKey
 
 #Jetty
 jetty_version: 9.4.16.v20190411
