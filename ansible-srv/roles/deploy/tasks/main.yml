@@ -9,9 +9,9 @@
     src: ./templates/ansible.cfg
     dest: /etc/ansible/       
 
-- name: Placing ansible script
+- name: Placing checkbox script
   copy:
-    src: ./templates/main.yml
+    src: ./templates/checkbox.yml
     dest: /web-srv/   
 
 - name: Copying roles
@@ -23,16 +23,21 @@
     - ../../nginx
     - ../../nodejs
     - ../../mongodb
-    - ../../mysql
-    - ../../checkbox
+    # - ../../mysql
+    # - ../../checkbox
        
 - name: Updating mongo file
   copy:
     src: ../../mongodb/templates/main.yml
     dest: /web-srv/roles/mongodb/tasks/main.yml
 
-- name: Copy iTrust script
+- name: Copying checkbox role
   copy:
-    src: ../itrust/templates/main.yml
-    dest: /web-srv/roles/itrust/tasks/
+    src: ../../checkbox/templates/main.yml
+    dest: /web-srv/roles/checkbox/tasks/
+
+# - name: Copy iTrust script
+#   copy:
+#     src: ../itrust/templates/main.yml
+#     dest: /web-srv/roles/itrust/tasks/
    

@@ -1,0 +1,14 @@
+- name: Install Checkbox from repository
+  git:
+    repo: "{{ checkbox_repo }}"
+    dest: "{{ checkbox_dest }}"
+
+- name: Add nginx default file for checkbox location
+  shell: cp /checkbox/local-conf/default /etc/nginx/sites-available/default
+
+- name: Add nginx conf file for checkbox location
+  shell: cp /checkbox/local-conf/nginx.conf /etc/nginx/nginx.conf
+
+- name: Restart nginx
+  become: true
+  shell: 'systemctl restart nginx'

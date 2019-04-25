@@ -28,8 +28,8 @@
         name:
           - dopy>=0.3.5,<=0.3.5
 
-    - name: Installing dopy
-      command: python -c "import dopy"
+    # - name: Installing dopy
+    #   command: python -c "import dopy"
 
     - name: Add ssh key to account
       digital_ocean:
@@ -48,7 +48,7 @@
       digital_ocean:
         state: present
         command: droplet
-        name: "{{droplet_name}}"
+        name: "{{droplet_name_checkbox}}"
         private_networking: yes
         size_id: "{{droplet_size}}"
         image_id: "{{droplet_image}}"
@@ -79,9 +79,9 @@
   - nodejs
   - nginx
   - mongodb
-  - mysql
+  # - mysql
   - checkbox
-  - itrust
+  # - itrust
 
 
 
