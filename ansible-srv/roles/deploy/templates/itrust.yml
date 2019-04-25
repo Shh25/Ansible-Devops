@@ -48,7 +48,7 @@
       digital_ocean:
         state: present
         command: droplet
-        name: "{{droplet_name_checkbox}}"
+        name: "{{droplet_name_itrust}}"
         private_networking: yes
         size_id: "{{droplet_size}}"
         image_id: "{{droplet_image}}"
@@ -76,10 +76,8 @@
       local_action: "wait_for port=22 host={{ inventory_hostname }}"
 
   roles:
-  - nodejs
-  - nginx
-  - mongodb
-  - checkbox
+  - mysql
+  - itrust
 
 
 

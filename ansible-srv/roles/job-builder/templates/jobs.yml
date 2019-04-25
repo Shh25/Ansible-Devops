@@ -27,7 +27,7 @@
       - shell: 'mvn -f pom-data.xml process-test-classes && mvn package' 
       - shell: 'mysqldump -u {{mysql_user}} -p -p{{mysql_password}} -x -A > /tmp/dbs2.sql'
       - ansible-playbook:
-          playbook: "/web-srv/main.yml" 
+          playbook: "/web-srv/itrust.yml" 
           inventory-type: "do-not-specify"   
     publishers:
       - chuck-norris

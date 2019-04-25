@@ -12,7 +12,12 @@
 - name: Placing checkbox script
   copy:
     src: ./templates/checkbox.yml
-    dest: /web-srv/   
+    dest: /web-srv/  
+    
+- name: Placing iTrust script
+  copy:
+    src: ./templates/itrust.yml
+    dest: /web-srv/    
 
 - name: Copying roles
   copy:
@@ -23,8 +28,7 @@
     - ../../nginx
     - ../../nodejs
     - ../../mongodb
-    # - ../../mysql
-    # - ../../checkbox
+    - ../../mysql
        
 - name: Updating mongo file
   copy:
@@ -36,8 +40,8 @@
     src: ../../checkbox/templates/main.yml
     dest: /web-srv/roles/checkbox/tasks/
 
-# - name: Copy iTrust script
-#   copy:
-#     src: ../itrust/templates/main.yml
-#     dest: /web-srv/roles/itrust/tasks/
+- name: Copy iTrust script
+  copy:
+    src: ../itrust/templates/main.yml
+    dest: /web-srv/roles/itrust/tasks/
    
