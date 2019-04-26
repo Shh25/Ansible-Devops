@@ -6,28 +6,38 @@ var _ = require('underscore');
 
 var templates = loadJadeTemplates();
 
+// exports.render = function(data)
+// {
+// 	console.log(data);
+// 	marked.setOptions({gfm:true,tables:true});
+
+//   	var lines = data.split("\n");
+//   	var header = ReadHeader(lines);
+// 	console.log(header);
+//   	var qOptions = JSON5.parse(header);
+
+//   	var body = ReadBody(lines);
+
+// 	var tokens = marked.lexer(body, {gfm:true,tables:true});
+
+// 	//console.log(tokens);
+// 	var newTokens = ProcessTokens(tokens, qOptions);
+
+// 	var text = marked.parser(newTokens);
+
+// 	return text;
+// };
+
 exports.render = function(data)
 {
-	console.log(data);
-	marked.setOptions({gfm:true,tables:true});
-
-  	var lines = data.split("\n");
-  	var header = ReadHeader(lines);
-	console.log(header);
-  	var qOptions = JSON5.parse(header);
-
-  	var body = ReadBody(lines);
-
-	var tokens = marked.lexer(body, {gfm:true,tables:true});
-
-	//console.log(tokens);
-	var newTokens = ProcessTokens(tokens, qOptions);
-
-	var text = marked.parser(newTokens);
-
-	return text;
-};
-
+	return {
+		status: 200,
+		body: 'Your body here',
+		headers: {
+			'Foo': 'Bar'
+		}
+	}
+}
 
 function loadJadeTemplates()
 {

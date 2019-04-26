@@ -1,10 +1,13 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: render-service-http
+  name: render-service-http1
+  labels:
+    app: render
 spec:
+  clusterIP: None
   selector:
-    app: MyApp
+    app: render.service.js
   ports:
   # - protocol: TCP
   #   port: 80

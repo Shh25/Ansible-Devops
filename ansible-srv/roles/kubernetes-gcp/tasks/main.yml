@@ -1,0 +1,128 @@
+# ---
+# - name: Add Kubernetes APT GPG key
+#   apt_key:
+#     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+#     state: present
+
+# - name: Add Kubernetes APT repository
+#   apt_repository:
+#     repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
+#     state: present
+#     filename: 'kubernetes'
+
+# - name: Install kubernetes packages
+#   apt:
+#     name: "kubectl"
+#     update_cache: yes
+#     state: latest
+
+# - name: Copy serviceaccount file to web server
+#   copy:
+#     src: ../templates/project-2af53c61d296.json
+#     dest: ../../../../home/vagrant
+
+# # Temp TASK. REMOVE
+# - name: Install lxml and pip
+#   apt: 
+#     name: ['python3-lxml','python-pip', 'python3-pip']
+#     state: present
+
+# - name: Install google auth
+#   pip:
+#     name: ['google-auth', 'requests']
+  
+# - name: Set up env variables
+#   shell: export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+
+# - name: Obtain google cloud key
+#   shell: curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+# - name: Install google cloud sdk
+#   apt:
+#     name: ['google-cloud-sdk']
+#     state: present
+
+# - name: Activate google cloud sdk
+#   shell: gcloud auth activate-service-account --key-file {{ key_file_name }}
+
+# - name: Set config project
+#   shell: gcloud config set project {{ project_name }}
+
+# - name: Set config zone
+#   shell: gcloud config set compute/zone {{ compute_zone }}
+
+# - name: Create a cluster
+#   gcp_container_cluster:
+#       name: "{{ cluster_name }}"
+#       initial_node_count: 3
+#       master_auth:
+#         username: admin
+#         password:
+#       node_config:
+#         machine_type: n1-standard-1
+#         disk_size_gb: 500
+#       zone: us-east1-c
+#       project: "{{ project_name }}"
+#       auth_kind: "serviceaccount"
+#       service_account_file: "{{ key_file_name }}"
+#       scopes:
+#         - https://www.googleapis.com/auth/compute
+#         - https://www.googleapis.com/auth/cloud-platform
+#       state: present
+#   register: cluster_var
+
+# - debug:
+#     msg: "{{cluster_var}}" 
+
+# - name: Set credentials file
+#   shell: "gcloud container clusters get-credentials {{ cluster_name }}"
+#   register: config_var_output
+  
+# - debug:
+#     msg: "{{config_var_output}}" 
+
+# - name: Make directory for cluster scripts
+#   file: path=/cluster_scripts state=directory mode=0766
+
+# - name: Copy deployment file to web server
+#   template:
+#     src: ./templates/create-deployment.yml
+#     dest: /cluster_scripts/create-deployment.yml
+
+# - name: Create Deployment in Cluster 
+#   shell: kubectl apply -f /cluster_scripts/create-deployment.yml
+#   register: dep_var_output
+
+# - debug:
+#     msg: "{{dep_var_output}}" 
+
+# - name: Copy service file to web server
+#   template:
+#     src: ./templates/create-service.yml
+#     dest: /cluster_scripts/create-service.yml
+
+# - name: Create Service in Cluster 
+#   shell: kubectl apply -f /cluster_scripts/create-service.yml
+
+- name: Get External IP from Service
+  shell: "kubectl get svc {{service_name}} -o json"
+  register: ser_var_output
+
+- set_fact:
+    "ipadd_output": "{{ ser_var_output.stdout | join() }}" 
+
+- set_fact:
+    'ipaddress': "{{ ipadd_output['status']['loadBalancer']['ingress'][0]['ip'] }}" 
+
+# - name: Set environment variable for external IP
+#   shell: "export IP_ADDRESS={{ipaddress}}"
+#   args:
+#     chdir: "{{ checkbox_dest }}"
+
+# - name: Echo my_env_var
+#   shell: "echo $IP_ADDRESS"
+#   environment:
+#     IP_ADDRESS: "{{ ipaddress }}"
+
+- name: Adding the path in the bashrc files
+  lineinfile: dest=/home/vagrant/.bashrc line='export IP_ADDRESS={{ ipaddress }}' insertafter='EOF' state=present

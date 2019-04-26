@@ -72,6 +72,10 @@ digital_ocean_key_name: MyKey
 jetty_version: 9.4.16.v20190411
 jetty_dst_dir: /opt
 
-
-
-
+#Cluster
+cluster_name: render-cluster
+project_name: my-kube-project-238704
+compute_zone: us-east1-c
+deployment_name: render-app
+service_name: render-app-service
+key_file_name: project-2af53c61d296.json

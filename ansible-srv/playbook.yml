@@ -52,7 +52,7 @@
   - mysql
   - checkbox
   - itrust
-  # - kubernetes-do
+  - kubernetes-gcp
   # - { role: test-prioritization, when: itrust_fuzz_testing == 'y' }
 
 
