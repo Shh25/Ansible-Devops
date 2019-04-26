@@ -17,7 +17,7 @@ git clone https://github.ncsu.edu/ssujal/CSC519_Project.git
 ```
 
 # Devops_CSC519_Project Milestones 
-<details><summary>MILESTONE 1</summary>
+## <details><summary>MILESTONE 1</summary>
 
 ## Build Milestones
 
@@ -122,7 +122,7 @@ Open jenkins on specified location above and check if the build is running.
 https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sharing
 </details>
 
-## MILESTONE 2
+## <details><summary>MILESTONE 2</summary>
 
 ## Task Distribution
 [Prayani Singh](https://github.ncsu.edu/psingh25)(psingh25@ncsu.edu) - Checkbox Static Analysis Implementation and Gates <br>
