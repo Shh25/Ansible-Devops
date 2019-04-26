@@ -122,7 +122,7 @@ Open jenkins on specified location above and check if the build is running.
 https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sharing
 </details>
 
-## MILESTONE 2
+<details><summary>MILESTONE 2</summary>
 
 ## Task Distribution
 [Prayani Singh](https://github.ncsu.edu/psingh25)(psingh25@ncsu.edu) - Checkbox Static Analysis Implementation and Gates <br>
@@ -189,12 +189,32 @@ Includes:
 
 ## ScreenCast link
 https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sharing
-
-<details><summary>MILESTONE 3</summary>
-<p>
-  <h4> coming soon </h4>
-</p> 
 </details>
+
+## MILESTONE 3
+
+## Feature Flags
+
+## Deployment
+
+## Infrastructure Upgrade
+We have created a Kubernetes cluster on Google Cloud Platform by using service accounts authentication.
+- Create a new project on GCP
+- Enable Kubernetes on GCP and create a service account. Download the service account key and save it at the location /roles/kubernetes-gcp/templates/
+- Save project name and key name in variables.yml
+- Run ansible scripts for creating cluster
+- Log into your Digital Ocean account and get the IP address of the Virtual Machine where Checkbox is installed
+- Check IP of Checkbox VM and open it on browser
+- Check microservice for route POST /api/design/survey on Postman 
+OR
+- Create a design survey on the site
+- This endpoint uses the microservice
+
+## Special Component
+
+## ScreenCast link
+
+## Project Demo
 
 ## Wiki and Repository Links
 
