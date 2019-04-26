@@ -117,17 +117,7 @@
     "ipadd_output": "{{ ser_var_output.stdout | join() }}" 
 
 - set_fact:
-    'ipaddress': "{{ ipadd_output['status']['loadBalancer']['ingress'][0]['ip'] }}" 
-
-# - name: Set environment variable for external IP
-#   shell: "export IP_ADDRESS={{ipaddress}}"
-#   args:
-#     chdir: "{{ checkbox_dest }}"
-
-# - name: Echo my_env_var
-#   shell: "echo $IP_ADDRESS"
-#   environment:
-#     IP_ADDRESS: "{{ ipaddress }}"
+    'ip_address': "{{ ipadd_output['status']['loadBalancer']['ingress'][0]['ip'] }}" 
 
 - name: Adding the path in the bashrc files
-  lineinfile: dest=/home/vagrant/.bashrc line='export IP_ADDRESS={{ ipaddress }}' insertafter='EOF' state=present
+  lineinfile: dest=/home/vagrant/.bashrc line='export IP_ADDRESS={{ ip_address }}' insertafter='EOF' state=present

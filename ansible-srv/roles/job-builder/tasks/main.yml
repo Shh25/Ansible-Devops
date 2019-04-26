@@ -36,6 +36,7 @@
   template:
     src: ./templates/jobs.yml
     dest: /web-srv/jobs/
+  with_items: "{{ ip_address }}"
 
 - name: Update Jobs 
   command: 'jenkins-jobs --conf jenkins_jobs.ini update jobs'
