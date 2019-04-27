@@ -3,58 +3,71 @@
   apt_key:
     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
     state: present
+  when: cluster_created == false
 
 - name: Add Kubernetes APT repository
   apt_repository:
     repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
     state: present
     filename: 'kubernetes'
+  when: cluster_created == false
 
 - name: Install kubernetes packages
   apt:
     name: "kubectl"
     update_cache: yes
     state: latest
+  when: cluster_created == false
 
 - name: Copy serviceaccount file to web server
   copy:
     src: '../templates/{{ key_file_name }}'
     dest: ../../../../home/vagrant
+  when: cluster_created == false
 
 # Temp TASK. REMOVE
 - name: Install lxml and pip
   apt: 
     name: ['python3-lxml','python-pip', 'python3-pip']
     state: present
+  when: cluster_created == false
 
 - name: Install google auth
   pip:
     name: ['google-auth', 'requests']
+  when: cluster_created == false
   
 - name: Set up env variables
   shell: export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+  when: cluster_created == false
 
 - name: Obtain google cloud key
   shell: curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+  when: cluster_created == false
   
 - name: Adds gcloud repos
   apt_repository:
     repo: "deb http://packages.cloud.google.com/apt cloud-sdk-{{ ansible_distribution_release }} main"
     update_cache: yes
+  when: cluster_created == false
 
 - name: Install google cloud sdk
   apt:
     name: ['google-cloud-sdk']
     state: present
+  when: cluster_created == false
 
 - name: Activate google cloud sdk
   shell: gcloud auth activate-service-account --key-file {{ key_file_name }}
+  when: cluster_created == false
 
 - name: Set config project
   shell: gcloud config set project {{ project_name }}
+  when: cluster_created == false
 
 - name: Set config zone
   shell: gcloud config set compute/zone {{ compute_zone }}
+  when: cluster_created == false
 
 - name: Create a cluster
   gcp_container_cluster:
@@ -75,43 +88,57 @@
         - https://www.googleapis.com/auth/cloud-platform
       state: present
   register: cluster_var
+  when: cluster_created == false
 
 - debug:
     msg: "{{cluster_var}}" 
+  when: cluster_created == false
 
 - name: Set credentials file
   shell: "gcloud container clusters get-credentials {{ cluster_name }}"
   register: config_var_output
+  when: cluster_created == false
   
 - debug:
     msg: "{{config_var_output}}" 
+  when: cluster_created == false
 
 - name: Make directory for cluster scripts
   file: path=/cluster_scripts state=directory mode=0766
+  when: cluster_created == false
 
 - name: Copy deployment file to web server
   template:
     src: ./templates/create-deployment.yml
     dest: /cluster_scripts/create-deployment.yml
+  when: cluster_created == false
 
 - name: Create Deployment in Cluster 
   shell: kubectl apply -f /cluster_scripts/create-deployment.yml
   register: dep_var_output
+  when: cluster_created == false
 
 - debug:
     msg: "{{dep_var_output}}" 
+  when: cluster_created == false
 
 - name: Copy service file to web server
   template:
     src: ./templates/create-service.yml
     dest: /cluster_scripts/create-service.yml
+  when: cluster_created == false
 
 - name: Create Service in Cluster 
   shell: kubectl apply -f /cluster_scripts/create-service.yml
+  when: cluster_created == false
 
 - name: Creating IP in service
   wait_for:
     timeout: 10
+  when: cluster_created == false
+
+- set_fact:
+    cluster_created: "true"
 
 - name: Get External IP from Service
   shell: "kubectl get svc {{service_name}} -o json"

@@ -79,3 +79,4 @@ compute_zone: us-east1-c
 deployment_name: render-app
 service_name: render-app-service
 key_file_name: project-2af53c61d296.json
+cluster_created: false
