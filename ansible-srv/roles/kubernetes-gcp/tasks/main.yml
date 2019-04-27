@@ -117,17 +117,16 @@
   shell: kubectl apply -f /cluster_scripts/create-service.yml
   when: cluster_created == false
 
-- name: Creating IP in service
-  wait_for:
-    timeout: 10
-  when: cluster_created == false
-
 - set_fact:
     cluster_created: "true"
 
 - name: Get External IP from Service
   shell: "kubectl get svc {{service_name}} -o json"
   register: ser_var_output
+  until: ser_var_output.stdout.find('ingress') != -1
+  retries: 10
+  delay: 10
+  changed_when: false
 
 - set_fact:
     "ipadd_output": "{{ ser_var_output.stdout | join() }}" 
