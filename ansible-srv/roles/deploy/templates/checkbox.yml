@@ -57,6 +57,10 @@
         unique_name: yes
       register: do
 
+    - name: Set IP address
+      set_fact:
+        IP_checkbox: "{{ do.droplet.ip_address }}"
+
     - name: Add new host to our inventory.
       add_host:
         name: "{{ do.droplet.ip_address }}"
