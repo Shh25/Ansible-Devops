@@ -246,10 +246,10 @@ OR
 ## Special Component
 
 
-For this we used [Grafana](https://prometheus.io/docs/visualization/grafana/). We installed Prometheus on DigitalOcean VM and Grafana on our build server which is available on your server at port 3000. </br>
-To monitor the application, 
+For this we used [Grafana](https://prometheus.io/docs/visualization/grafana/). We installed Prometheus on DigitalOcean VM and Grafana on our build server which is available on the server at port 3000. </br>
+To monitor the application:
 - Add virtual instance as the datasource to Grafana.
-- configure Grafana dashboard according to the metric you want to monitor.
+- Configure Grafana dashboard according to the metric you want to monitor.
 
 ## ScreenCast link
 
