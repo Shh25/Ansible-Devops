@@ -75,6 +75,16 @@
     ansible_python_interpreter: "/usr/bin/python3"
   vars_files:
     - ./variables.yml
+  environment:
+    MONGO_PORT: "27017"
+    MONGO_IP: "127.0.0.1"
+    MONGO_USER: "mongo_user"
+    MONGO_PASSWORD: "admin"
+    MAIL_USER: "s@a.com"
+    MAIL_PASSWORD: "abcd"
+    MAIL_SMTP: "smtp@gmail.com"
+    APP_PORT: "3002"
+    IP_ADDRESS: "34.74.60.97"
   pre_tasks:
     - name: Wait for port 22 to become available.
       local_action: "wait_for port=22 host={{ inventory_hostname }}"

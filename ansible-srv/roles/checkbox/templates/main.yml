@@ -12,3 +12,8 @@
 - name: Restart nginx
   become: true
   shell: 'systemctl restart nginx'
+
+- name: Install dependencies
+  shell: npm install && npm start
+  args:
+    chdir: /checkbox/server-side/site/
