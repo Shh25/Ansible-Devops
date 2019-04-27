@@ -11,6 +11,9 @@ jenkins_user: ""
 jenkins_password: ""
 jenkins_job_name_checkbox: checkbox
 jenkins_job_name_itrust: itrust
+
+# Point this to the location you want Jenkins to run. If Jenkins runs locally the url should be http://localhost:8080.
+# If Jenkins runs on a remote machine url should be https://remote_machine_ip:8080
 server_url: http://localhost:8080
 jenkins_console_output_location: "/var/lib/jenkins/jobs/itrust/builds/lastFailedBuild/log"
 
@@ -22,6 +25,7 @@ plugins_list_scm: ['bitbucket', 'clearcase', 'cvs', 'git', 'git-parameter', 'git
 plugins_list_notify: ['email-ext', 'emailext-template', 'mailer', 'publish-over-ssh', 'ssh', 'chucknorris']
 
 #mysql
+#We have seen issues setting mysql_user to anything other than root. It is highly recommended to use "root" as mysql_user.
 mysql_user: ""
 mysql_db: ""
 mysql_password: ""
@@ -79,4 +83,5 @@ compute_zone: us-east1-c
 deployment_name: render-app
 service_name: render-app-service
 key_file_name: project-2af53c61d296.json
+#In case you already have a cluster created, change this to true.
 cluster_created: false
