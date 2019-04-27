@@ -44,15 +44,16 @@
 
   roles:
   - kubernetes-gcp
-  - deploy
-  - nodejs
+  # - deploy
+  # - nodejs
   - nginx
-  - jenkins
-  - job-builder # Please run this role only with Kubernetes role as it expects IP address for microservice
+  # - jenkins
+  # - job-builder # Please run this role only with Kubernetes role as it expects IP address for microservice
   - mongodb
-  - mysql
-  - checkbox
-  - itrust
+  # - mysql
+  # - checkbox
+  # - itrust
+  # - monitoring
   # - { role: test-prioritization, when: itrust_fuzz_testing == 'y' }
 
 
