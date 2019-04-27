@@ -29,6 +29,7 @@
     - ../../nodejs
     - ../../mongodb
     - ../../mysql
+    - ../../monitoring
        
 - name: Updating mongo file
   copy:
@@ -44,4 +45,8 @@
   copy:
     src: ../itrust/templates/main.yml
     dest: /web-srv/roles/itrust/tasks/
-   
+
+- name: Copy grafana script
+  copy:
+    src: ./templates/grafana.sh
+    dest: /web-srv/roles/monitoring/

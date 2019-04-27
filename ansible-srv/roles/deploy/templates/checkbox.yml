@@ -56,11 +56,22 @@
         ssh_key_ids: "{{SSH_ID}}"
         unique_name: yes
       register: do
+    
+    - name: Execute grafana script
+      shell: chmod +x /web-srv/roles/monitoring/grafana.sh
+      args:
+        warn: false
+
+    - name: Run  
+      become: true
+      no_log: true
+      shell: /web-srv/roles/monitoring/grafana.sh
+      ignore_errors: yes
 
     - name: Set IP address
       set_fact:
         IP_checkbox: "{{ do.droplet.ip_address }}"
-
+    
     - name: Add new host to our inventory.
       add_host:
         name: "{{ do.droplet.ip_address }}"
@@ -93,7 +104,9 @@
   - nodejs
   - nginx
   - mongodb
+  - monitoring
   - checkbox
+  
 
 
 

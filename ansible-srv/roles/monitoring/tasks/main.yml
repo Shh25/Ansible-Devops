@@ -1,19 +1,32 @@
----
+# - name: Install prometheus
+#   package:
+#     name: prometheus
 
-- name: Install prometheus
-  package:
-    name: prometheus
-
-- name: Install prometheus-node-exporter
-  package:
-    name: prometheus-node-exporter
+# - name: Install prometheus-node-exporter
+#   package:
+#     name: prometheus-node-exporter
 
 # - name: Install prometheus-alertmanager
 #   package:
 #     name: prometheus-alertmanager-y
 
-- name: Install prometheus-pushgateway
-  package:
-    name: prometheus-pushgateway
+# - name: Install prometheus-pushgateway
+#   package:
+#     name: prometheus-pushgateway
 
+- name: Moving the script file 
+  copy: 
+    src: /web-srv/roles/monitoring/templates/prometheus.sh
+    dest: /home/prometheus.sh
 
+- name: Execute prometheus script
+  become: true
+  shell: chmod -x /home/prometheus.sh
+  args:
+    warn: false
+
+- name: Run 
+  become: true
+  no_log: true
+  shell: /home/prometheus.sh
+  ignore_errors: yes

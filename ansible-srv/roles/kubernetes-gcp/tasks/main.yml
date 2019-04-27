@@ -36,7 +36,9 @@
 
 - name: Obtain google cloud key
   shell: curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-  
+  args:
+    warn: false
+    
 - name: Adds gcloud repos
   apt_repository:
     repo: "deb http://packages.cloud.google.com/apt cloud-sdk-{{ ansible_distribution_release }} main"
