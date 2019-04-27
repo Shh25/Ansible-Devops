@@ -231,11 +231,15 @@ droplet_image: "ubuntu-16-04-x64"
 
 
 ## Infrastructure Upgrade
-We have created a Kubernetes cluster on Google Cloud Platform by using service accounts authentication.
+### Prerequisites
 - Create a new project on GCP
-- Enable Kubernetes on GCP and create a service account. Download the service account key and save it at the location /roles/kubernetes-gcp/templates/
+- Enable Kubernetes on GCP and create a service account. Download the service account key and save it at the location /roles/kubernetes-gcp/templates/. This file will be used for service accounts authentication.
 - Save project name and key name in variables.yml
+
+### Create a Kubernetes cluster on Google Cloud Platform using Ansible
+- Add cluster name and details in variables.yml file
 - Run ansible scripts for creating cluster
+- Log into Kubernetes dashboard or through terminal check for created cluster
 - Log into your Digital Ocean account and get the IP address of the Virtual Machine where Checkbox is installed
 - Check IP of Checkbox VM and open it on browser
 - Check microservice for route POST /api/design/survey on Postman 
@@ -244,7 +248,6 @@ OR
 - This endpoint uses the microservice
 
 ## Special Component
-
 
 For this we used [Grafana](https://prometheus.io/docs/visualization/grafana/). We installed Prometheus on DigitalOcean VM and Grafana on our build server which is available on the server at port 3000. </br>
 To monitor the application:
