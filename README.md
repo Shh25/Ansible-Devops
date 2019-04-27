@@ -194,8 +194,41 @@ https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sha
 ## MILESTONE 3
 
 ## Feature Flags
+* Dev would need to add supported Feature Flags in "src/main/java/featureFlagWhitelist" before adding a new Feature Flag.
+* Currently the Feature Flags supported are:
+**disable_labtech_procedures**, and
+**disable_hospitals**.
+
+`disable_labtech_procedures`
+
+`disable_hospitals`
+
+**disable_labtech_procedures** enables/disables the **/labtech/procedures** route, while **disable_hospitals** enables/disables the **admin/hospitals**.
+
+The whitelist is used to ensure an adversary would not be able to inject unsupported Feature Flags in iTrust, by setting junk values in Redis server.
+
+* Admin can use **redis-cli** or any other Redis client or wrapper script to set the feature flags:
+Using redis-cli:
+`set disable_labtech_procedures true`
+`set disable_hospitals true`
+
 
 ## Deployment
+We started by creating an account on Digital Ocean.
+
+- API_TOKEN was generated from the DigitalOcean account and provided as the value of the API_TOKEN along with rest of the variables in the variables.yml file, as follows:
+```
+API_TOKEN: "My_Sample_Token"
+droplet_name_itrust: "iTrustDroplet"
+droplet_name_checkbox: "checkboxDroplet"
+digital_ocean_key_name: "MyKey"
+droplet_size: "2gb"
+droplet_region: "tor1"
+droplet_image: "ubuntu-16-04-x64"
+```
+- run the 'deploy' role along with other roles in the playbook.yml file.
+- on committing anything on the webserver on iTrust or Checkbox, jenkins build is triggered which spins up a new droplet on DigitalOcean or update existing droplet with each of these applications deployed on 2 different VMs.
+
 
 ## Infrastructure Upgrade
 We have created a Kubernetes cluster on Google Cloud Platform by using service accounts authentication.
@@ -211,6 +244,12 @@ OR
 - This endpoint uses the microservice
 
 ## Special Component
+
+
+For this we used [Grafana](https://prometheus.io/docs/visualization/grafana/). We installed Prometheus on DigitalOcean VM and Grafana on our build server which is available on your server at port 3000. </br>
+To monitor the application, 
+- Add virtual instance as the datasource to Grafana.
+- configure Grafana dashboard according to the metric you want to monitor.
 
 ## ScreenCast link
 
