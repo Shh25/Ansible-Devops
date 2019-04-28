@@ -245,16 +245,20 @@ droplet_image: "ubuntu-16-04-x64"
 - Check microservice for route POST /api/design/survey on Postman 
 OR
 - Create a design survey on the site
-- This endpoint uses the microservice
+- This endpoint uses the microservice set up with an route used by Checkbox application internally
 
 ## Special Component
 
-For this we used [Grafana](https://prometheus.io/docs/visualization/grafana/). We installed Prometheus on DigitalOcean VM and Grafana on our build server which is available on the server at port 3000. </br>
-To monitor the application:
-- Add virtual instance as the datasource to Grafana.
-- Configure Grafana dashboard according to the metric you want to monitor.
+For this we used [Promethius](https://prometheus.io) and [Grafana](https://prometheus.io/docs/visualization/grafana/). 
+To enable and add monitoring to the applications:
+- Open Prometheus dashboard on <VM IP>:9090. Test with various metrices
+- On Grafana dashboard: Open <Build server IP>:3000
+- Add virtual instance IP as the datasource to Grafana if it is not present already
+- Grafana is already configured with a few metrices
+- Configure Grafana dashboard for custom metrics that you want to monitor.
 
 ## ScreenCast link
+https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sharing
 
 ## Project Demo
 
