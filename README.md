@@ -187,7 +187,7 @@ Includes:
 3. Sample Coverage Report
 4. Checkbox Analysis Report
 
-## ScreenCast link
+## Screencast link
 https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sharing
 </details>
 
@@ -257,7 +257,7 @@ To enable and add monitoring to the applications:
 - Grafana is already configured with a few metrices
 - Configure Grafana dashboard for custom metrics that you want to monitor.
 
-## ScreenCast link
+## Screencast link
 https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sharing
 
 ## Project Demo
@@ -265,7 +265,7 @@ https://drive.google.com/drive/folders/1mXXmxJ1JYzsIzeRBpfsbZqc69qA-OorE?usp=sha
 ## Wiki and Repository Links
 
 ## Project Wiki
-https://github.ncsu.edu/ssujal/CSC519_Project/wiki
+https://github.ncsu.edu/ssujal/CSC519_Project/wiki/Milestone-3
 
 ## Forked Repositories
 https://github.com/Shh25/checkbox.io
