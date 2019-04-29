@@ -28,7 +28,7 @@ chown prometheus:prometheus /usr/local/bin/promtool
 # copy config
 cp -r consoles /etc/prometheus
 cp -r console_libraries /etc/prometheus
-cp prometheus.yml /etc/prometheus/prometheus.yml
+cp /home/prometheus.yml /etc/prometheus/prometheus.yml
 
 chown -R prometheus:prometheus /etc/prometheus/consoles
 chown -R prometheus:prometheus /etc/prometheus/console_libraries
