@@ -43,16 +43,16 @@
         state: directory
 
   roles:
-  # - kubernetes-gcp
-  # - deploy
-  # - nodejs
-  # - nginx
-  # - jenkins
-  # - job-builder # Please run this role only with Kubernetes role as it expects IP address for microservice
-  # - mongodb
-  # - mysql
-  # - checkbox
-  # - itrust
+  - kubernetes-gcp
+  - deploy
+  - nodejs
+  - nginx
+  - jenkins
+  - job-builder # Please run this role only with Kubernetes role as it expects IP address for microservice
+  - mongodb
+  - mysql
+  - checkbox
+  - itrust
   - monitoring # Please run monitoring if running deploy
   # - { role: test-prioritization, when: itrust_fuzz_testing == 'y' }
 
