@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: render-service-http1
+  labels:
+    app: render
+spec:
+  clusterIP: None
+  selector:
+    app: render.service.js
+  ports:
+  # - protocol: TCP
+  #   port: 80
+  #   targetPort: 9376
+
+  # Accept traffic sent to port 80
+  - name: http
+    port: 80
+    targetPort: 80

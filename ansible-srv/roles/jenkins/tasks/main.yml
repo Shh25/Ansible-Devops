@@ -7,9 +7,9 @@
     cache_valid_time: 3600
     state: present
 
-- name: Install  pip and lxml
+- name: Install lxml and pip
   apt: 
-    name: ['python-pip', 'python3-pip','python3-lxml']
+    name: ['python3-lxml','python-pip', 'python3-pip']
     state: present
 
 - name: Install the Job builder
@@ -43,9 +43,15 @@
     cache_valid_time: 3600
   register: was_jenkins_installed
 
-- name: Wait for 10 sec 
-  wait_for:
-      timeout: 10
+- name: Waiting for jenkins to be installed
+  command: curl --head --silent {{ server_url }}/
+  register: result
+  until: result.stdout.find("200 OK") != -1
+  retries: 5
+  delay: 10
+  changed_when: false
+  args:
+    warn: false
 
 - name: Reading password
   no_log: true
@@ -111,6 +117,12 @@
    name: jenkins
    state: restarted 
 
-- name: Wait for 45 sec 
-  wait_for:
-    timeout: 45
+- name: Wait untils Jenkins web API is available
+  command: curl --head --silent {{ server_url }}/
+  register: result
+  until: result.stdout.find("200 OK") != -1
+  retries: 5
+  delay: 10
+  changed_when: false
+  args:
+    warn: false

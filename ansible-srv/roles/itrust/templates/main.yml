@@ -1,0 +1,41 @@
+---
+- name: Install OpenJDK, Maven and Redis
+  apt: 
+    name: ['openjdk-8-jdk','redis-server']
+    update_cache: yes
+    cache_valid_time: 3600
+    state: present
+  become: true
+
+- name: Pushing redis to background
+  become: true
+  shell: "systemctl enable redis-server.service"
+
+- name: Install Jetty
+  unarchive:
+    src: http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/{{ jetty_version }}/jetty-distribution-{{ jetty_version }}.tar.gz
+    dest: "{{ jetty_dst_dir }}"
+    remote_src: True
+
+- name: Moving .war file 
+  copy: 
+    src: /var/lib/jenkins/workspace/itrust/target/iTrust2.war
+    dest: /opt/jetty-distribution-9.4.16.v20190411/webapps/
+
+- name: Copy db file
+  copy:
+    src: /tmp/dbs2.sql
+    dest: /tmp/dbs2.sql
+
+- name: Copy db
+  shell: 'mysql -u {{mysql_user}} -p -p{{mysql_password}} < /tmp/dbs2.sql'
+
+# - name: Start Jetty
+#   shell: "nohup mvn jetty:run &"
+#   args:
+#     chdir: "{{ itrust_dest }}/iTrust2"
+
+- name: Deploy iTrust   
+  shell: 'nohup java -jar start.jar &'
+  args:
+    chdir: /opt/jetty-distribution-9.4.16.v20190411/

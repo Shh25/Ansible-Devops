@@ -22,7 +22,6 @@
 - name: Modifying permissions for Post-Commit file for execution
   file: dest="{{ itrust_dest }}/.git/hooks/post-commit" mode=a+x
 
-
 # Copy db.properties file
 - name: Copy db.properties file
   template:
@@ -34,8 +33,4 @@
   template:
     src: ./templates/email.properties.template
     dest: "{{ itrust_dest }}/iTrust2/src/main/java/email.properties"
-
-- name: Build database and create sample data 
-  shell: "mvn -f pom-data.xml process-test-classes"
-  args:
-    chdir: "{{ itrust_dest }}/iTrust2"
+    

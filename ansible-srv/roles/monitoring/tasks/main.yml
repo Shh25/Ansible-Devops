@@ -1,0 +1,44 @@
+- name: Moving the script file 
+  template: 
+    src: ./templates/prometheus.sh
+    dest: /home/prometheus.sh
+
+- name: Moving the Prometheus config file to VM
+  template: 
+    src: ./templates/prometheus.yml
+    dest: /home/prometheus.yml
+
+- name: Execute prometheus script
+  become: true
+  shell: chmod 777 /home/prometheus.sh
+  args:
+    warn: false
+
+- name: Moving the node exporter script file 
+  template: 
+    src: ./templates/node_exporter.sh
+    dest: /home/node_exporter.sh
+
+- name: Execute node_exporter script
+  become: true
+  shell: chmod 777 /home/node_exporter.sh
+  args:
+    warn: false
+
+- name: Run 
+  become: true
+#   no_log: true
+  shell: /home/node_exporter.sh
+  ignore_errors: yes
+
+- name: Execute prometheus script
+  become: true
+  shell: chmod 777 /home/prometheus.sh
+  args:
+    warn: false
+
+- name: Run 
+  become: true
+#   no_log: true
+  shell: /home/prometheus.sh
+  ignore_errors: yes

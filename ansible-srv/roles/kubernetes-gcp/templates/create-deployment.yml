@@ -1,0 +1,43 @@
+---
+apiVersion: "extensions/v1beta1"
+kind: "Deployment"
+metadata:
+  name: "{{ deployment_name }}"
+  namespace: "default"
+  labels:
+    app: "{{ deployment_name }}"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "{{ deployment_name }}"
+  template:
+    metadata:
+      labels:
+        app: "{{ deployment_name }}"
+    spec:
+      containers:
+      - name: "render-marqdown"
+        image: "prayanisingh/render-marqdown-2"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "{{ deployment_name }}-hpa"
+  namespace: "default"
+  labels:
+    app: "{{ deployment_name }}"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "{{ deployment_name }}"
+    apiVersion: "apps/v1beta1"
+  minReplicas: 3
+  maxReplicas: 5
+  metrics:
+  - type: "Resource"
+    resource:
+      name: "cpu"
+      targetAverageUtilization: 80
+
+

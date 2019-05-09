@@ -3,15 +3,6 @@
     repo: "{{ checkbox_repo }}"
     dest: "{{ checkbox_dest }}"
 
-- name: Placing hook script at /.git/hooks/
-  become: true
-  template:
-    src: ./templates/post-commit
-    dest: "{{ checkbox_dest }}/.git/hooks/"
-
-- name: Modifying permissions for Post-Commit file for execution
-  file: dest="{{ checkbox_dest }}/.git/hooks/post-commit" mode=a+x
-
 - name: Add nginx default file for checkbox location
   shell: cp /checkbox/local-conf/default /etc/nginx/sites-available/default
 
@@ -21,3 +12,8 @@
 - name: Restart nginx
   become: true
   shell: 'systemctl restart nginx'
+
+- name: Install dependencies
+  shell: npm install && npm start
+  args:
+    chdir: /checkbox/server-side/site/

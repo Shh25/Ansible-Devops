@@ -1,0 +1,52 @@
+---
+- name: Copying variables file 
+  template:
+    src: ./variables.yml
+    dest: /web-srv/variables.yml
+
+- name: Configuring ansible
+  copy:
+    src: ./templates/ansible.cfg
+    dest: /etc/ansible/       
+
+- name: Placing checkbox script
+  copy:
+    src: ./templates/checkbox.yml
+    dest: /web-srv/  
+    
+- name: Placing iTrust script
+  copy:
+    src: ./templates/itrust.yml
+    dest: /web-srv/    
+
+- name: Copying roles
+  copy:
+    src: "{{ item }}"
+    dest: /web-srv/roles/
+    owner: root
+  with_items:
+    - ../../nginx
+    - ../../nodejs
+    - ../../mongodb
+    - ../../mysql
+    - ../../monitoring
+       
+- name: Updating mongo file
+  copy:
+    src: ../../mongodb/templates/main.yml
+    dest: /web-srv/roles/mongodb/tasks/main.yml
+
+- name: Copying checkbox role
+  copy:
+    src: ../../checkbox/templates/main.yml
+    dest: /web-srv/roles/checkbox/tasks/
+
+- name: Copy iTrust script
+  copy:
+    src: ../itrust/templates/main.yml
+    dest: /web-srv/roles/itrust/tasks/
+
+- name: Copy grafana script
+  copy:
+    src: ./templates/grafana.sh
+    dest: /web-srv/roles/monitoring/
